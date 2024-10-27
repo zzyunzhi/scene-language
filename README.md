@@ -94,11 +94,57 @@ Example results (raw outputs [here](resources/results/minecraft)):
 </tr>
 </table>
 
-#### Other Renderers
-Code will be released upon paper acceptance.
-
 
 ### Image-Conditioned 3D Generation
 ```bash
 python scripts/run.py --tasks ./resources/examples/* --cond image --temperature 0.8
+```
+
+
+### Codebase Details
+
+<details>
+<summary>Macro definitions</summary>
+
+
+The following table lists helper functions defined in [this](scripts/outputs/stubgen/20241020-145124-exposed-calc/header.pyi) file  in accordance with expressions defined in the domain-specific language (DSL) (Tables 2 and 5 of the paper):
+
+| Implementation | DSL |
+|----------------------|----------------|
+| `register`           | `bind`         |
+| `library_call`       | `call`         |
+| `primitive_call`     | `call`         |
+| `loop`               | `union-loop`   |
+| `concat_shapes`      | `union`        |
+| `transform_shape`    | `transform`    |
+| `rotation_matrix`    | `rotation`     |
+| `translation_matrix` | `translate`    |
+| `scale_matrix`       | `scale`        |
+| `reflection_matrix`  | `reflect`      |
+| `compute_shape_center` | `compute-shape-center` |
+| `compute_shape_min`  | `compute-shape-min` |
+| `compute_shape_max`  | `compute-shape-max` |
+| `compute_shape_sizes` | `compute-shape-sizes` |
+
+
+</details>
+
+
+### Code release plan
+
+The current codebase allows you to generate 3D scenes with text or image prompts. Other tasks and renderers reported in the paper will be supported in future updates. 
+
+We welcome contributions---please submit a PR if you have feature requests, enhancements, or would like to share results. :)
+
+### Citation
+
+If you find this work useful, please cite our paper:
+
+```bibtex
+@article{zhang2024scenelanguage,
+  title={The Scene Language: Representing Scenes with Programs, Words, and Embeddings},
+  author={Yunzhi Zhang and Zizhang Li and Matt Zhou and Shangzhe Wu and Jiajun Wu},
+  year={2024},
+  journal={arXiv preprint arXiv:2410.16770},
+}
 ```
