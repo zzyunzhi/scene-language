@@ -89,7 +89,7 @@ def main():
     depth = args.depth
     print(f"[INFO] Running unconstrained generation with depth={depth}")
 
-    print_vcv_url(save_dir.as_posix())
+    # print_vcv_url(save_dir.as_posix())
 
     programs = []
     for idx in range(depth):

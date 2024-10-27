@@ -18,6 +18,10 @@ pip install mitsuba
 pip install --force-reinstall numpy==1.26.4  # to be compatible with transforms3d
 pip install unidecode Pillow anthropic transforms3d astor ipdb scipy jaxtyping imageio
 
+# required for minecraft renderer
+pip install spacy
+python -m spacy download en_core_web_md
+
 git clone https://github.com/zzyunzhi/sclg.git
 cd sclg
 pip install -e .
@@ -41,11 +45,24 @@ By default, we use Claude 3.5 Sonnet. You may switch to other language models by
 python scripts/run.py --tasks "a chessboard with a full set of chess pieces" 
 ```
 
-Example results:
+Example results (raw outputs [here](resources/results/mitsuba)):
 
-| "a chessboard with a full set of chess pieces" | "a scene inspired by Egon Schiele" | "a Roman Colosseum" | "a spider puppet"
-|:---:|:---:|:---:|:---:|
-| ![chessboard](resources/results/mitsuba/a_chessboard_with_a_full_set_of_chess_pieces_f44954b0-838f-5dd5-8379-2f0edff77400/1/renderings/exposed_chessboard_with_pieces_rover_background_rendering_traj.gif) | ![Schiele](resources/results/mitsuba/a_scene_inspired_by_Egon_Schiele_72beffd6-1531-5700-894f-f86bb06b7b30/0/renderings/exposed_schiele_composition_rover_background_rendering_traj.gif) | ![colosseum](resources/results/mitsuba/Roman_Colosseum_2640d6cf-75e7-5440-b4c4-e072884ef6b3/3/renderings/exposed_roman_colosseum_rover_background_rendering_traj.gif) | ![spider](resources/results/mitsuba/a_spider_puppet_24f4f0f9-7b54-5eac-a54f-1cd06d97a043/0/renderings/exposed_spider_puppet_rover_background_rendering_traj.gif) |
+<table>
+<tr>
+<th width="20%">"a chessboard with a full set of chess pieces"</th>
+<th width="20%">"A 9x9 Sudoku board partially filled with numbers"</th>
+<th width="20%">"a scene inspired by Egon Schiele"</th>
+<th width="20%">"a Roman Colosseum"</th>
+<th width="20%">"a spider puppet"</th>
+</tr>
+<tr>
+<td><img src="resources/results/mitsuba/a_chessboard_with_a_full_set_of_chess_pieces_f44954b0-838f-5dd5-8379-2f0edff77400/1/renderings/exposed_chessboard_with_pieces_rover_background_rendering_traj.gif" width="100%"></td>
+<td><img src="resources/results/mitsuba/A_9x9_Sudoku_board_partially_filled_with_numbers_8eccefdc-5835-56dc-85b4-b98006013597/2/renderings/exposed_sudoku_board_rover_background_rendering_traj.gif" width="100%"></td>
+<td><img src="resources/results/mitsuba/a_scene_inspired_by_Egon_Schiele_72beffd6-1531-5700-894f-f86bb06b7b30/0/renderings/exposed_schiele_composition_rover_background_rendering_traj.gif" width="100%"></td>
+<td><img src="resources/results/mitsuba/Roman_Colosseum_2640d6cf-75e7-5440-b4c4-e072884ef6b3/3/renderings/exposed_roman_colosseum_rover_background_rendering_traj.gif" width="100%"></td>
+<td><img src="resources/results/mitsuba/a_spider_puppet_24f4f0f9-7b54-5eac-a54f-1cd06d97a043/0/renderings/exposed_spider_puppet_rover_background_rendering_traj.gif" width="100%"></td>
+</tr>
+</table>
 
 #### Renderer: Minecraft
 
@@ -57,6 +74,25 @@ To visualize Minecraft results, run the following command, open [http://127.0.0.
 ```bash
 python viewers/minecraft/run.py
 ```
+
+Example results (raw outputs [here](resources/results/minecraft)):
+
+<table>
+<tr>
+<th width="20%">"a witch's house in Halloween"</th>
+<th width="20%">"a detailed cylindrical medieval tower"</th>
+<th width="20%">"a detailed model of Picachu"</th>
+<th width="20%">"Stonehenge"</th>
+<th width="20%">"a Greek temple"</th>
+</tr>
+<tr>
+<td><img src="resources/results/minecraft-screenshots/witch.gif" width="100%"></td>
+<td><img src="resources/results/minecraft-screenshots/medieval.gif" width="100%"></td>
+<td><img src="resources/results/minecraft-screenshots/pikachu.png" width="100%"></td>
+<td><img src="resources/results/minecraft-screenshots/stonehenge.png" width="100%"></td>
+<td><img src="resources/results/minecraft-screenshots/greek.png" width="100%"></td>
+</tr>
+</table>
 
 #### Other Renderers
 Code will be released upon paper acceptance.
