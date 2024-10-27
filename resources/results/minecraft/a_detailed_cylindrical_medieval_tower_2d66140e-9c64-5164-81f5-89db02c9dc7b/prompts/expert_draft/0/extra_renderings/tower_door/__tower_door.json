@@ -1,0 +1,57 @@
+{
+    "width": 1,
+    "height": 2,
+    "depth": 1,
+    "frames": [
+        [
+            {
+                "start": [
+                    0,
+                    0,
+                    0
+                ],
+                "end": [
+                    1,
+                    1,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:oak_door",
+                "properties": {
+                    "half": "lower",
+                    "hinge": "left",
+                    "facing": "south",
+                    "open": "false",
+                    "powered": "false"
+                },
+                "stack": [
+                    "tower_door"
+                ]
+            },
+            {
+                "start": [
+                    0,
+                    1,
+                    0
+                ],
+                "end": [
+                    1,
+                    2,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:oak_door",
+                "properties": {
+                    "half": "upper",
+                    "hinge": "left",
+                    "facing": "south",
+                    "open": "false",
+                    "powered": "false"
+                },
+                "stack": [
+                    "tower_door"
+                ]
+            }
+        ]
+    ]
+}

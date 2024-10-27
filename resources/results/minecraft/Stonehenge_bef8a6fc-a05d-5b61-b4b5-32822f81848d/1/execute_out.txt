@@ -1,0 +1,23 @@
+ENGINE_MODE='minecraft'
+DRY_RUN=False
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/rover/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/table/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/table/scene.xml not found
+{'stonehenge': Hole(stonehenge), 'stone_circle': Hole(stone_circle), 'inner_horseshoe': Hole(inner_horseshoe), 'trilithon': Hole(trilithon), 'tall_trilithon': Hole(tall_trilithon), 'standing_stone': Hole(standing_stone), 'tall_standing_stone': Hole(tall_standing_stone), 'lintel': Hole(lintel), 'altar_stone': Hole(altar_stone), 'heel_stone': Hole(heel_stone)}
+scc=([{'stonehenge'}, {'stone_circle'}, {'inner_horseshoe'}, {'trilithon'}, {'tall_trilithon'}, {'standing_stone'}, {'tall_standing_stone'}, {'lintel'}, {'altar_stone'}, {'heel_stone'}], [[1, 2, 3, 4, 5, 6, 7, 8, 9], [3, 5, 7], [4, 6, 7], [5, 7], [6, 7], [], [], [], [], []])
+root='stonehenge'
+Writing to /Users/yzzhang/release/engine/scripts/outputs/run_20241026-221418_8ad3c94a-26fc-4377-9688-624af68bfc62/Stonehenge_bef8a6fc-a05d-5b61-b4b5-32822f81848d/1/renderings/stonehenge/__stonehenge.json
+Writing to /Users/yzzhang/release/engine/scripts/outputs/run_20241026-221418_8ad3c94a-26fc-4377-9688-624af68bfc62/Stonehenge_bef8a6fc-a05d-5b61-b4b5-32822f81848d/1/extra_renderings/stonehenge/__stonehenge.json
+Writing to /Users/yzzhang/release/engine/scripts/outputs/run_20241026-221418_8ad3c94a-26fc-4377-9688-624af68bfc62/Stonehenge_bef8a6fc-a05d-5b61-b4b5-32822f81848d/1/extra_renderings/stone_circle/__stone_circle.json
+Writing to /Users/yzzhang/release/engine/scripts/outputs/run_20241026-221418_8ad3c94a-26fc-4377-9688-624af68bfc62/Stonehenge_bef8a6fc-a05d-5b61-b4b5-32822f81848d/1/extra_renderings/inner_horseshoe/__inner_horseshoe.json
+Writing to /Users/yzzhang/release/engine/scripts/outputs/run_20241026-221418_8ad3c94a-26fc-4377-9688-624af68bfc62/Stonehenge_bef8a6fc-a05d-5b61-b4b5-32822f81848d/1/extra_renderings/trilithon/__trilithon.json
+Writing to /Users/yzzhang/release/engine/scripts/outputs/run_20241026-221418_8ad3c94a-26fc-4377-9688-624af68bfc62/Stonehenge_bef8a6fc-a05d-5b61-b4b5-32822f81848d/1/extra_renderings/tall_trilithon/__tall_trilithon.json
+Writing to /Users/yzzhang/release/engine/scripts/outputs/run_20241026-221418_8ad3c94a-26fc-4377-9688-624af68bfc62/Stonehenge_bef8a6fc-a05d-5b61-b4b5-32822f81848d/1/extra_renderings/standing_stone/__standing_stone.json
+Writing to /Users/yzzhang/release/engine/scripts/outputs/run_20241026-221418_8ad3c94a-26fc-4377-9688-624af68bfc62/Stonehenge_bef8a6fc-a05d-5b61-b4b5-32822f81848d/1/extra_renderings/tall_standing_stone/__tall_standing_stone.json
+Writing to /Users/yzzhang/release/engine/scripts/outputs/run_20241026-221418_8ad3c94a-26fc-4377-9688-624af68bfc62/Stonehenge_bef8a6fc-a05d-5b61-b4b5-32822f81848d/1/extra_renderings/lintel/__lintel.json
+Writing to /Users/yzzhang/release/engine/scripts/outputs/run_20241026-221418_8ad3c94a-26fc-4377-9688-624af68bfc62/Stonehenge_bef8a6fc-a05d-5b61-b4b5-32822f81848d/1/extra_renderings/altar_stone/__altar_stone.json
+Writing to /Users/yzzhang/release/engine/scripts/outputs/run_20241026-221418_8ad3c94a-26fc-4377-9688-624af68bfc62/Stonehenge_bef8a6fc-a05d-5b61-b4b5-32822f81848d/1/extra_renderings/heel_stone/__heel_stone.json

@@ -1,0 +1,81 @@
+{
+    "width": 9,
+    "height": 1,
+    "depth": 10,
+    "frames": [
+        [
+            {
+                "start": [
+                    0,
+                    0,
+                    0
+                ],
+                "end": [
+                    1,
+                    1,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:cobweb",
+                "properties": {},
+                "stack": [
+                    "cobwebs"
+                ]
+            },
+            {
+                "start": [
+                    8,
+                    0,
+                    0
+                ],
+                "end": [
+                    9,
+                    1,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:cobweb",
+                "properties": {},
+                "stack": [
+                    "cobwebs"
+                ]
+            },
+            {
+                "start": [
+                    0,
+                    0,
+                    9
+                ],
+                "end": [
+                    1,
+                    1,
+                    10
+                ],
+                "fill": true,
+                "type": "minecraft:cobweb",
+                "properties": {},
+                "stack": [
+                    "cobwebs"
+                ]
+            },
+            {
+                "start": [
+                    8,
+                    0,
+                    9
+                ],
+                "end": [
+                    9,
+                    1,
+                    10
+                ],
+                "fill": true,
+                "type": "minecraft:cobweb",
+                "properties": {},
+                "stack": [
+                    "cobwebs"
+                ]
+            }
+        ]
+    ]
+}

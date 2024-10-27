@@ -1,0 +1,27 @@
+{
+    "width": 7,
+    "height": 6,
+    "depth": 8,
+    "frames": [
+        [
+            {
+                "start": [
+                    0,
+                    0,
+                    0
+                ],
+                "end": [
+                    7,
+                    6,
+                    8
+                ],
+                "fill": false,
+                "type": "minecraft:dark_oak_planks",
+                "properties": {},
+                "stack": [
+                    "house_base"
+                ]
+            }
+        ]
+    ]
+}

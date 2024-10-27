@@ -1,0 +1,89 @@
+{
+    "width": 5,
+    "height": 1,
+    "depth": 8,
+    "frames": [
+        [
+            {
+                "start": [
+                    0,
+                    0,
+                    0
+                ],
+                "end": [
+                    1,
+                    1,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:soul_lantern",
+                "properties": {
+                    "hanging": "false"
+                },
+                "stack": [
+                    "windows"
+                ]
+            },
+            {
+                "start": [
+                    4,
+                    0,
+                    0
+                ],
+                "end": [
+                    5,
+                    1,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:soul_lantern",
+                "properties": {
+                    "hanging": "false"
+                },
+                "stack": [
+                    "windows"
+                ]
+            },
+            {
+                "start": [
+                    0,
+                    0,
+                    7
+                ],
+                "end": [
+                    1,
+                    1,
+                    8
+                ],
+                "fill": true,
+                "type": "minecraft:soul_lantern",
+                "properties": {
+                    "hanging": "false"
+                },
+                "stack": [
+                    "windows"
+                ]
+            },
+            {
+                "start": [
+                    4,
+                    0,
+                    7
+                ],
+                "end": [
+                    5,
+                    1,
+                    8
+                ],
+                "fill": true,
+                "type": "minecraft:soul_lantern",
+                "properties": {
+                    "hanging": "false"
+                },
+                "stack": [
+                    "windows"
+                ]
+            }
+        ]
+    ]
+}

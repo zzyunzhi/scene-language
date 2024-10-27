@@ -1,0 +1,29 @@
+{
+    "width": 40,
+    "height": 1,
+    "depth": 40,
+    "frames": [
+        [
+            {
+                "start": [
+                    0,
+                    0,
+                    0
+                ],
+                "end": [
+                    40,
+                    1,
+                    40
+                ],
+                "fill": true,
+                "type": "minecraft:grass_block",
+                "properties": {
+                    "snowy": "false"
+                },
+                "stack": [
+                    "ground"
+                ]
+            }
+        ]
+    ]
+}

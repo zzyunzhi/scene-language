@@ -1,0 +1,99 @@
+{
+    "width": 9,
+    "height": 5,
+    "depth": 9,
+    "frames": [
+        [
+            {
+                "start": [
+                    0,
+                    0,
+                    0
+                ],
+                "end": [
+                    9,
+                    1,
+                    9
+                ],
+                "fill": true,
+                "type": "minecraft:purple_concrete",
+                "properties": {},
+                "stack": [
+                    "pointed_roof"
+                ]
+            },
+            {
+                "start": [
+                    0,
+                    1,
+                    0
+                ],
+                "end": [
+                    8,
+                    2,
+                    9
+                ],
+                "fill": true,
+                "type": "minecraft:purple_concrete",
+                "properties": {},
+                "stack": [
+                    "pointed_roof"
+                ]
+            },
+            {
+                "start": [
+                    1,
+                    2,
+                    0
+                ],
+                "end": [
+                    8,
+                    3,
+                    9
+                ],
+                "fill": true,
+                "type": "minecraft:purple_concrete",
+                "properties": {},
+                "stack": [
+                    "pointed_roof"
+                ]
+            },
+            {
+                "start": [
+                    1,
+                    3,
+                    0
+                ],
+                "end": [
+                    7,
+                    4,
+                    9
+                ],
+                "fill": true,
+                "type": "minecraft:purple_concrete",
+                "properties": {},
+                "stack": [
+                    "pointed_roof"
+                ]
+            },
+            {
+                "start": [
+                    2,
+                    4,
+                    0
+                ],
+                "end": [
+                    7,
+                    5,
+                    9
+                ],
+                "fill": true,
+                "type": "minecraft:purple_concrete",
+                "properties": {},
+                "stack": [
+                    "pointed_roof"
+                ]
+            }
+        ]
+    ]
+}

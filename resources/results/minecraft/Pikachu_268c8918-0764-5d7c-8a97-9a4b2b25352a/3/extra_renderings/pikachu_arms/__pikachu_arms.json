@@ -1,0 +1,45 @@
+{
+    "width": 10,
+    "height": 4,
+    "depth": 2,
+    "frames": [
+        [
+            {
+                "start": [
+                    0,
+                    0,
+                    0
+                ],
+                "end": [
+                    2,
+                    4,
+                    2
+                ],
+                "fill": true,
+                "type": "minecraft:yellow_concrete",
+                "properties": {},
+                "stack": [
+                    "pikachu_arms"
+                ]
+            },
+            {
+                "start": [
+                    8,
+                    0,
+                    0
+                ],
+                "end": [
+                    10,
+                    4,
+                    2
+                ],
+                "fill": true,
+                "type": "minecraft:yellow_concrete",
+                "properties": {},
+                "stack": [
+                    "pikachu_arms"
+                ]
+            }
+        ]
+    ]
+}

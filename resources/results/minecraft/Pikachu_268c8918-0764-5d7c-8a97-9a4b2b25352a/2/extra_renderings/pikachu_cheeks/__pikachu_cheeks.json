@@ -1,0 +1,45 @@
+{
+    "width": 8,
+    "height": 2,
+    "depth": 1,
+    "frames": [
+        [
+            {
+                "start": [
+                    0,
+                    0,
+                    0
+                ],
+                "end": [
+                    2,
+                    2,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:red_concrete",
+                "properties": {},
+                "stack": [
+                    "pikachu_cheeks"
+                ]
+            },
+            {
+                "start": [
+                    6,
+                    0,
+                    0
+                ],
+                "end": [
+                    8,
+                    2,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:red_concrete",
+                "properties": {},
+                "stack": [
+                    "pikachu_cheeks"
+                ]
+            }
+        ]
+    ]
+}

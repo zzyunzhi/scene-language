@@ -1,0 +1,1 @@
+ENGINE_MODE=minecraft DEBUG=0 PYTHONPATH=/Users/yzzhang/release/engine/scripts/prompts:$PYTHONPATH python /Users/yzzhang/release/engine/scripts/outputs/run_20241026-221418_8ad3c94a-26fc-4377-9688-624af68bfc62/a_Greek_temple_efa7984e-ac0c-5ba3-bbb7-7419358ab128/3/impl.py

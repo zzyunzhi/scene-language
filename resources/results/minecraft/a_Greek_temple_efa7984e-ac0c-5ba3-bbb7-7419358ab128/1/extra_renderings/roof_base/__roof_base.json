@@ -1,0 +1,27 @@
+{
+    "width": 22,
+    "height": 2,
+    "depth": 32,
+    "frames": [
+        [
+            {
+                "start": [
+                    0,
+                    0,
+                    0
+                ],
+                "end": [
+                    22,
+                    2,
+                    32
+                ],
+                "fill": true,
+                "type": "minecraft:smooth_quartz",
+                "properties": {},
+                "stack": [
+                    "roof_base"
+                ]
+            }
+        ]
+    ]
+}

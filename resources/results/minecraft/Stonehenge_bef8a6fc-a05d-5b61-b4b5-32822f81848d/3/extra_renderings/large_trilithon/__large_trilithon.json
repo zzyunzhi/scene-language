@@ -1,0 +1,66 @@
+{
+    "width": 6,
+    "height": 7,
+    "depth": 1,
+    "frames": [
+        [
+            {
+                "start": [
+                    0,
+                    0,
+                    0
+                ],
+                "end": [
+                    2,
+                    6,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "large_standing_stone",
+                    "large_trilithon"
+                ]
+            },
+            {
+                "start": [
+                    4,
+                    0,
+                    0
+                ],
+                "end": [
+                    6,
+                    6,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "large_standing_stone",
+                    "large_trilithon"
+                ]
+            },
+            {
+                "start": [
+                    0,
+                    6,
+                    0
+                ],
+                "end": [
+                    6,
+                    7,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "large_lintel",
+                    "large_trilithon"
+                ]
+            }
+        ]
+    ]
+}

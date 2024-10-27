@@ -1,0 +1,81 @@
+{
+    "width": 5,
+    "height": 2,
+    "depth": 8,
+    "frames": [
+        [
+            {
+                "start": [
+                    0,
+                    0,
+                    0
+                ],
+                "end": [
+                    1,
+                    2,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:orange_stained_glass",
+                "properties": {},
+                "stack": [
+                    "windows"
+                ]
+            },
+            {
+                "start": [
+                    4,
+                    0,
+                    0
+                ],
+                "end": [
+                    5,
+                    2,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:orange_stained_glass",
+                "properties": {},
+                "stack": [
+                    "windows"
+                ]
+            },
+            {
+                "start": [
+                    0,
+                    0,
+                    7
+                ],
+                "end": [
+                    1,
+                    2,
+                    8
+                ],
+                "fill": true,
+                "type": "minecraft:orange_stained_glass",
+                "properties": {},
+                "stack": [
+                    "windows"
+                ]
+            },
+            {
+                "start": [
+                    4,
+                    0,
+                    7
+                ],
+                "end": [
+                    5,
+                    2,
+                    8
+                ],
+                "fill": true,
+                "type": "minecraft:orange_stained_glass",
+                "properties": {},
+                "stack": [
+                    "windows"
+                ]
+            }
+        ]
+    ]
+}

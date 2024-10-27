@@ -1,0 +1,1809 @@
+{
+    "width": 33,
+    "height": 5,
+    "depth": 29,
+    "frames": [
+        [
+            {
+                "start": [
+                    30,
+                    0,
+                    14
+                ],
+                "end": [
+                    31,
+                    4,
+                    15
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    32,
+                    0,
+                    14
+                ],
+                "end": [
+                    33,
+                    4,
+                    15
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    30,
+                    4,
+                    14
+                ],
+                "end": [
+                    33,
+                    5,
+                    15
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    29,
+                    0,
+                    17
+                ],
+                "end": [
+                    30,
+                    4,
+                    18
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    31,
+                    0,
+                    17
+                ],
+                "end": [
+                    32,
+                    4,
+                    18
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    29,
+                    4,
+                    17
+                ],
+                "end": [
+                    32,
+                    5,
+                    18
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    28,
+                    0,
+                    20
+                ],
+                "end": [
+                    29,
+                    4,
+                    21
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    30,
+                    0,
+                    20
+                ],
+                "end": [
+                    31,
+                    4,
+                    21
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    28,
+                    4,
+                    20
+                ],
+                "end": [
+                    31,
+                    5,
+                    21
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    27,
+                    0,
+                    22
+                ],
+                "end": [
+                    28,
+                    4,
+                    23
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    29,
+                    0,
+                    22
+                ],
+                "end": [
+                    30,
+                    4,
+                    23
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    27,
+                    4,
+                    22
+                ],
+                "end": [
+                    30,
+                    5,
+                    23
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    25,
+                    0,
+                    25
+                ],
+                "end": [
+                    26,
+                    4,
+                    26
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    27,
+                    0,
+                    25
+                ],
+                "end": [
+                    28,
+                    4,
+                    26
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    25,
+                    4,
+                    25
+                ],
+                "end": [
+                    28,
+                    5,
+                    26
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    22,
+                    0,
+                    26
+                ],
+                "end": [
+                    23,
+                    4,
+                    27
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    24,
+                    0,
+                    26
+                ],
+                "end": [
+                    25,
+                    4,
+                    27
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    22,
+                    4,
+                    26
+                ],
+                "end": [
+                    25,
+                    5,
+                    27
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    19,
+                    0,
+                    28
+                ],
+                "end": [
+                    20,
+                    4,
+                    29
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    21,
+                    0,
+                    28
+                ],
+                "end": [
+                    22,
+                    4,
+                    29
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    19,
+                    4,
+                    28
+                ],
+                "end": [
+                    22,
+                    5,
+                    29
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    16,
+                    0,
+                    28
+                ],
+                "end": [
+                    17,
+                    4,
+                    29
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    18,
+                    0,
+                    28
+                ],
+                "end": [
+                    19,
+                    4,
+                    29
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    16,
+                    4,
+                    28
+                ],
+                "end": [
+                    19,
+                    5,
+                    29
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    14,
+                    0,
+                    28
+                ],
+                "end": [
+                    15,
+                    4,
+                    29
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    16,
+                    0,
+                    28
+                ],
+                "end": [
+                    17,
+                    4,
+                    29
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    14,
+                    4,
+                    28
+                ],
+                "end": [
+                    17,
+                    5,
+                    29
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    11,
+                    0,
+                    28
+                ],
+                "end": [
+                    12,
+                    4,
+                    29
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    13,
+                    0,
+                    28
+                ],
+                "end": [
+                    14,
+                    4,
+                    29
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    11,
+                    4,
+                    28
+                ],
+                "end": [
+                    14,
+                    5,
+                    29
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    8,
+                    0,
+                    26
+                ],
+                "end": [
+                    9,
+                    4,
+                    27
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    10,
+                    0,
+                    26
+                ],
+                "end": [
+                    11,
+                    4,
+                    27
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    8,
+                    4,
+                    26
+                ],
+                "end": [
+                    11,
+                    5,
+                    27
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    5,
+                    0,
+                    25
+                ],
+                "end": [
+                    6,
+                    4,
+                    26
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    7,
+                    0,
+                    25
+                ],
+                "end": [
+                    8,
+                    4,
+                    26
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    5,
+                    4,
+                    25
+                ],
+                "end": [
+                    8,
+                    5,
+                    26
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    3,
+                    0,
+                    22
+                ],
+                "end": [
+                    4,
+                    4,
+                    23
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    5,
+                    0,
+                    22
+                ],
+                "end": [
+                    6,
+                    4,
+                    23
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    3,
+                    4,
+                    22
+                ],
+                "end": [
+                    6,
+                    5,
+                    23
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    2,
+                    0,
+                    20
+                ],
+                "end": [
+                    3,
+                    4,
+                    21
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    4,
+                    0,
+                    20
+                ],
+                "end": [
+                    5,
+                    4,
+                    21
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    2,
+                    4,
+                    20
+                ],
+                "end": [
+                    5,
+                    5,
+                    21
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    1,
+                    0,
+                    17
+                ],
+                "end": [
+                    2,
+                    4,
+                    18
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    3,
+                    0,
+                    17
+                ],
+                "end": [
+                    4,
+                    4,
+                    18
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    1,
+                    4,
+                    17
+                ],
+                "end": [
+                    4,
+                    5,
+                    18
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    0,
+                    0,
+                    14
+                ],
+                "end": [
+                    1,
+                    4,
+                    15
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    2,
+                    0,
+                    14
+                ],
+                "end": [
+                    3,
+                    4,
+                    15
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    0,
+                    4,
+                    14
+                ],
+                "end": [
+                    3,
+                    5,
+                    15
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    1,
+                    0,
+                    11
+                ],
+                "end": [
+                    2,
+                    4,
+                    12
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    3,
+                    0,
+                    11
+                ],
+                "end": [
+                    4,
+                    4,
+                    12
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    1,
+                    4,
+                    11
+                ],
+                "end": [
+                    4,
+                    5,
+                    12
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    2,
+                    0,
+                    8
+                ],
+                "end": [
+                    3,
+                    4,
+                    9
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    4,
+                    0,
+                    8
+                ],
+                "end": [
+                    5,
+                    4,
+                    9
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    2,
+                    4,
+                    8
+                ],
+                "end": [
+                    5,
+                    5,
+                    9
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    3,
+                    0,
+                    6
+                ],
+                "end": [
+                    4,
+                    4,
+                    7
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    5,
+                    0,
+                    6
+                ],
+                "end": [
+                    6,
+                    4,
+                    7
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    3,
+                    4,
+                    6
+                ],
+                "end": [
+                    6,
+                    5,
+                    7
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    5,
+                    0,
+                    3
+                ],
+                "end": [
+                    6,
+                    4,
+                    4
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    7,
+                    0,
+                    3
+                ],
+                "end": [
+                    8,
+                    4,
+                    4
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    5,
+                    4,
+                    3
+                ],
+                "end": [
+                    8,
+                    5,
+                    4
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    8,
+                    0,
+                    2
+                ],
+                "end": [
+                    9,
+                    4,
+                    3
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    10,
+                    0,
+                    2
+                ],
+                "end": [
+                    11,
+                    4,
+                    3
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    8,
+                    4,
+                    2
+                ],
+                "end": [
+                    11,
+                    5,
+                    3
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    11,
+                    0,
+                    0
+                ],
+                "end": [
+                    12,
+                    4,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    13,
+                    0,
+                    0
+                ],
+                "end": [
+                    14,
+                    4,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    11,
+                    4,
+                    0
+                ],
+                "end": [
+                    14,
+                    5,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    14,
+                    0,
+                    0
+                ],
+                "end": [
+                    15,
+                    4,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    16,
+                    0,
+                    0
+                ],
+                "end": [
+                    17,
+                    4,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    14,
+                    4,
+                    0
+                ],
+                "end": [
+                    17,
+                    5,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    16,
+                    0,
+                    0
+                ],
+                "end": [
+                    17,
+                    4,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    18,
+                    0,
+                    0
+                ],
+                "end": [
+                    19,
+                    4,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    16,
+                    4,
+                    0
+                ],
+                "end": [
+                    19,
+                    5,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    19,
+                    0,
+                    0
+                ],
+                "end": [
+                    20,
+                    4,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    21,
+                    0,
+                    0
+                ],
+                "end": [
+                    22,
+                    4,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    19,
+                    4,
+                    0
+                ],
+                "end": [
+                    22,
+                    5,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    22,
+                    0,
+                    2
+                ],
+                "end": [
+                    23,
+                    4,
+                    3
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    24,
+                    0,
+                    2
+                ],
+                "end": [
+                    25,
+                    4,
+                    3
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    22,
+                    4,
+                    2
+                ],
+                "end": [
+                    25,
+                    5,
+                    3
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    25,
+                    0,
+                    3
+                ],
+                "end": [
+                    26,
+                    4,
+                    4
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    27,
+                    0,
+                    3
+                ],
+                "end": [
+                    28,
+                    4,
+                    4
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    25,
+                    4,
+                    3
+                ],
+                "end": [
+                    28,
+                    5,
+                    4
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    27,
+                    0,
+                    6
+                ],
+                "end": [
+                    28,
+                    4,
+                    7
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    29,
+                    0,
+                    6
+                ],
+                "end": [
+                    30,
+                    4,
+                    7
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    27,
+                    4,
+                    6
+                ],
+                "end": [
+                    30,
+                    5,
+                    7
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    28,
+                    0,
+                    8
+                ],
+                "end": [
+                    29,
+                    4,
+                    9
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    30,
+                    0,
+                    8
+                ],
+                "end": [
+                    31,
+                    4,
+                    9
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    28,
+                    4,
+                    8
+                ],
+                "end": [
+                    31,
+                    5,
+                    9
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    29,
+                    0,
+                    11
+                ],
+                "end": [
+                    30,
+                    4,
+                    12
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    31,
+                    0,
+                    11
+                ],
+                "end": [
+                    32,
+                    4,
+                    12
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            },
+            {
+                "start": [
+                    29,
+                    4,
+                    11
+                ],
+                "end": [
+                    32,
+                    5,
+                    12
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon",
+                    "stone_circle"
+                ]
+            }
+        ]
+    ]
+}

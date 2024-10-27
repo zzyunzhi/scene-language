@@ -1,0 +1,75 @@
+{
+    "width": 28,
+    "height": 3,
+    "depth": 38,
+    "frames": [
+        [
+            {
+                "start": [
+                    2,
+                    2,
+                    2
+                ],
+                "end": [
+                    26,
+                    3,
+                    36
+                ],
+                "fill": false,
+                "type": "minecraft:stone_brick_stairs",
+                "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight"
+                },
+                "stack": [
+                    "temple_steps"
+                ]
+            },
+            {
+                "start": [
+                    1,
+                    1,
+                    1
+                ],
+                "end": [
+                    27,
+                    2,
+                    37
+                ],
+                "fill": false,
+                "type": "minecraft:stone_brick_stairs",
+                "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight"
+                },
+                "stack": [
+                    "temple_steps"
+                ]
+            },
+            {
+                "start": [
+                    0,
+                    0,
+                    0
+                ],
+                "end": [
+                    28,
+                    1,
+                    38
+                ],
+                "fill": false,
+                "type": "minecraft:stone_brick_stairs",
+                "properties": {
+                    "facing": "north",
+                    "half": "bottom",
+                    "shape": "straight"
+                },
+                "stack": [
+                    "temple_steps"
+                ]
+            }
+        ]
+    ]
+}

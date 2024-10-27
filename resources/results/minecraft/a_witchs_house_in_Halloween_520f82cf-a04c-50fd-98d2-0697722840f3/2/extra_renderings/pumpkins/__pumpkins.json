@@ -1,0 +1,89 @@
+{
+    "width": 9,
+    "height": 1,
+    "depth": 6,
+    "frames": [
+        [
+            {
+                "start": [
+                    1,
+                    0,
+                    0
+                ],
+                "end": [
+                    2,
+                    1,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:jack_o_lantern",
+                "properties": {
+                    "facing": "south"
+                },
+                "stack": [
+                    "pumpkins"
+                ]
+            },
+            {
+                "start": [
+                    7,
+                    0,
+                    0
+                ],
+                "end": [
+                    8,
+                    1,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:jack_o_lantern",
+                "properties": {
+                    "facing": "south"
+                },
+                "stack": [
+                    "pumpkins"
+                ]
+            },
+            {
+                "start": [
+                    0,
+                    0,
+                    5
+                ],
+                "end": [
+                    1,
+                    1,
+                    6
+                ],
+                "fill": true,
+                "type": "minecraft:jack_o_lantern",
+                "properties": {
+                    "facing": "south"
+                },
+                "stack": [
+                    "pumpkins"
+                ]
+            },
+            {
+                "start": [
+                    8,
+                    0,
+                    5
+                ],
+                "end": [
+                    9,
+                    1,
+                    6
+                ],
+                "fill": true,
+                "type": "minecraft:jack_o_lantern",
+                "properties": {
+                    "facing": "south"
+                },
+                "stack": [
+                    "pumpkins"
+                ]
+            }
+        ]
+    ]
+}

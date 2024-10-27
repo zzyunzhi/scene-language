@@ -1,0 +1,478 @@
+{
+    "width": 9,
+    "height": 11,
+    "depth": 10,
+    "frames": [
+        [
+            {
+                "start": [
+                    1,
+                    0,
+                    1
+                ],
+                "end": [
+                    8,
+                    6,
+                    9
+                ],
+                "fill": false,
+                "type": "minecraft:dark_oak_planks",
+                "properties": {},
+                "stack": [
+                    "house_base",
+                    "witch_house"
+                ]
+            },
+            {
+                "start": [
+                    0,
+                    6,
+                    1
+                ],
+                "end": [
+                    9,
+                    7,
+                    10
+                ],
+                "fill": true,
+                "type": "minecraft:purple_concrete",
+                "properties": {},
+                "stack": [
+                    "pointed_roof",
+                    "witch_house"
+                ]
+            },
+            {
+                "start": [
+                    0,
+                    7,
+                    1
+                ],
+                "end": [
+                    8,
+                    8,
+                    10
+                ],
+                "fill": true,
+                "type": "minecraft:purple_concrete",
+                "properties": {},
+                "stack": [
+                    "pointed_roof",
+                    "witch_house"
+                ]
+            },
+            {
+                "start": [
+                    1,
+                    8,
+                    1
+                ],
+                "end": [
+                    8,
+                    9,
+                    10
+                ],
+                "fill": true,
+                "type": "minecraft:purple_concrete",
+                "properties": {},
+                "stack": [
+                    "pointed_roof",
+                    "witch_house"
+                ]
+            },
+            {
+                "start": [
+                    1,
+                    9,
+                    1
+                ],
+                "end": [
+                    7,
+                    10,
+                    10
+                ],
+                "fill": true,
+                "type": "minecraft:purple_concrete",
+                "properties": {},
+                "stack": [
+                    "pointed_roof",
+                    "witch_house"
+                ]
+            },
+            {
+                "start": [
+                    2,
+                    10,
+                    1
+                ],
+                "end": [
+                    7,
+                    11,
+                    10
+                ],
+                "fill": true,
+                "type": "minecraft:purple_concrete",
+                "properties": {},
+                "stack": [
+                    "pointed_roof",
+                    "witch_house"
+                ]
+            },
+            {
+                "start": [
+                    2,
+                    3,
+                    1
+                ],
+                "end": [
+                    3,
+                    5,
+                    2
+                ],
+                "fill": true,
+                "type": "minecraft:orange_stained_glass",
+                "properties": {},
+                "stack": [
+                    "windows",
+                    "witch_house"
+                ]
+            },
+            {
+                "start": [
+                    6,
+                    3,
+                    1
+                ],
+                "end": [
+                    7,
+                    5,
+                    2
+                ],
+                "fill": true,
+                "type": "minecraft:orange_stained_glass",
+                "properties": {},
+                "stack": [
+                    "windows",
+                    "witch_house"
+                ]
+            },
+            {
+                "start": [
+                    2,
+                    3,
+                    8
+                ],
+                "end": [
+                    3,
+                    5,
+                    9
+                ],
+                "fill": true,
+                "type": "minecraft:orange_stained_glass",
+                "properties": {},
+                "stack": [
+                    "windows",
+                    "witch_house"
+                ]
+            },
+            {
+                "start": [
+                    6,
+                    3,
+                    8
+                ],
+                "end": [
+                    7,
+                    5,
+                    9
+                ],
+                "fill": true,
+                "type": "minecraft:orange_stained_glass",
+                "properties": {},
+                "stack": [
+                    "windows",
+                    "witch_house"
+                ]
+            },
+            {
+                "start": [
+                    4,
+                    1,
+                    1
+                ],
+                "end": [
+                    5,
+                    3,
+                    2
+                ],
+                "fill": true,
+                "type": "minecraft:dark_oak_door",
+                "properties": {
+                    "facing": "south",
+                    "half": "lower",
+                    "hinge": "left"
+                },
+                "stack": [
+                    "door",
+                    "witch_house"
+                ]
+            },
+            {
+                "start": [
+                    1,
+                    1,
+                    0
+                ],
+                "end": [
+                    2,
+                    2,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:jack_o_lantern",
+                "properties": {
+                    "facing": "south"
+                },
+                "stack": [
+                    "pumpkins",
+                    "decorations",
+                    "witch_house"
+                ]
+            },
+            {
+                "start": [
+                    7,
+                    1,
+                    0
+                ],
+                "end": [
+                    8,
+                    2,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:jack_o_lantern",
+                "properties": {
+                    "facing": "south"
+                },
+                "stack": [
+                    "pumpkins",
+                    "decorations",
+                    "witch_house"
+                ]
+            },
+            {
+                "start": [
+                    0,
+                    1,
+                    5
+                ],
+                "end": [
+                    1,
+                    2,
+                    6
+                ],
+                "fill": true,
+                "type": "minecraft:jack_o_lantern",
+                "properties": {
+                    "facing": "south"
+                },
+                "stack": [
+                    "pumpkins",
+                    "decorations",
+                    "witch_house"
+                ]
+            },
+            {
+                "start": [
+                    8,
+                    1,
+                    5
+                ],
+                "end": [
+                    9,
+                    2,
+                    6
+                ],
+                "fill": true,
+                "type": "minecraft:jack_o_lantern",
+                "properties": {
+                    "facing": "south"
+                },
+                "stack": [
+                    "pumpkins",
+                    "decorations",
+                    "witch_house"
+                ]
+            },
+            {
+                "start": [
+                    0,
+                    4,
+                    0
+                ],
+                "end": [
+                    1,
+                    5,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:soul_lantern",
+                "properties": {
+                    "hanging": "true"
+                },
+                "stack": [
+                    "lanterns",
+                    "decorations",
+                    "witch_house"
+                ]
+            },
+            {
+                "start": [
+                    8,
+                    4,
+                    0
+                ],
+                "end": [
+                    9,
+                    5,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:soul_lantern",
+                "properties": {
+                    "hanging": "true"
+                },
+                "stack": [
+                    "lanterns",
+                    "decorations",
+                    "witch_house"
+                ]
+            },
+            {
+                "start": [
+                    0,
+                    4,
+                    9
+                ],
+                "end": [
+                    1,
+                    5,
+                    10
+                ],
+                "fill": true,
+                "type": "minecraft:soul_lantern",
+                "properties": {
+                    "hanging": "true"
+                },
+                "stack": [
+                    "lanterns",
+                    "decorations",
+                    "witch_house"
+                ]
+            },
+            {
+                "start": [
+                    8,
+                    4,
+                    9
+                ],
+                "end": [
+                    9,
+                    5,
+                    10
+                ],
+                "fill": true,
+                "type": "minecraft:soul_lantern",
+                "properties": {
+                    "hanging": "true"
+                },
+                "stack": [
+                    "lanterns",
+                    "decorations",
+                    "witch_house"
+                ]
+            },
+            {
+                "start": [
+                    0,
+                    5,
+                    0
+                ],
+                "end": [
+                    1,
+                    6,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:cobweb",
+                "properties": {},
+                "stack": [
+                    "cobwebs",
+                    "decorations",
+                    "witch_house"
+                ]
+            },
+            {
+                "start": [
+                    8,
+                    5,
+                    0
+                ],
+                "end": [
+                    9,
+                    6,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:cobweb",
+                "properties": {},
+                "stack": [
+                    "cobwebs",
+                    "decorations",
+                    "witch_house"
+                ]
+            },
+            {
+                "start": [
+                    0,
+                    5,
+                    9
+                ],
+                "end": [
+                    1,
+                    6,
+                    10
+                ],
+                "fill": true,
+                "type": "minecraft:cobweb",
+                "properties": {},
+                "stack": [
+                    "cobwebs",
+                    "decorations",
+                    "witch_house"
+                ]
+            },
+            {
+                "start": [
+                    8,
+                    5,
+                    9
+                ],
+                "end": [
+                    9,
+                    6,
+                    10
+                ],
+                "fill": true,
+                "type": "minecraft:cobweb",
+                "properties": {},
+                "stack": [
+                    "cobwebs",
+                    "decorations",
+                    "witch_house"
+                ]
+            }
+        ]
+    ]
+}

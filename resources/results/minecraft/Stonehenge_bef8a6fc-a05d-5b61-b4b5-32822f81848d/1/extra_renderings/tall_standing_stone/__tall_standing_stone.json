@@ -1,0 +1,27 @@
+{
+    "width": 2,
+    "height": 6,
+    "depth": 1,
+    "frames": [
+        [
+            {
+                "start": [
+                    0,
+                    0,
+                    0
+                ],
+                "end": [
+                    2,
+                    6,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "tall_standing_stone"
+                ]
+            }
+        ]
+    ]
+}

@@ -1,0 +1,45 @@
+{
+    "width": 4,
+    "height": 1,
+    "depth": 1,
+    "frames": [
+        [
+            {
+                "start": [
+                    0,
+                    0,
+                    0
+                ],
+                "end": [
+                    1,
+                    1,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:black_concrete",
+                "properties": {},
+                "stack": [
+                    "pikachu_eyes"
+                ]
+            },
+            {
+                "start": [
+                    3,
+                    0,
+                    0
+                ],
+                "end": [
+                    4,
+                    1,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:black_concrete",
+                "properties": {},
+                "stack": [
+                    "pikachu_eyes"
+                ]
+            }
+        ]
+    ]
+}

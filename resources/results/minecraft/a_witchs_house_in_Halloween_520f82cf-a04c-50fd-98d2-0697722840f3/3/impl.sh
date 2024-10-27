@@ -1,0 +1,1 @@
+ENGINE_MODE=minecraft DEBUG=0 PYTHONPATH=/Users/yzzhang/release/engine/scripts/prompts:$PYTHONPATH python /Users/yzzhang/release/engine/scripts/outputs/run_20241026-222136_f6d4b0b0-316c-4481-9286-55c4e4d33b40/a_witchs_house_in_Halloween_520f82cf-a04c-50fd-98d2-0697722840f3/3/impl.py

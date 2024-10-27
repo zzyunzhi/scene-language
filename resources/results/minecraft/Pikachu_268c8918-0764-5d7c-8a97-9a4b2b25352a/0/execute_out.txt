@@ -1,0 +1,22 @@
+ENGINE_MODE='minecraft'
+DRY_RUN=False
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/rover/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/table/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/table/scene.xml not found
+{'pikachu': Hole(pikachu), 'pikachu_body': Hole(pikachu_body), 'pikachu_head': Hole(pikachu_head), 'pikachu_ears': Hole(pikachu_ears), 'pikachu_arms': Hole(pikachu_arms), 'pikachu_legs': Hole(pikachu_legs), 'pikachu_tail': Hole(pikachu_tail), 'pikachu_cheeks': Hole(pikachu_cheeks), 'pikachu_eyes': Hole(pikachu_eyes)}
+scc=([{'pikachu'}, {'pikachu_body'}, {'pikachu_head'}, {'pikachu_ears'}, {'pikachu_arms'}, {'pikachu_legs'}, {'pikachu_tail'}, {'pikachu_cheeks'}, {'pikachu_eyes'}], [[1, 2, 3, 4, 5, 6, 7, 8], [], [], [], [], [], [], [], []])
+root='pikachu'
+Writing to /Users/yzzhang/release/engine/scripts/outputs/run_20241027-024728_3cebc667-cf22-455e-ae69-ef7caf6f7f18/Pikachu_268c8918-0764-5d7c-8a97-9a4b2b25352a/0/renderings/pikachu/__pikachu.json
+Writing to /Users/yzzhang/release/engine/scripts/outputs/run_20241027-024728_3cebc667-cf22-455e-ae69-ef7caf6f7f18/Pikachu_268c8918-0764-5d7c-8a97-9a4b2b25352a/0/extra_renderings/pikachu/__pikachu.json
+Writing to /Users/yzzhang/release/engine/scripts/outputs/run_20241027-024728_3cebc667-cf22-455e-ae69-ef7caf6f7f18/Pikachu_268c8918-0764-5d7c-8a97-9a4b2b25352a/0/extra_renderings/pikachu_body/__pikachu_body.json
+Writing to /Users/yzzhang/release/engine/scripts/outputs/run_20241027-024728_3cebc667-cf22-455e-ae69-ef7caf6f7f18/Pikachu_268c8918-0764-5d7c-8a97-9a4b2b25352a/0/extra_renderings/pikachu_head/__pikachu_head.json
+Writing to /Users/yzzhang/release/engine/scripts/outputs/run_20241027-024728_3cebc667-cf22-455e-ae69-ef7caf6f7f18/Pikachu_268c8918-0764-5d7c-8a97-9a4b2b25352a/0/extra_renderings/pikachu_ears/__pikachu_ears.json
+Writing to /Users/yzzhang/release/engine/scripts/outputs/run_20241027-024728_3cebc667-cf22-455e-ae69-ef7caf6f7f18/Pikachu_268c8918-0764-5d7c-8a97-9a4b2b25352a/0/extra_renderings/pikachu_arms/__pikachu_arms.json
+Writing to /Users/yzzhang/release/engine/scripts/outputs/run_20241027-024728_3cebc667-cf22-455e-ae69-ef7caf6f7f18/Pikachu_268c8918-0764-5d7c-8a97-9a4b2b25352a/0/extra_renderings/pikachu_legs/__pikachu_legs.json
+Writing to /Users/yzzhang/release/engine/scripts/outputs/run_20241027-024728_3cebc667-cf22-455e-ae69-ef7caf6f7f18/Pikachu_268c8918-0764-5d7c-8a97-9a4b2b25352a/0/extra_renderings/pikachu_tail/__pikachu_tail.json
+Writing to /Users/yzzhang/release/engine/scripts/outputs/run_20241027-024728_3cebc667-cf22-455e-ae69-ef7caf6f7f18/Pikachu_268c8918-0764-5d7c-8a97-9a4b2b25352a/0/extra_renderings/pikachu_cheeks/__pikachu_cheeks.json
+Writing to /Users/yzzhang/release/engine/scripts/outputs/run_20241027-024728_3cebc667-cf22-455e-ae69-ef7caf6f7f18/Pikachu_268c8918-0764-5d7c-8a97-9a4b2b25352a/0/extra_renderings/pikachu_eyes/__pikachu_eyes.json

@@ -1,0 +1,27 @@
+{
+    "width": 5,
+    "height": 1,
+    "depth": 1,
+    "frames": [
+        [
+            {
+                "start": [
+                    0,
+                    0,
+                    0
+                ],
+                "end": [
+                    5,
+                    1,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "large_lintel"
+                ]
+            }
+        ]
+    ]
+}

@@ -1,0 +1,199 @@
+{
+    "width": 22,
+    "height": 5,
+    "depth": 33,
+    "frames": [
+        [
+            {
+                "start": [
+                    0,
+                    0,
+                    0
+                ],
+                "end": [
+                    22,
+                    1,
+                    4
+                ],
+                "fill": true,
+                "type": "minecraft:smooth_quartz",
+                "properties": {},
+                "stack": [
+                    "temple_pediment",
+                    "temple_pediment"
+                ]
+            },
+            {
+                "start": [
+                    1,
+                    1,
+                    0
+                ],
+                "end": [
+                    21,
+                    2,
+                    4
+                ],
+                "fill": true,
+                "type": "minecraft:smooth_quartz",
+                "properties": {},
+                "stack": [
+                    "temple_pediment",
+                    "temple_pediment"
+                ]
+            },
+            {
+                "start": [
+                    2,
+                    2,
+                    0
+                ],
+                "end": [
+                    20,
+                    3,
+                    4
+                ],
+                "fill": true,
+                "type": "minecraft:smooth_quartz",
+                "properties": {},
+                "stack": [
+                    "temple_pediment",
+                    "temple_pediment"
+                ]
+            },
+            {
+                "start": [
+                    3,
+                    3,
+                    0
+                ],
+                "end": [
+                    19,
+                    4,
+                    4
+                ],
+                "fill": true,
+                "type": "minecraft:smooth_quartz",
+                "properties": {},
+                "stack": [
+                    "temple_pediment",
+                    "temple_pediment"
+                ]
+            },
+            {
+                "start": [
+                    4,
+                    4,
+                    0
+                ],
+                "end": [
+                    18,
+                    5,
+                    4
+                ],
+                "fill": true,
+                "type": "minecraft:smooth_quartz",
+                "properties": {},
+                "stack": [
+                    "temple_pediment",
+                    "temple_pediment"
+                ]
+            },
+            {
+                "start": [
+                    0,
+                    0,
+                    29
+                ],
+                "end": [
+                    22,
+                    1,
+                    33
+                ],
+                "fill": true,
+                "type": "minecraft:smooth_quartz",
+                "properties": {},
+                "stack": [
+                    "temple_pediment",
+                    "temple_pediment"
+                ]
+            },
+            {
+                "start": [
+                    1,
+                    1,
+                    29
+                ],
+                "end": [
+                    21,
+                    2,
+                    33
+                ],
+                "fill": true,
+                "type": "minecraft:smooth_quartz",
+                "properties": {},
+                "stack": [
+                    "temple_pediment",
+                    "temple_pediment"
+                ]
+            },
+            {
+                "start": [
+                    2,
+                    2,
+                    29
+                ],
+                "end": [
+                    20,
+                    3,
+                    33
+                ],
+                "fill": true,
+                "type": "minecraft:smooth_quartz",
+                "properties": {},
+                "stack": [
+                    "temple_pediment",
+                    "temple_pediment"
+                ]
+            },
+            {
+                "start": [
+                    3,
+                    3,
+                    29
+                ],
+                "end": [
+                    19,
+                    4,
+                    33
+                ],
+                "fill": true,
+                "type": "minecraft:smooth_quartz",
+                "properties": {},
+                "stack": [
+                    "temple_pediment",
+                    "temple_pediment"
+                ]
+            },
+            {
+                "start": [
+                    4,
+                    4,
+                    29
+                ],
+                "end": [
+                    18,
+                    5,
+                    33
+                ],
+                "fill": true,
+                "type": "minecraft:smooth_quartz",
+                "properties": {},
+                "stack": [
+                    "temple_pediment",
+                    "temple_pediment"
+                ]
+            }
+        ]
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "width": 2,
+    "height": 1,
+    "depth": 4,
+    "frames": [
+        [
+            {
+                "start": [
+                    0,
+                    0,
+                    0
+                ],
+                "end": [
+                    2,
+                    1,
+                    4
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "altar_stone"
+                ]
+            }
+        ]
+    ]
+}

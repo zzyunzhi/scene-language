@@ -1,0 +1,123 @@
+{
+    "width": 23,
+    "height": 7,
+    "depth": 32,
+    "frames": [
+        [
+            {
+                "start": [
+                    0,
+                    0,
+                    0
+                ],
+                "end": [
+                    22,
+                    2,
+                    32
+                ],
+                "fill": true,
+                "type": "minecraft:smooth_quartz",
+                "properties": {},
+                "stack": [
+                    "roof_base",
+                    "temple_roof"
+                ]
+            },
+            {
+                "start": [
+                    1,
+                    2,
+                    0
+                ],
+                "end": [
+                    23,
+                    3,
+                    32
+                ],
+                "fill": true,
+                "type": "minecraft:smooth_quartz",
+                "properties": {},
+                "stack": [
+                    "roof_pediment",
+                    "temple_roof"
+                ]
+            },
+            {
+                "start": [
+                    2,
+                    3,
+                    0
+                ],
+                "end": [
+                    22,
+                    4,
+                    32
+                ],
+                "fill": true,
+                "type": "minecraft:smooth_quartz",
+                "properties": {},
+                "stack": [
+                    "roof_pediment",
+                    "temple_roof"
+                ]
+            },
+            {
+                "start": [
+                    3,
+                    4,
+                    0
+                ],
+                "end": [
+                    21,
+                    5,
+                    32
+                ],
+                "fill": true,
+                "type": "minecraft:smooth_quartz",
+                "properties": {},
+                "stack": [
+                    "roof_pediment",
+                    "temple_roof"
+                ]
+            },
+            {
+                "start": [
+                    4,
+                    5,
+                    0
+                ],
+                "end": [
+                    20,
+                    6,
+                    32
+                ],
+                "fill": true,
+                "type": "minecraft:smooth_quartz",
+                "properties": {},
+                "stack": [
+                    "roof_pediment",
+                    "temple_roof"
+                ]
+            },
+            {
+                "start": [
+                    5,
+                    6,
+                    0
+                ],
+                "end": [
+                    19,
+                    7,
+                    32
+                ],
+                "fill": true,
+                "type": "minecraft:smooth_quartz",
+                "properties": {},
+                "stack": [
+                    "roof_pediment",
+                    "temple_roof"
+                ]
+            }
+        ]
+    ]
+}

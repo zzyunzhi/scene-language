@@ -1,0 +1,87 @@
+{
+    "width": 6,
+    "height": 4,
+    "depth": 8,
+    "frames": [
+        [
+            {
+                "start": [
+                    1,
+                    0,
+                    0
+                ],
+                "end": [
+                    2,
+                    1,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:jack_o_lantern",
+                "properties": {
+                    "facing": "south"
+                },
+                "stack": [
+                    "decorations"
+                ]
+            },
+            {
+                "start": [
+                    5,
+                    0,
+                    0
+                ],
+                "end": [
+                    6,
+                    1,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:jack_o_lantern",
+                "properties": {
+                    "facing": "south"
+                },
+                "stack": [
+                    "decorations"
+                ]
+            },
+            {
+                "start": [
+                    0,
+                    3,
+                    1
+                ],
+                "end": [
+                    1,
+                    4,
+                    2
+                ],
+                "fill": true,
+                "type": "minecraft:cobweb",
+                "properties": {},
+                "stack": [
+                    "decorations"
+                ]
+            },
+            {
+                "start": [
+                    5,
+                    0,
+                    7
+                ],
+                "end": [
+                    6,
+                    1,
+                    8
+                ],
+                "fill": true,
+                "type": "minecraft:cauldron",
+                "properties": {
+                    "level": "3"
+                },
+                "stack": [
+                    "decorations"
+                ]
+            }
+        ]
+    ]
+}

@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/Users/yzzhang/release/engine/scripts/prompts/impl_utils.py", line 10, in <module>
+    from engine.utils.omost_utils import MyCanvas
+  File "/Users/yzzhang/release/engine/engine/utils/omost_utils.py", line 2, in <module>
+    from engine.third_party.omost.lib_omost.canvas import Canvas, valid_colors, safe_str
+ModuleNotFoundError: No module named 'engine.third_party'

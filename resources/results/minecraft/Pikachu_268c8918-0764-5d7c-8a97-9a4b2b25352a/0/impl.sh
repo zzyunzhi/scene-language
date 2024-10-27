@@ -1,0 +1,1 @@
+ENGINE_MODE=minecraft DEBUG=0 PYTHONPATH=/Users/yzzhang/release/engine/scripts/prompts:$PYTHONPATH python /Users/yzzhang/release/engine/scripts/outputs/run_20241027-024728_3cebc667-cf22-455e-ae69-ef7caf6f7f18/Pikachu_268c8918-0764-5d7c-8a97-9a4b2b25352a/0/impl.py

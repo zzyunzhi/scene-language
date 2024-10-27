@@ -1,0 +1,47 @@
+{
+    "width": 3,
+    "height": 5,
+    "depth": 1,
+    "frames": [
+        [
+            {
+                "start": [
+                    0,
+                    0,
+                    0
+                ],
+                "end": [
+                    2,
+                    4,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "standing_stone",
+                    "trilithon"
+                ]
+            },
+            {
+                "start": [
+                    0,
+                    4,
+                    0
+                ],
+                "end": [
+                    3,
+                    5,
+                    1
+                ],
+                "fill": true,
+                "type": "minecraft:stone",
+                "properties": {},
+                "stack": [
+                    "lintel",
+                    "trilithon"
+                ]
+            }
+        ]
+    ]
+}

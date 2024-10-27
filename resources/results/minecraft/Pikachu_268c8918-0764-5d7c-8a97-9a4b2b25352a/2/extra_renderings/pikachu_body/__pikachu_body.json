@@ -1,0 +1,27 @@
+{
+    "width": 6,
+    "height": 8,
+    "depth": 4,
+    "frames": [
+        [
+            {
+                "start": [
+                    0,
+                    0,
+                    0
+                ],
+                "end": [
+                    6,
+                    8,
+                    4
+                ],
+                "fill": true,
+                "type": "minecraft:yellow_concrete",
+                "properties": {},
+                "stack": [
+                    "pikachu_body"
+                ]
+            }
+        ]
+    ]
+}

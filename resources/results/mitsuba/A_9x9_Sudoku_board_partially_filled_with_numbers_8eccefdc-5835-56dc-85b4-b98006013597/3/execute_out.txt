@@ -1,0 +1,60 @@
+[INFO] torch not found, setting default variant to scalar_rgb
+ENGINE_MODE='exposed'
+DRY_RUN=False
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/rover/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/table/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/table/scene.xml not found
+[WARNING] Failed to import neural pipelines.
+[ERROR] OpenAI package not installed. Please ignore this error if you intend to use other language models.
+[INFO] ('/Users/yzzhang/release/engine/scripts/outputs/run_20241027-031723_4f3a4c98-3b6f-4b41-998d-7dbd1865a82a/A_9x9_Sudoku_board_partially_filled_with_numbers_8eccefdc-5835-56dc-85b4-b98006013597/3/renderings',){}
+[INFO] (None,){'verbose': False}
+[INFO] ('/Users/yzzhang/release/engine/scripts/outputs/run_20241027-031723_4f3a4c98-3b6f-4b41-998d-7dbd1865a82a/A_9x9_Sudoku_board_partially_filled_with_numbers_8eccefdc-5835-56dc-85b4-b98006013597/3/renderings',){'verbose': False}
+[INFO] (None, [[None], [None]]){'col_type': 'text'}
+[WARNING] no roots specified, using the last function in the library
+[INFO] calling node (supposed to be root): sudoku_board
+Unable to avoid copy while creating an array as requested.
+If using `np.array(obj, copy=False)` replace it with `np.asarray(obj)` to allow a copy when needed (no behavior change in NumPy 1.x).
+For more details, see https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword.
+Traceback (most recent call last):
+  File "/Users/yzzhang/release/engine/scripts/outputs/run_20241027-031723_4f3a4c98-3b6f-4b41-998d-7dbd1865a82a/A_9x9_Sudoku_board_partially_filled_with_numbers_8eccefdc-5835-56dc-85b4-b98006013597/3/impl.py", line 407, in <module>
+    main()
+  File "/Users/yzzhang/release/engine/scripts/outputs/run_20241027-031723_4f3a4c98-3b6f-4b41-998d-7dbd1865a82a/A_9x9_Sudoku_board_partially_filled_with_numbers_8eccefdc-5835-56dc-85b4-b98006013597/3/impl.py", line 37, in main
+    core(engine_modes=args.engine_modes, overwrite=args.overwrite, save_dir=args.log_dir,
+  File "/Users/yzzhang/release/engine/scripts/outputs/run_20241027-031723_4f3a4c98-3b6f-4b41-998d-7dbd1865a82a/A_9x9_Sudoku_board_partially_filled_with_numbers_8eccefdc-5835-56dc-85b4-b98006013597/3/impl.py", line 117, in core
+    library_equiv = create_nodes(roots=[root] if root is not None else None)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yzzhang/release/engine/scripts/prompts/impl_utils.py", line 620, in create_nodes
+    _ = library_call(root)
+        ^^^^^^^^^^^^^^^^^^
+  File "/Users/yzzhang/release/engine/scripts/prompts/dsl_utils.py", line 234, in library_call
+    return library[func_name]['__target__'](**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yzzhang/release/engine/scripts/prompts/dsl_utils.py", line 101, in wrapper
+    ret = func(*args, **kwargs)  # FIXME should use the function in the library
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yzzhang/release/engine/scripts/outputs/run_20241027-031723_4f3a4c98-3b6f-4b41-998d-7dbd1865a82a/A_9x9_Sudoku_board_partially_filled_with_numbers_8eccefdc-5835-56dc-85b4-b98006013597/3/impl.py", line 380, in sudoku_board
+    number = library_call('number_7', size=number_size, thickness=thickness)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yzzhang/release/engine/scripts/prompts/dsl_utils.py", line 234, in library_call
+    return library[func_name]['__target__'](**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yzzhang/release/engine/scripts/prompts/dsl_utils.py", line 101, in wrapper
+    ret = func(*args, **kwargs)  # FIXME should use the function in the library
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yzzhang/release/engine/scripts/outputs/run_20241027-031723_4f3a4c98-3b6f-4b41-998d-7dbd1865a82a/A_9x9_Sudoku_board_partially_filled_with_numbers_8eccefdc-5835-56dc-85b4-b98006013597/3/impl.py", line 333, in number_7
+    rotation_matrix(math.pi/10, (0, 0, 1), (width*0.7, height, 0)))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yzzhang/release/engine/scripts/prompts/math_utils.py", line 32, in rotation_matrix
+    return _rotation_matrix(angle, direction=direction, point=point)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yzzhang/miniconda3/envs/sclg/lib/python3.11/site-packages/transforms3d/_gohlketransforms.py", line 346, in rotation_matrix
+    point = numpy.array(point[:3], dtype=numpy.float64, copy=False)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Unable to avoid copy while creating an array as requested.
+If using `np.array(obj, copy=False)` replace it with `np.asarray(obj)` to allow a copy when needed (no behavior change in NumPy 1.x).
+For more details, see https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword.
+

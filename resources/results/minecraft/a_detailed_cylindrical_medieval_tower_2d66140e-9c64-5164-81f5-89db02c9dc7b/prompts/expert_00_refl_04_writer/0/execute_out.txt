@@ -1,0 +1,15 @@
+ENGINE_MODE='minecraft'
+DRY_RUN=False
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/rover/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/table/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/table/scene.xml not found
+{'medieval_tower': Hole(medieval_tower), 'tower_base': Hole(tower_base), 'tower_roof': Hole(tower_roof), 'tower_windows': Hole(tower_windows), 'tower_door': Hole(tower_door), 'tower_battlements': Hole(tower_battlements), 'tower_decorations': Hole(tower_decorations)}
+scc=([{'medieval_tower'}, {'tower_base'}, {'tower_roof'}, {'tower_windows'}, {'tower_door'}, {'tower_battlements'}, {'tower_decorations'}], [[1, 2, 3, 4, 5, 6], [], [], [], [], [], []])
+root='medieval_tower'
+[WARNING] Replacing minecraft:wall_torch with minecraft:torch
+Writing to /Users/yzzhang/release/engine/scripts/outputs/run_self_reflect_with_moe_20241026-175939_a34340f9-5e80-449f-84ab-358ed5ffe2dc/a_detailed_cylindrical_medieval_tower_2d66140e-9c64-5164-81f5-89db02c9dc7b/prompts/expert_00_refl_04_writer/0/renderings/medieval_tower/__medieval_tower.json
+Writing to /Users/yzzhang/release/engine/scripts/outputs/run_self_reflect_with_moe_20241026-175939_a34340f9-5e80-449f-84ab-358ed5ffe2dc/a_detailed_cylindrical_medieval_tower_2d66140e-9c64-5164-81f5-89db02c9dc7b/prompts/expert_00_refl_04_writer/0/extra_renderings/medieval_tower/__medieval_tower.json
