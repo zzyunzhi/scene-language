@@ -1,0 +1,27 @@
+ENGINE_MODE='exposed'
+DRY_RUN=False
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/rover/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/table/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/table/scene.xml not found
+[WARNING] Failed to import neural pipelines.
+[WARNING] no roots specified, using the last function in the library
+[INFO] calling node (supposed to be root): chessboard_with_pieces
+[INFO] registering children for chessboard_square with 64 hist calls
+[INFO] registering children for chessboard with 1 hist calls
+[INFO] registering children for pawn with 16 hist calls
+[INFO] registering children for rook with 4 hist calls
+[INFO] registering children for knight with 4 hist calls
+[INFO] registering children for bishop with 4 hist calls
+[INFO] registering children for queen with 2 hist calls
+[INFO] registering children for king with 2 hist calls
+[INFO] registering children for place_pieces with 1 hist calls
+[INFO] registering children for chessboard_with_pieces with 1 hist calls
+root='chessboard_with_pieces'
+[INFO] executing `chessboard_with_pieces`...
+node_depths={'chessboard_square': 2, 'chessboard': 1, 'pawn': 2, 'rook': 2, 'knight': 2, 'bishop': 2, 'queen': 2, 'king': 2, 'place_pieces': 1, 'chessboard_with_pieces': 0}
+[INFO] executing `chessboard_with_pieces` done!
+node_depths={'chessboard_square': 2, 'chessboard': 1, 'pawn': 2, 'rook': 2, 'knight': 2, 'bishop': 2, 'queen': 2, 'king': 2, 'place_pieces': 1, 'chessboard_with_pieces': 0}

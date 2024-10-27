@@ -1,0 +1,1 @@
+ENGINE_MODE=exposed DEBUG=0 PYTHONPATH=/Users/yzzhang/release/engine/scripts/prompts:$PYTHONPATH python /Users/yzzhang/release/engine/scripts/outputs/run_20241026-195032_3d56ae1e-39ea-48ae-8d87-7caa7a3bc0d4/resourcesexamplescokespng_702c98d7-323d-59cf-a872-f435ea42bea3/1/impl.py

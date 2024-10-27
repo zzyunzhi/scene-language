@@ -1,0 +1,73 @@
+Here's a program to reconstruct the input scene using the provided `helper.py`:
+
+```python
+from helper import *
+
+"""
+Reconstruct the input scene
+"""
+
+@register()
+def spherical_vase(radius: float, height: float, color: tuple[float, float, float]) -> Shape:
+    base = primitive_call('sphere', shape_kwargs={'radius': radius}, color=color)
+    top_cut = primitive_call('cube', shape_kwargs={'scale': (radius*2, height, radius*2)}, color=color)
+    top_cut = transform_shape(top_cut, translation_matrix((0, radius, 0)))
+    return concat_shapes(base, top_cut)
+
+@register()
+def cylindrical_vase(radius: float, height: float, color: tuple[float, float, float]) -> Shape:
+    return primitive_call('cylinder', shape_kwargs={'radius': radius, 'p0': (0, 0, 0), 'p1': (0, height, 0)}, color=color)
+
+@register()
+def bottle_vase(base_radius: float, neck_radius: float, height: float, color: tuple[float, float, float]) -> Shape:
+    base = primitive_call('cylinder', shape_kwargs={'radius': base_radius, 'p0': (0, 0, 0), 'p1': (0, height * 0.6, 0)}, color=color)
+    neck = primitive_call('cylinder', shape_kwargs={'radius': neck_radius, 'p0': (0, height * 0.6, 0), 'p1': (0, height, 0)}, color=color)
+    return concat_shapes(base, neck)
+
+@register()
+def curvy_vase(radius: float, height: float, color: tuple[float, float, float]) -> Shape:
+    def curve_segment(y: float) -> Shape:
+        r = radius * (1 + 0.3 * math.sin(y * math.pi / height))
+        return primitive_call('cylinder', shape_kwargs={'radius': r, 'p0': (0, y, 0), 'p1': (0, y + height/20, 0)}, color=color)
+    
+    segments = loop(20, lambda i: curve_segment(i * height / 20))
+    return concat_shapes(*segments)
+
+@register()
+def table(width: float, depth: float, height: float, color: tuple[float, float, float]) -> Shape:
+    return primitive_call('cube', shape_kwargs={'scale': (width, height, depth)}, color=color)
+
+@register()
+def scene() -> Shape:
+    table_top = library_call('table', width=2.0, depth=1.0, height=0.05, color=(0.8, 0.6, 0.4))
+    
+    spherical_vase_shape = library_call('spherical_vase', radius=0.15, height=0.2, color=(0.9, 0.6, 0.5))
+    yellow_vase_shape = library_call('bottle_vase', base_radius=0.12, neck_radius=0.05, height=0.4, color=(1.0, 0.8, 0.0))
+    pink_vase_shape = library_call('curvy_vase', radius=0.08, height=0.5, color=(0.9, 0.5, 0.6))
+    purple_vase_shape = library_call('cylindrical_vase', radius=0.1, height=0.4, color=(0.7, 0.4, 0.7))
+    
+    small_sphere = primitive_call('sphere', shape_kwargs={'radius': 0.05}, color=(0.9, 0.9, 0.8))
+    
+    table_center = compute_shape_center(table_top)
+    table_max = compute_shape_max(table_top)
+    
+    return concat_shapes(
+        table_top,
+        transform_shape(spherical_vase_shape, translation_matrix((table_center[0] - 0.7, table_max[1], table_center[2] - 0.2))),
+        transform_shape(yellow_vase_shape, translation_matrix((table_center[0] - 0.3, table_max[1], table_center[2] - 0.2))),
+        transform_shape(pink_vase_shape, translation_matrix((table_center[0] + 0.1, table_max[1], table_center[2] - 0.2))),
+        transform_shape(purple_vase_shape, translation_matrix((table_center[0] + 0.5, table_max[1], table_center[2] - 0.2))),
+        transform_shape(small_sphere, translation_matrix((table_center[0] - 0.1, table_max[1], table_center[2] - 0.2)))
+    )
+```
+
+This program creates a scene that approximates the input image. Here's a breakdown of the functions:
+
+1. `spherical_vase`: Creates a spherical vase by combining a sphere and a cube.
+2. `cylindrical_vase`: Creates a simple cylindrical vase.
+3. `bottle_vase`: Creates a vase with a wider base and narrower neck.
+4. `curvy_vase`: Creates a vase with a curvy profile using multiple cylinder segments.
+5. `table`: Creates a simple table surface.
+6. `scene`: Assembles all the elements of the scene, including the table and various vases.
+
+The `scene` function places the vases on the table surface, approximating their positions in the input image. Note that this is a simplified 3D representation and doesn't include details like the plants or the exact shapes of the vases, but it captures the overall composition of the scene.

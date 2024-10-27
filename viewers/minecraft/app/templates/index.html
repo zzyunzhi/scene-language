@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0"
+    />
+    <title>[JSON] Offline Minecraft Renderer</title>
+
+    <!-- Deepslate -->
+    <script src="https://unpkg.com/deepslate@0.10.1"></script>
+    <script src="https://unpkg.com/gl-matrix@3.4.3/gl-matrix-min.js"></script>
+
+    <script src="../static/js/assets.js"></script>
+    <script src="../static/js/opaque.js"></script>
+
+    <!-- Materialize -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+      media="screen,projection"
+    />
+    <link rel="stylesheet" href="../static/css/main.css" />
+
+    <!-- Icons -->
+    <script
+      src="https://kit.fontawesome.com/92330e144e.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="../static/js/script_animation.js"></script>
+  </head>
+
+  <body>
+    <!-- add a button to remove the url query params -->
+    <button
+      id="back-btn"
+      class="btn waves-effect waves-light red"
+      type="submit"
+      onclick="window.location.href = window.location.href.split('?')[0]"
+    >
+      Home
+    </button>
+    <div id="viewer" width="100%"></div>
+
+    <div id="main-content">
+      <div class="section no-pad-bot">
+        <div class="container">
+          <h3 class="header center">[JSON] Offline Minecraft Renderer</h3>
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <div class="container">
+        <div class="row">
+          <h5 class="header">Drag + Drop a .json file:</h5>
+          <div class="col s12" id="file-loader-panel">
+            <input
+              id="file-upload"
+              type="file"
+              onchange="readFileInput(this)"
+              hidden
+              multiple
+              accept=".json"
+            />
+
+            <label
+              for="file-upload"
+              id="drop-zone"
+              ondrop="dropHandler(event);"
+              ondragover="dragOverHandler(event);"
+              width="100%"
+            >
+              <div class="card-panel center gray lighten-1">
+                <span
+                  id="file-upload-btn"
+                  class="btn btn-floating btn-large waves-effect waves-light red"
+                  ><i class="material-icons">add</i></span
+                >
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="spacer"></div>
+        <div class="row">
+          <h5 class="header">Local .json files under:</h5>
+          <code><p id="json-local-source-description"></p></code>
+          <div id="json-file-list"></div>
+        </div>
+      </div>
+
+      <!-- Texture atlas -->
+      <img
+        id="atlas"
+        src="../static/resource/atlas.png"
+        alt="Texture atlas"
+        crossorigin="anonymous"
+        hidden
+      />
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+          const urlParams = new URLSearchParams(window.location.search);
+          const remoteUrl = urlParams.get("remote-url");
+
+          if (remoteUrl) {
+            console.log("Loading file from", remoteUrl);
+            readFileURL(remoteUrl);
+          }
+        });
+        function readFileInput(input) {
+          for (let i = 0; i < input.files.length; i++) {
+            let file = input.files[i];
+            readFile(file);
+          }
+        }
+
+        function dropHandler(ev) {
+          console.log("File(s) dropped");
+
+          // Prevent default behavior (Prevent file from being opened)
+          ev.preventDefault();
+
+          if (ev.dataTransfer.items) {
+            // Use DataTransferItemList interface to access the file(s)
+            for (let i = 0; i < ev.dataTransfer.items.length; i++) {
+              // If dropped items aren't files, reject them
+              if (ev.dataTransfer.items[i].kind === "file") {
+                const file = ev.dataTransfer.items[i].getAsFile();
+                console.log("... file[" + i + "].name = " + file.name);
+                readFile(file);
+              }
+            }
+          } else {
+            // Use DataTransfer interface to access the file(s)
+            for (let i = 0; i < ev.dataTransfer.files.length; i++) {
+              const file = ev.dataTransfer.files[i];
+              console.log("... file[" + i + "].name = " + file.name);
+              readFile(file);
+            }
+          }
+        }
+
+        function readFileURL(url) {
+          var request = new XMLHttpRequest();
+          request.responseType = "blob";
+          request.onreadystatechange = function () {
+            if (request.readyState === XMLHttpRequest.DONE) {
+              if (request.status === 200) {
+                console.log("Loaded file from URL:", url);
+                console.log(request.response);
+                readFile(request.response);
+              } else {
+                console.log("Error loading JSON from URL:", url);
+                console.log(request);
+              }
+            }
+          };
+          request.open("GET", url, true);
+          request.send();
+        }
+
+        function readFile(file) {
+          let reader = new FileReader();
+
+          reader.onload = function (evt) {
+            try {
+              const jsonData = JSON.parse(reader.result);
+              const { structure, frames } = structureFromJsonData(jsonData); // Use the updated structureFromJsonData
+              createRenderer(structure, frames); // Pass both structure and frames to createRenderer
+
+              // Remove input form to stop people from submitting twice
+              const elem = document.getElementById("file-loader-panel");
+              elem.parentNode.removeChild(elem);
+            } catch (error) {
+              console.error("Error parsing JSON file:", error);
+            }
+          };
+
+          reader.onerror = function () {
+            console.error(reader.error);
+          };
+
+          reader.readAsText(file); // Reading as text to handle JSON
+        }
+
+        function dragOverHandler(ev) {
+          // Prevent default behavior (Prevent file from being opened)
+          ev.preventDefault();
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+          fetch("/api/file-directory")
+            .then((response) => response.json())
+            .then((data) => {
+              const fileDirectory = data.directory;
+              document.querySelector(
+                "#json-local-source-description"
+              ).innerText = `${fileDirectory}`;
+            })
+            .catch((error) =>
+              console.error("Error fetching file directory:", error)
+            );
+        });
+
+        // Hit flask server to show links
+        document.addEventListener("DOMContentLoaded", function () {
+          fetchFiles();
+
+          function fetchFiles() {
+            fetch("/api/files")
+              .then((response) => response.json())
+              .then((files) => {
+                const fileLoaderPanel =
+                  document.getElementById("json-file-list");
+                files.forEach((file) => {
+                  const fileLink = document.createElement("a");
+                  fileLink.href = `/files/${file}`;
+                  fileLink.textContent = "🔗 " + file;
+                  fileLink.className = "json-link";
+                  fileLink.onclick = function (event) {
+                    event.preventDefault(); // Prevent the default link behavior
+                    readFileURL(this.href); // Call your existing function to load and display the file
+                  };
+                  fileLoaderPanel.appendChild(fileLink);
+                });
+              })
+              .catch((err) => console.error("Error loading files:", err));
+          }
+        });
+      </script>
+    </div>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>

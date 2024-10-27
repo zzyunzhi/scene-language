@@ -1,0 +1,1 @@
+ENGINE_MODE=exposed DEBUG=0 PYTHONPATH=/Users/yzzhang/release/engine/scripts/prompts:$PYTHONPATH python /Users/yzzhang/release/engine/scripts/outputs/run_20241026-185817_ab566477-a619-4c6c-9cfb-28a6b70ebe3a/a_chessboard_with_a_full_set_of_chess_pieces_f44954b0-838f-5dd5-8379-2f0edff77400/2/impl.py

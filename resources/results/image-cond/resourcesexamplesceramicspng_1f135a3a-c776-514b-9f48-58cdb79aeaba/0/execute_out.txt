@@ -1,0 +1,26 @@
+ENGINE_MODE='exposed'
+DRY_RUN=False
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/rover/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/table/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/table/scene.xml not found
+[WARNING] Failed to import neural pipelines.
+[WARNING] no roots specified, using the last function in the library
+[INFO] calling node (supposed to be root): scene
+[INFO] registering children for vase with 4 hist calls
+[INFO] registering children for sphere with 2 hist calls
+[INFO] registering children for table with 1 hist calls
+[INFO] registering children for round_vase with 1 hist calls
+[INFO] registering children for yellow_vase with 1 hist calls
+[INFO] registering children for pink_tall_vase with 1 hist calls
+[INFO] registering children for purple_vase with 1 hist calls
+[INFO] registering children for small_sphere with 1 hist calls
+[INFO] registering children for scene with 1 hist calls
+root='scene'
+[INFO] executing `scene`...
+node_depths={'vase': 2, 'sphere': 2, 'table': 1, 'round_vase': 1, 'yellow_vase': 1, 'pink_tall_vase': 1, 'purple_vase': 1, 'small_sphere': 1, 'scene': 0}
+[INFO] executing `scene` done!
+node_depths={'vase': 2, 'sphere': 2, 'table': 1, 'round_vase': 1, 'yellow_vase': 1, 'pink_tall_vase': 1, 'purple_vase': 1, 'small_sphere': 1, 'scene': 0}

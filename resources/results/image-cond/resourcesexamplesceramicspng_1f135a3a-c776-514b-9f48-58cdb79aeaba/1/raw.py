@@ -1,0 +1,84 @@
+"""
+Here's a program to reconstruct the input scene using the provided `helper.py`:
+
+"""
+from helper import *
+
+"""
+Reconstruct the input scene
+"""
+
+@register()
+def round_vase(radius: float, height: float, color: tuple[float, float, float]) -> Shape:
+    base = primitive_call('cylinder', shape_kwargs={'radius': radius, 'p0': (0, 0, 0), 'p1': (0, height, 0)}, color=color)
+    top = primitive_call('sphere', shape_kwargs={'radius': radius}, color=color)
+    return concat_shapes(
+        base,
+        transform_shape(top, translation_matrix((0, height, 0)))
+    )
+
+@register()
+def tall_vase(radius: float, height: float, color: tuple[float, float, float]) -> Shape:
+    base = primitive_call('cylinder', shape_kwargs={'radius': radius, 'p0': (0, 0, 0), 'p1': (0, height * 0.7, 0)}, color=color)
+    middle = primitive_call('sphere', shape_kwargs={'radius': radius * 1.2}, color=color)
+    top = primitive_call('cylinder', shape_kwargs={'radius': radius * 0.8, 'p0': (0, 0, 0), 'p1': (0, height * 0.3, 0)}, color=color)
+    return concat_shapes(
+        base,
+        transform_shape(middle, translation_matrix((0, height * 0.7, 0))),
+        transform_shape(top, translation_matrix((0, height * 0.7, 0)))
+    )
+
+@register()
+def bottle_vase(radius: float, height: float, color: tuple[float, float, float]) -> Shape:
+    base = primitive_call('cylinder', shape_kwargs={'radius': radius, 'p0': (0, 0, 0), 'p1': (0, height * 0.6, 0)}, color=color)
+    neck = primitive_call('cylinder', shape_kwargs={'radius': radius * 0.3, 'p0': (0, 0, 0), 'p1': (0, height * 0.4, 0)}, color=color)
+    return concat_shapes(
+        base,
+        transform_shape(neck, translation_matrix((0, height * 0.6, 0)))
+    )
+
+@register()
+def spherical_container(radius: float, color: tuple[float, float, float]) -> Shape:
+    bottom = primitive_call('sphere', shape_kwargs={'radius': radius}, color=color)
+    top = primitive_call('sphere', shape_kwargs={'radius': radius}, color=color)
+    return concat_shapes(
+        bottom,
+        transform_shape(top, translation_matrix((0, radius * 0.1, 0)))
+    )
+
+@register()
+def table() -> Shape:
+    return primitive_call('cube', shape_kwargs={'scale': (2, 0.05, 1)}, color=(0.6, 0.3, 0.1))
+
+@register()
+def scene() -> Shape:
+    table_top = library_call('table')
+    yellow_vase = library_call('bottle_vase', radius=0.1, height=0.3, color=(1, 0.8, 0))
+    pink_tall_vase = library_call('tall_vase', radius=0.05, height=0.4, color=(1, 0.6, 0.8))
+    purple_vase = library_call('round_vase', radius=0.08, height=0.25, color=(0.6, 0.2, 0.6))
+    spherical_container = library_call('spherical_container', radius=0.1, color=(1, 0.7, 0.5))
+    small_sphere = primitive_call('sphere', shape_kwargs={'radius': 0.03}, color=(1, 1, 0.8))
+
+    table_height = compute_shape_max(table_top)[1]
+
+    return concat_shapes(
+        table_top,
+        transform_shape(yellow_vase, translation_matrix((0, table_height, 0))),
+        transform_shape(pink_tall_vase, translation_matrix((0.2, table_height, 0))),
+        transform_shape(purple_vase, translation_matrix((0.4, table_height, 0))),
+        transform_shape(spherical_container, translation_matrix((-0.3, table_height, 0))),
+        transform_shape(small_sphere, translation_matrix((0.1, table_height, 0.2)))
+    )
+"""
+
+This program reconstructs the scene from the input image. Here's a breakdown of the functions:
+
+1. `round_vase`: Creates a round vase using a cylinder and a sphere.
+2. `tall_vase`: Creates a tall vase with a bulging middle section.
+3. `bottle_vase`: Creates a bottle-shaped vase with a wide base and narrow neck.
+4. `spherical_container`: Creates a spherical container (like the one on the left in the image).
+5. `table`: Creates a simple table surface.
+6. `scene`: Assembles all the elements of the scene, including the vases, spherical container, and small sphere, placing them on the table.
+
+The scene function creates the table and all the objects, then positions them appropriately. The colors and sizes are approximated based on the image. Note that this is a simplified 3D representation and doesn't include details like the plants or the exact shapes of the vases, but it captures the overall composition of the scene.
+"""

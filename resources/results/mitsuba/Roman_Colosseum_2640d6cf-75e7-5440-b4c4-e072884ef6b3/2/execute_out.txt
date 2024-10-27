@@ -1,0 +1,22 @@
+ENGINE_MODE='exposed'
+DRY_RUN=False
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/rover/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/table/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/table/scene.xml not found
+[WARNING] Failed to import neural pipelines.
+[WARNING] no roots specified, using the last function in the library
+[INFO] calling node (supposed to be root): colosseum
+[INFO] registering children for arch with 64 hist calls
+[INFO] registering children for arch_row with 4 hist calls
+[INFO] registering children for colosseum_level with 4 hist calls
+[INFO] registering children for colosseum_base with 1 hist calls
+[INFO] registering children for colosseum with 1 hist calls
+root='colosseum'
+[INFO] executing `colosseum`...
+node_depths={'arch': 3, 'arch_row': 2, 'colosseum_level': 1, 'colosseum_base': 1, 'colosseum': 0}
+[INFO] executing `colosseum` done!
+node_depths={'arch': 3, 'arch_row': 2, 'colosseum_level': 1, 'colosseum_base': 1, 'colosseum': 0}

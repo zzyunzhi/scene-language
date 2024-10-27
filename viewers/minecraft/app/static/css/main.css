@@ -1,0 +1,85 @@
+@media (prefers-color-scheme: light) {
+  body {
+    background: #fff;
+    color: #111;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: black;
+    color: #c8e6c9;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  input#remote-url {
+    color: white;
+  }
+}
+
+#viewer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.settings-section {
+  margin-bottom: 20px;
+  display: grid;
+  width: fit-content;
+  margin: auto;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+#settings-button {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  z-index: 1;
+}
+
+#settings-panel {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  right: 0;
+  opacity: 90%;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* Position and style the close button (top right corner) */
+#settings-panel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.spacer {
+  margin-bottom: 50px;
+}
+
+.json-link {
+  display: block;
+  margin-bottom: 10px; /* optional, adds space between links */
+}
+
+#back-btn {
+  z-index: 1;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}

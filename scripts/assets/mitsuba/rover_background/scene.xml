@@ -1,0 +1,68 @@
+<scene version="3.0.0">
+    <default name="integrator" value="path"/>
+    <default name="spp" value="64"/>
+    <default name="resx" value="860"/>
+    <default name="resy" value="720"/>
+    <default name="pixel_format" value="rgb"/>
+    <default name="max_depth" value="8"/>
+    <default name="rr_depth" value="64"/>
+
+    <integrator type="$integrator">
+        <integer name="max_depth" value="$max_depth"/>
+        <integer name="rr_depth" value="$rr_depth"/>
+        <boolean name="hide_emitters" value="false"/>
+    </integrator>
+
+    <film type="hdrfilm" id="film">
+        <integer name="width" value="$resx"/>
+        <integer name="height" value="$resy"/>
+        <rfilter type="box"/>
+        <string  name="pixel_format" value="$pixel_format"/>
+    </film>
+    <sampler type="independent" id="sampler">
+        <integer name="sample_count" value="$spp"/>
+    </sampler>
+
+    <sensor type="perspective">
+        <string name="fov_axis" value="smaller"/>
+        <float name="fov" value="20.0"/>
+        <transform name="to_world">
+            <rotate x="1" angle="-170.9201291112598"/>
+            <rotate y="1" angle="38.321556062631714"/>
+            <rotate z="1" angle="179.99988206555128"/>
+            <translate value="-14.036 5.3 17.576447"/>
+        </transform>
+        <ref id="sampler"/>
+        <ref id="film"/>
+    </sensor>
+
+    <emitter type="constant">
+        <rgb name="radiance" value="1.0"/>
+    </emitter>
+
+    <shape type="rectangle">
+        <transform name="to_world">
+            <scale value="100"/>
+            <rotate x="1" angle="-90"/>
+        </transform>
+		<bsdf type="diffuse">
+			<rgb value="1.0" name="reflectance"/>
+		</bsdf>
+    </shape>
+
+<!-- Materials -->
+	<bsdf type="diffuse" id="empty-emitter-bsdf">
+		<rgb value="0.000000" name="reflectance"/>
+	</bsdf>
+
+<!-- Emitters -->
+
+	<shape type="ply">
+		<string name="filename" value="meshes/Rover_body_internal_001-Material.022.ply"/>
+		<ref id="empty-emitter-bsdf" name="bsdf"/>
+		<!-- <emitter type="area">
+			<rgb value="2.887838 7.595667 8.299999" name="radiance"/>
+		</emitter> -->
+	</shape>
+
+</scene>

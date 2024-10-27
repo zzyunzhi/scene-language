@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>default</title>
+<style>
+td {vertical-align:top;padding:5px}
+</style>
+</head>
+<body>
+<h1>default</h1>
+
+<script
+    src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+    crossorigin="anonymous"
+></script>
+<script>
+function frameMove(elem, offset) {
+    elem = $(elem);
+    window.elem = elem;
+    data = JSON.parse(elem.parent().find(".data").html());
+    index = parseInt(elem.parent().find(".index").val());
+
+    nextIndex = index + offset;
+    if (nextIndex < 0) nextIndex = 0;
+    if (nextIndex >= data.length) nextIndex = data.length - 1;
+
+    elem.parent().find(".index").val(nextIndex);
+    if ("image" in data[nextIndex]) {
+        elem.parent().find(".image").attr("src", data[nextIndex]["image"][0]).attr("alt", data[nextIndex]["image"][1]);
+    } else {
+        elem.parent().find(".text").html(data[nextIndex]["text"]);
+    }
+
+    if ("info" in data[nextIndex]) {
+        elem.parent().find(".info").html("Frame #" + nextIndex.toString() + " :: " + data[nextIndex]["info"]);
+    } else {
+        elem.parent().find(".info").html("Frame #" + nextIndex.toString());
+    }
+}
+</script>
+    
+<style>
+.table0_column_row {  }
+.table0_td_row {  }
+.table0_column_c00 {  }
+.table0_td_c00 {  }
+</style>
+<h3></h3>
+<table>
+<tr>
+    <td><pre >row</pre></td>
+    <td><pre >c00</pre></td>
+</tr>
+<tr>
+  <td class="table0_td_row">
+    <pre class="table0_column_row">r00</pre>
+  </td>
+  <td class="table0_td_c00">
+    <div class="table0_column_c00">file:////Users/yzzhang/release/engine/scripts/outputs/run_20241026-195032_3d56ae1e-39ea-48ae-8d87-7caa7a3bc0d4/resourcesexamplesglassespng_de72be70-526f-553f-95d5-fd4053075ae3/0/renderings/debug/index.html</div>
+  </td>
+</tr>
+<tr>
+  <td class="table0_td_row">
+    <pre class="table0_column_row">r01</pre>
+  </td>
+  <td class="table0_td_c00">
+    <div class="table0_column_c00">http://vcv.stanford.edu/cgi-bin/file-explorer/?dir=%2FUsers%2Fyzzhang%2Frelease%2Fengine%2Fscripts%2Foutputs%2Frun_20241026-195032_3d56ae1e-39ea-48ae-8d87-7caa7a3bc0d4%2Fresourcesexamplesglassespng_de72be70-526f-553f-95d5-fd4053075ae3%2F0%2Frenderings&amp;patterns_show=&amp;patterns_highlight=&amp;w=375&amp;h=1500&amp;n=4&amp;autoplay=1&amp;showmedia=1</div>
+  </td>
+</tr>
+</table>

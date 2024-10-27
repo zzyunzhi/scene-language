@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/yzzhang/release/engine/scripts/prompts/impl_utils.py", line 10, in <module>
+    from engine.utils.omost_utils import MyCanvas
+  File "/Users/yzzhang/release/engine/engine/utils/omost_utils.py", line 2, in <module>
+    from engine.third_party.omost.lib_omost.canvas import Canvas, valid_colors, safe_str
+ModuleNotFoundError: No module named 'engine.third_party'
+INFO:tu.loggers.utils:[32m[URL] http://vcv.stanford.edu/cgi-bin/file-explorer/?dir=%2FUsers%2Fyzzhang%2Frelease%2Fengine%2Fscripts%2Foutputs%2Frun_20241026-185817_ab566477-a619-4c6c-9cfb-28a6b70ebe3a%2Fa_spider_puppet_24f4f0f9-7b54-5eac-a54f-1cd06d97a043%2F2%2Frenderings&patterns_show=&patterns_highlight=&w=375&h=1500&n=4&autoplay=1&showmedia=1[0m
+INFO:tu.loggers.utils:[32m[URL] file:////Users/yzzhang/release/engine/scripts/outputs/run_20241026-185817_ab566477-a619-4c6c-9cfb-28a6b70ebe3a/a_spider_puppet_24f4f0f9-7b54-5eac-a54f-1cd06d97a043/2/renderings/index.html[0m
+INFO:tu.loggers.utils:[32m[URL] file:////Users/yzzhang/release/engine/scripts/outputs/run_20241026-185817_ab566477-a619-4c6c-9cfb-28a6b70ebe3a/a_spider_puppet_24f4f0f9-7b54-5eac-a54f-1cd06d97a043/2/renderings/debug/index.html[0m
+INFO:tu.loggers.utils:[32m[URL] file:////Users/yzzhang/release/engine/scripts/outputs/run_20241026-185817_ab566477-a619-4c6c-9cfb-28a6b70ebe3a/a_spider_puppet_24f4f0f9-7b54-5eac-a54f-1cd06d97a043/2/renderings/index.html[0m
+INFO:tu.loggers.utils:[32m[URL] file:////Users/yzzhang/release/engine/scripts/outputs/run_20241026-185817_ab566477-a619-4c6c-9cfb-28a6b70ebe3a/a_spider_puppet_24f4f0f9-7b54-5eac-a54f-1cd06d97a043/2/renderings/debug/index.html[0m
