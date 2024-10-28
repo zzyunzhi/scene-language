@@ -24,8 +24,8 @@ python -m spacy download en_core_web_md
 
 pip install --force-reinstall numpy==1.26.4  # to be compatible with transforms3d
 
-git clone https://github.com/zzyunzhi/sclg.git
-cd sclg
+git clone https://github.com/zzyunzhi/scene-lagnaugage.git
+cd scene-language
 pip install -e .
 ```
 
