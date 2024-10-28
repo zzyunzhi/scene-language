@@ -1,0 +1,110 @@
+I'll help you create a model of the Tower of Pisa with its characteristic tilt and cylindrical architecture:
+
+```python
+from helper import *
+
+"""
+Tower of Pisa with its iconic lean and cylindrical architecture
+"""
+
+@register()
+def column_level(radius: float, height: float) -> Shape:
+    """Creates one level of the tower with columns around the perimeter"""
+    def column_fn(i: int) -> Shape:
+        angle = i * 2 * math.pi / 8  # 8 columns per level
+        x = radius * math.cos(angle)
+        z = radius * math.sin(angle)
+        return primitive_call('cylinder', 
+            color=(0.9, 0.9, 0.85),
+            shape_kwargs={
+                'radius': 0.1,
+                'p0': (x, 0, z),
+                'p1': (x, height, z)
+            })
+    
+    # Central cylinder plus outer columns
+    return concat_shapes(
+        primitive_call('cylinder', 
+            color=(0.95, 0.95, 0.9),
+            shape_kwargs={
+                'radius': radius * 0.8,
+                'p0': (0, 0, 0),
+                'p1': (0, height, 0)
+            }),
+        loop(8, column_fn)
+    )
+
+@register()
+def tower_level(radius: float, height: float, level: int) -> Shape:
+    """Creates one complete level of the tower including columns and floor"""
+    floor = primitive_call('cylinder',
+        color=(0.93, 0.93, 0.88),
+        shape_kwargs={
+            'radius': radius + 0.15,
+            'p0': (0, 0, 0),
+            'p1': (0, 0.2, 0)
+        })
+    
+    columns = library_call('column_level', radius=radius, height=height)
+    return concat_shapes(floor, columns)
+
+@register()
+def tower_of_pisa() -> Shape:
+    """Creates the complete Tower of Pisa with its characteristic lean"""
+    # Tower parameters
+    base_radius = 2.0
+    level_height = 1.5
+    num_levels = 8
+    lean_angle = math.radians(5.5)  # Famous lean angle
+    
+    def level_fn(i: int) -> Shape:
+        # Each level is slightly smaller than the one below
+        current_radius = base_radius * (1 - i * 0.03)
+        level = library_call('tower_level', 
+                           radius=current_radius, 
+                           height=level_height,
+                           level=i)
+        
+        # Stack levels with translation
+        level = transform_shape(level, 
+            translation_matrix((0, i * level_height, 0)))
+        
+        return level
+
+    # Create all levels
+    tower = loop(num_levels, level_fn)
+    
+    # Add base
+    base = primitive_call('cylinder',
+        color=(0.9, 0.9, 0.85),
+        shape_kwargs={
+            'radius': base_radius + 0.5,
+            'p0': (0, -0.5, 0),
+            'p1': (0, 0, 0)
+        })
+    
+    tower = concat_shapes(base, tower)
+    
+    # Calculate tower center for rotation
+    tower_center = compute_shape_center(tower)
+    
+    # Apply the famous lean along the x-axis
+    return transform_shape(tower,
+        rotation_matrix(lean_angle, (0, 0, 1), tower_center))
+
+```
+
+This program creates a simplified but recognizable model of the Tower of Pisa with these features:
+
+1. `column_level`: Creates one level of the tower with 8 columns arranged in a circle around a central cylinder.
+
+2. `tower_level`: Combines the columns with a floor to create one complete level.
+
+3. `tower_of_pisa`: Assembles the complete tower with:
+   - 8 levels that gradually decrease in radius as they go up
+   - A wider base at the bottom
+   - The characteristic lean (5.5 degrees)
+   - Cylindrical architecture with columns
+   - Appropriate coloring to simulate marble/stone
+
+The tower is created from bottom to top, with each level slightly smaller than the previous one. The final step applies the famous lean using a rotation matrix. The colors are chosen to approximate the white marble appearance of the real Tower of Pisa.

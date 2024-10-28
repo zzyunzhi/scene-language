@@ -1,0 +1,1 @@
+ENGINE_MODE=exposed DEBUG=0 PYTHONPATH=/Users/yzzhang/release/engine/scripts/prompts:$PYTHONPATH python /Users/yzzhang/release/engine/scripts/outputs/run_20241027-195930_1635d5bb-fcc1-47d9-8d7a-c75e6fde6148/Tower_of_Pisa_997be964-956c-510f-88ee-fea373dab49d/1/impl.py

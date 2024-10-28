@@ -14,13 +14,15 @@
 conda create --name sclg python=3.11
 conda activate sclg
 pip install mitsuba 
-# if you encountered Segmentation fault on MacOS, run `pip install --force-reinstall mitsuba==3.5.1`
-pip install --force-reinstall numpy==1.26.4  # to be compatible with transforms3d
+# if you run into Segmentation fault, you might need specific mitsuba versions
+# e.g., `pip install --force-reinstall mitsuba==3.5.1` on MacOS
 pip install unidecode Pillow anthropic transforms3d astor ipdb scipy jaxtyping imageio
 
 # required for minecraft renderer
 pip install spacy
 python -m spacy download en_core_web_md
+
+pip install --force-reinstall numpy==1.26.4  # to be compatible with transforms3d
 
 git clone https://github.com/zzyunzhi/sclg.git
 cd sclg
@@ -44,6 +46,7 @@ By default, we use Claude 3.5 Sonnet. You may switch to other language models by
 ```bash
 python scripts/run.py --tasks "a chessboard with a full set of chess pieces" 
 ```
+Renderings will be saved to `${PROJ_ROOT}/scripts/outputs/run_${timestep}_${uuid}/${scene_name}_${uuid}/${sample_index}/renderings/*.gif`. 
 
 Example results (raw outputs [here](resources/results/mitsuba)):
 
@@ -69,11 +72,13 @@ Example results (raw outputs [here](resources/results/mitsuba)):
 ```bash
 ENGINE_MODE=minecraft python scripts/run.py --tasks "a detailed cylindrical medieval tower"
 ```
-
-To visualize Minecraft results, run the following command, open [http://127.0.0.1:5001](http://127.0.0.1:5001) in your browser, and drag generated `renderings/${root_function_name}/*.json` to the web page and visualize.
+Generated scenes are saved as json files in `${PROJ_ROOT}/scripts/outputs/run_${timestep}_${uuid}/${scene_name}_${uuid}/${sample_index}/renderings/*.json`.
+For visualization, run the following command:
 ```bash
 python viewers/minecraft/run.py
 ```
+Then open [http://127.0.0.1:5001](http://127.0.0.1:5001) in your browser
+and drag generated json files to the web page.
 
 Example results (raw outputs [here](resources/results/minecraft)):
 
@@ -130,15 +135,17 @@ The following table lists helper functions defined in [this](scripts/outputs/stu
 </details>
 
 
-### Code release plan
+### Codebase improvements
 
-The current codebase allows you to generate 3D scenes with text or image prompts. Other tasks and renderers reported in the paper will be supported in future updates. 
+The current codebase allows you to generate 3D scenes with text or image prompts. 
+Other tasks and renderers reported in the paper will be supported in future updates. 
 
-We welcome contributions---please submit a PR if you have feature requests, enhancements, or would like to share results. :)
+Please submit a PR or [email us](mailto:yzzhang@cs.stanford.edu)
+if you have feature requests, suggestions for improvements, or would like to share your results.
 
 ### Citation
 
-If you find this work useful, please cite our paper:
+If you find this work useful, please consider cite our paper:
 
 ```bibtex
 @article{zhang2024scenelanguage,

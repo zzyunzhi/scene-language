@@ -1,0 +1,73 @@
+[INFO] torch not found, setting default variant to scalar_rgb
+ENGINE_MODE='exposed'
+DRY_RUN=False
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/rover/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/indoors/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/table/scene.xml not found
+WARNING: /Users/yzzhang/release/engine/scripts/assets/mitsuba/table/scene.xml not found
+[WARNING] Failed to import neural pipelines.
+[ERROR] OpenAI package not installed. Please ignore this error if you intend to use other language models.
+[INFO] ('/Users/yzzhang/release/engine/scripts/outputs/run_20241027-195930_1635d5bb-fcc1-47d9-8d7a-c75e6fde6148/Tower_of_Pisa_997be964-956c-510f-88ee-fea373dab49d/2/renderings',){}
+[INFO] (None,){'verbose': False}
+[INFO] ('/Users/yzzhang/release/engine/scripts/outputs/run_20241027-195930_1635d5bb-fcc1-47d9-8d7a-c75e6fde6148/Tower_of_Pisa_997be964-956c-510f-88ee-fea373dab49d/2/renderings',){'verbose': False}
+[INFO] (None, [[None], [None]]){'col_type': 'text'}
+[WARNING] no roots specified, using the last function in the library
+[INFO] calling node (supposed to be root): tower_of_pisa
+[INFO] registering children for tower_level with 8 hist calls
+[INFO] registering children for tower_top with 1 hist calls
+[INFO] registering children for tower_base with 1 hist calls
+[INFO] registering children for tower_middle_section with 1 hist calls
+[INFO] registering children for tower_of_pisa with 1 hist calls
+root='tower_of_pisa'
+[INFO] (None, [['Parsed root from program.']]){}
+[INFO] (None, [['root function name: tower_of_pisa'], ["scc=([{'tower_level'}, {'tower_top'}, {'tower_base'}, {'tower_middle_section'}, {'tower_of_pisa'}], [[], [0], [0], [0], [0, 1, 2, 3]])"]]){}
+[INFO] (None, [['root function name: tower_of_pisa'], ["scc=([{'tower_level'}, {'tower_top'}, {'tower_base'}, {'tower_middle_section'}, {'tower_of_pisa'}], [[], [0], [0], [0], [0, 1, 2, 3]])"]]){}
+[INFO] (None, [['', '']]){'col_names': ['dependency', 'program']}
+[INFO] executing `tower_of_pisa`...
+node_depths={'tower_level': 2, 'tower_top': 1, 'tower_base': 1, 'tower_middle_section': 1, 'tower_of_pisa': 0}
+[INFO] executing `tower_of_pisa` done!
+node_depths={'tower_level': 2, 'tower_top': 1, 'tower_base': 1, 'tower_middle_section': 1, 'tower_of_pisa': 0}
+[INFO] (None, [['starting tree_depth=00']]){}
+[INFO] (None, [['tree_depth=00, viewpoint=00']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x13CB0A210>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=00, viewpoint=01']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x13B806C50>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=00, viewpoint=02']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x13CAE7210>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=00, viewpoint=03']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x13CAE5910>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=00, viewpoint=04']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x13CAE7550>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=00, viewpoint=05']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x13CAE6C10>]]){'col_names': ['exposed']}
+[INFO] (None, [['starting tree_depth=01']]){}
+[INFO] (None, [['tree_depth=01, viewpoint=00']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x13CAE7550>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=01, viewpoint=01']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x13B7DFED0>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=01, viewpoint=02']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x13C8FE3D0>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=01, viewpoint=03']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x13CAF2B90>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=01, viewpoint=04']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x13CAF3890>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=01, viewpoint=05']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x13CAF1AD0>]]){'col_names': ['exposed']}
+[INFO] (None, [['starting tree_depth=02']]){}
+[INFO] (None, [['tree_depth=02, viewpoint=00']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x13CAF0210>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=02, viewpoint=01']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x13CAF1790>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=02, viewpoint=02']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x13C8FD990>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=02, viewpoint=03']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x13CABBA90>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=02, viewpoint=04']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x13CABAB90>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=02, viewpoint=05']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x13CAB9CD0>]]){'col_names': ['exposed']}
+[INFO] (None,){}
+[INFO] (None,){}
