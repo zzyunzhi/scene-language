@@ -14,7 +14,7 @@
 conda create --name sclg python=3.11
 conda activate sclg
 pip install mitsuba 
-# if you run into Segmentation fault, you might need specific mitsuba versions
+# if you run into segmentation fault, you might need specific mitsuba versions
 # e.g., `pip install --force-reinstall mitsuba==3.5.1` on MacOS
 pip install unidecode Pillow anthropic transforms3d astor ipdb scipy jaxtyping imageio
 
@@ -24,7 +24,7 @@ python -m spacy download en_core_web_md
 
 pip install --force-reinstall numpy==1.26.4  # to be compatible with transforms3d
 
-git clone https://github.com/zzyunzhi/scene-lagnaugage.git
+git clone https://github.com/zzyunzhi/scene-language.git
 cd scene-language
 pip install -e .
 ```
@@ -140,7 +140,7 @@ The following table lists helper functions defined in [this](scripts/outputs/stu
 The current codebase allows you to generate 3D scenes with text or image prompts. 
 Other tasks and renderers reported in the paper will be supported in future updates. 
 
-Please submit a PR or [email us](mailto:yzzhang@cs.stanford.edu)
+Please submit a PR or [email](mailto:yzzhang@cs.stanford.edu) us
 if you have feature requests, suggestions for improvements, or would like to share your results.
 
 ### Citation
