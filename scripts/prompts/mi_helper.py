@@ -1,4 +1,5 @@
 # engine-specific helper has access to engine-agnostic helper
+from engine.constants import ENGINE_MODE, PROJ_DIR  # set mitsuba variant within constants.py to avoid errors in typing mi.Sensor
 import tempfile
 from typing import Literal, Callable, Union, Optional, List
 import time
@@ -11,7 +12,6 @@ from PIL import Image, ImageDraw
 from tqdm import tqdm
 import numpy as np
 import numpy.typing
-from engine.constants import ENGINE_MODE, PROJ_DIR
 import xml.etree.ElementTree as ET
 import hashlib
 import uuid
@@ -207,7 +207,7 @@ def find_ground_plane_rover() -> float:
 
 def find_box_rover() -> BBox:
     if not Path(XML_PATH_ROVER).exists():
-        print(f'WARNING: {XML_PATH_ROVER} not found')
+        # print(f'WARNING: {XML_PATH_ROVER} not found')
         min_corner = np.array([-100, 0, -100])
         max_corner = np.array([100, 5.39451838, 100])
         center = (min_corner + max_corner) / 2
@@ -334,30 +334,30 @@ SCENE_PRESETS = {
         'box': find_box_rover(),
         'coord_scale': 1,
     },
-    'indoors_no_window': {
-        'xml_path': XML_PATH_INDOORS_NO_WINDOW,
-        'ground_plane': find_ground_plane_indoors(shift=0.),    # shift=2.
-        'box': find_box_indoors(),
-        'coord_scale': 1,
-    },
-    'indoors': {
-        'xml_path': XML_PATH_INDOORS,
-        'ground_plane': find_ground_plane_indoors(),
-        'box': find_box_indoors(),
-        'coord_scale': 1,
-    },
-    'outdoors': {
-        'xml_path': XML_PATH_OUTDOORS,
-        'ground_plane': find_ground_plane_outdoors(),
-        'box': find_box_outdoors(),
-        'coord_scale': 1,
-    },
-    'table': {
-        'xml_path': XML_PATH_TABLE,
-        'ground_plane': find_ground_plane_table(),
-        'box': find_box_table(),
-        'coord_scale': 1,
-    },
+    # 'indoors_no_window': {
+    #     'xml_path': XML_PATH_INDOORS_NO_WINDOW,
+    #     'ground_plane': find_ground_plane_indoors(shift=0.),    # shift=2.
+    #     'box': find_box_indoors(),
+    #     'coord_scale': 1,
+    # },
+    # 'indoors': {
+    #     'xml_path': XML_PATH_INDOORS,
+    #     'ground_plane': find_ground_plane_indoors(),
+    #     'box': find_box_indoors(),
+    #     'coord_scale': 1,
+    # },
+    # 'outdoors': {
+    #     'xml_path': XML_PATH_OUTDOORS,
+    #     'ground_plane': find_ground_plane_outdoors(),
+    #     'box': find_box_outdoors(),
+    #     'coord_scale': 1,
+    # },
+    # 'table': {
+    #     'xml_path': XML_PATH_TABLE,
+    #     'ground_plane': find_ground_plane_table(),
+    #     'box': find_box_table(),
+    #     'coord_scale': 1,
+    # },
 }
 
 

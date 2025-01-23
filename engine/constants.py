@@ -6,11 +6,15 @@ PROJ_DIR: str = str(Path(__file__).parent.parent.absolute())
 IGNORE_INDEX = -100  # The default setting in CrossEntropyLoss
 
 try:
-    from .key import OPENAI_API_KEY, ANTHROPIC_API_KEY
+    from .key import ANTHROPIC_API_KEY
 except:
-    print("Warning: No OpenAI or Anthropic keys found.")
-    OPENAI_API_KEY = ''
+    print("Warning: No Anthropic keys found.")
     ANTHROPIC_API_KEY = ''
+try:
+    from .key import OPENAI_API_KEY
+except:
+    print("Warning: No OpenAI keys found.")
+    OPENAI_API_KEY = ''
 
 try:
     import torch
@@ -21,6 +25,9 @@ try:
 except ModuleNotFoundError:
     print(f'[INFO] torch not found, setting default variant to scalar_rgb')
     os.environ['MI_DEFAULT_VARIANT'] = 'scalar_rgb'
+
+import mitsuba as mi
+mi.set_variant(os.environ['MI_DEFAULT_VARIANT'])
 
 ENGINE_MODE: Literal['neural', 'mi', 'minecraft', 'lmd', 'mi_material', 'exposed'] = os.getenv('ENGINE_MODE', 'exposed')
 print(f'{ENGINE_MODE=}')

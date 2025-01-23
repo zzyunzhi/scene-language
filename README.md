@@ -13,10 +13,8 @@
 ```bash
 conda create --name sclg python=3.11
 conda activate sclg
-pip install mitsuba 
-# if you run into segmentation fault, you might need specific mitsuba versions
-# e.g., `pip install --force-reinstall mitsuba==3.5.1` on MacOS
-pip install unidecode Pillow anthropic transforms3d astor ipdb scipy jaxtyping imageio
+pip install mitsuba==3.5.1
+pip install unidecode Pillow anthropic transforms3d astor ipdb scipy jaxtyping imageio tqdm
 
 # required for minecraft renderer
 pip install spacy
@@ -28,6 +26,8 @@ git clone https://github.com/zzyunzhi/scene-language.git
 cd scene-language
 pip install -e .
 ```
+
+Run `python scripts/installation/test_install.py` to check if the installation is successful. 
 
 #### Language Model API
 Get your Anthropic API key following the [official documentation](https://docs.anthropic.com/en/api/getting-started#accessing-the-api)

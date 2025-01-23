@@ -17,7 +17,7 @@ try:
     from gala3d_helper import run_pipe as run_gala3d, run_pipe_post as run_gala3d_post, run_pipe_post_animation as run_gala3d_post_animation
 except:
     print("[WARNING] Failed to import neural pipelines.")
-    import traceback; traceback.print_exc()
+    # import traceback; traceback.print_exc()
 from dsl_utils import library, set_fake_call_enabled, set_seed, set_track_history_enabled, clear_history, animation_library_call
 from math_utils import _scale_matrix, translation_matrix, rotation_matrix, identity_matrix, align_vectors
 from _shape_utils import transform_shape, compute_bbox, Hole  # don't use the library here
