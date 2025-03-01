@@ -13,6 +13,7 @@ import anthropic
 
 CLAUDE_MODEL_NAME = 'claude-3-5-sonnet-20240620'  # this the model used throughout the paper
 CLAUDE_MODEL_NAME = 'claude-3-5-sonnet-20241022'
+CLAUDE_MODEL_NAME = 'claude-3-7-sonnet-20250219'
 
 class ClaudeClient:
     def __init__(self, model_name=CLAUDE_MODEL_NAME, cache="cache.json"):
@@ -82,33 +83,23 @@ class ClaudeClient:
                     return cache_key, self.cache[cache_key][skip_cache_completions:num_completions]
 
         while num_completions > 0:
-            while True:
-                try:
-                    response = self.client.messages.create(
-                        model=self.model_name,
-                        system=system_prompt,
-                        messages=messages,
-                        max_tokens=max_tokens,
-                        temperature=temperature,
-                        stop_sequences=stop_sequences
-                    )
-                    break
-                except anthropic.RateLimitError:
-                    print("Rate limit reached. Waiting before retrying...")
-                    time.sleep(16 * self.exponential_backoff)
-                    self.exponential_backoff *= 2
+            with self.client.messages.stream(
+                model=self.model_name,
+                system=system_prompt,
+                messages=messages,
+                max_tokens=max_tokens,
+                temperature=temperature,
+                stop_sequences=stop_sequences
+            ) as stream:
+                content = ''
+                for text in stream.text_stream:
+                    content += text
+            indented = content.split('\n')
+            results.append(indented)
+            
+            print(f'[INFO] Claude usage', stream.get_final_message().usage)
+
             num_completions -= 1
-
-            content = []
-            if response.content:
-                for text_block in response.content:
-                    content.append(text_block.text)
-                print(F'[INFO] Claude usage', response.usage)
-
-            indented = []
-            for c in content:
-                indented.append(c.split('\n'))
-            results.extend(indented)
 
         if not skip_cache:
             self.update_cache(cache_key, results)

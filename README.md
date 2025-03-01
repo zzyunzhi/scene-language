@@ -2,7 +2,7 @@
 
 [arXiv](https://arxiv.org/abs/2410.16770) | [Project Page](https://ai.stanford.edu/~yzzhang/projects/scene-language/)
 
-[Yunzhi Zhang](https://cs.stanford.edu/~yzzhang), [Zizhang Li](https://kyleleey.github.io/), Matt Zhou, [Shangzhe Wu](https://elliottwu.com/), [Jiajun Wu](https://jiajunwu.com/). arXiv preprint 2024.
+[Yunzhi Zhang](https://cs.stanford.edu/~yzzhang), [Zizhang Li](https://kyleleey.github.io/), Matt Zhou, [Shangzhe Wu](https://elliottwu.com/), [Jiajun Wu](https://jiajunwu.com/). CVPR 2025.
 
 ![teaser](resources/assets/representation.png)
 
@@ -13,7 +13,7 @@
 ```bash
 conda create --name sclg python=3.11
 conda activate sclg
-pip install mitsuba==3.5.1
+pip install mitsuba  # tested for mitsuba==3.6.4
 pip install unidecode Pillow anthropic transforms3d astor ipdb scipy jaxtyping imageio tqdm
 
 # required for minecraft renderer
@@ -26,6 +26,11 @@ git clone https://github.com/zzyunzhi/scene-language.git
 cd scene-language
 pip install -e .
 ```
+
+<!-- If you want run neural renderers:
+```bash
+pip install opencv-python plyfile adan-pytorch plotly
+``` -->
 
 Run `python scripts/installation/test_install.py` to check if the installation is successful. 
 
@@ -134,14 +139,17 @@ The following table lists helper functions defined in [this](scripts/outputs/stu
 
 </details>
 
+### Limitations
+
+The pipeline is sensitive to small changes in the prompts as shown [here](https://ai.stanford.edu/~yzzhang/projects/scene-language/#failure). 
+It is recommended to run prompts with some variations for better results. 
 
 ### Codebase improvements
 
 The current codebase allows you to generate 3D scenes with text or image prompts. 
 Other tasks and renderers reported in the paper will be supported in future updates. 
 
-Please submit a PR or [email](mailto:yzzhang@cs.stanford.edu) us
-if you have feature requests, suggestions for improvements, or would like to share your results.
+Please open a github issue or [email](mailto:yzzhang@cs.stanford.edu) us if encountering any issues. 
 
 ### Citation
 

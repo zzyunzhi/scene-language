@@ -874,7 +874,7 @@ def execute_from_preset(shape: Shape, save_dir: Optional[str], preset_id: Litera
         for vidx in range(len(bestviews)):
             sensor_bestview: mi.Sensor = mi.load_dict({
                 'type': 'perspective',
-                'to_world': mi.scalar_rgb.Transform4f.look_at(
+                'to_world': mi.ScalarTransform4f().look_at(
                     origin=bestviews[vidx],
                     # target=np.array(canon_transform.matrix)[:3, :3] @ np.array([0, 0, 1]) + np.array(canon_transform.translation()),
                     target=box.center,

@@ -51,7 +51,7 @@ print(f'DRY_RUN={DRY_RUN}')
 LLM_PROVIDER: Literal['gpt', 'claude', 'llama'] = 'claude'
 TEMPERATURE: float = 0.05
 NUM_COMPLETIONS: int = 1
-MAX_TOKENS: int = 4000
+MAX_TOKENS: int = 8192
 
 assert 0 <= TEMPERATURE <= 1, TEMPERATURE
 if NUM_COMPLETIONS > 1:
