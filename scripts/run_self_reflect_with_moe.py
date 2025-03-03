@@ -14,8 +14,8 @@ def get_parser():
     parser.add_argument('--cond', type=str, default='text', choices=['text'])
     parser.add_argument('--log-dir', type=str, default=(root / 'outputs' / Path(__file__).stem).as_posix())
     parser.add_argument('--temperature', type=float, default=.2, help='LM inference temperature')
-    parser.add_argument('--num-reflections', type=float, default=5, help='Number of self-reflection rounds for the LM')
-    parser.add_argument('--num-experts', type=float, default=4, help='Number of experts contributing proposals')
+    parser.add_argument('--num-reflections', type=int, default=7, help='Number of self-reflection rounds for the LM')
+    parser.add_argument('--num-experts', type=int, default=1, help='Number of experts contributing proposals')
     return parser
 
 

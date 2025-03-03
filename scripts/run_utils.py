@@ -5,6 +5,8 @@ import os
 from enum import Enum
 from engine.utils.parsel_utils import setup_gpt
 from engine.utils.claude_client import setup_claude
+from engine.utils.cv2_utils import load_rgb_png, write_rgb_png
+import numpy as np
 
 try:
     from engine.utils.code_llama_client import setup_llama
@@ -108,14 +110,14 @@ def save_prompts(
         with open((save_dir / "user_prompt.md").as_posix(), "w") as f:
             f.write(user_prompt)
     else:
-        for ind, prompt in enumerate(user_prompt):
-            if prompt["type"] == "text":
-                with open((save_dir / f"user_prompt_{ind}.md").as_posix(), "w") as f:
+        with open((save_dir / "user_prompt.md").as_posix(), "w") as f:
+            for ind, prompt in enumerate(user_prompt):
+                if prompt["type"] == "text":
                     f.write(prompt["text"])
-            elif prompt["type"] == "image_url":
-                pass
-            else:
-                raise NotImplementedError(f"{prompt['type']=}")
+                elif prompt["type"] == "image_url": 
+                    f.write(f"\n\n![image]({prompt['image_url']})\n\n")
+                else:
+                    raise NotImplementedError(f"{prompt['type']=}")
 
 
 def read_tasks() -> List[str]:
@@ -370,20 +372,7 @@ Your feedback should include feedback on the logical consistency between the cod
 """
     elif role == Role.JUDGE:
         return f"""\
-You are an objective judge. Your task is to evaluate three different Python code proposals and select the best one based on the following criteria:
-
-- Code correctness and functionality, particularly the usage of the provided DSL.
-- Whether the generated 3D scene matches the described task.
-- Code readability and maintainability.
-
-You are provided with the following `helper.py` which defines the given functions and definitions:
-```python
-{header}
-```
-
-{rules}
-
-You will be presented with three code snippets, and you must select the best one, providing a rationale for your choice. Be impartial and thorough in your evaluation.
+You are an objective judge. 
 """
     else:
         raise ValueError("Invalid role provided.")
@@ -426,7 +415,7 @@ The following is a review for the previous attempt:
 {critique}
 """
 
-Now, addressing the points brought up in the review, please re-write the program for the given task:
+Now, make minimal changes to address all points in the review.
 ```python
 from helper import *
 
@@ -440,27 +429,27 @@ from helper import *
 
 
 def get_critic_prompt(
-    task: str, writer_code: str, image_path: Optional[str]
+    task: str, writer_code: str, image_paths: list[str] | None,
 ) -> Union[str, list]:
     compilation_blurb = (
         "The current proposal cannot be properly executed and rendered! Analyze code errors in your review."
-        if image_path is None
-        else ""
+        if image_paths is None
+        else "The current proposal can be properly executed and rendered! Look for other issues."
     )
     feedback_blurb = (
         ""
-        if image_path is None
+        if image_paths is None
         else (
-            "Carefully examine the provided image rendered from the current proposal. "
+            "Carefully examine the provided image(s) from different viewpoints rendered from the current proposal. "
             "For EACH function output, check if the object is in the right position and orientation. "
             "A typical failure mode is translation missing by half of the object size!! "
+            "Note that the camera is automatically positioned to see the whole scene. "
             "Include error analysis in your review."
         )
     )
     text = f"""Your task is to review the following Python code and provide detailed feedback on (ordered by importance):
-- Code correctness and functionality, particularly the usage of the provided DSL. {compilation_blurb}
+- Code correctness, particularly the usage of the provided DSL. {compilation_blurb}
 - Whether the generated 3D scene matches the described task and common sense. {feedback_blurb}
-- Code readability and maintainability.
 - Only if everything else is correct, improve on scene details and aesthetics. 
 
 Task description:
@@ -473,34 +462,48 @@ Here is the current code proposal from the writer:
 
 Provide your critiques and suggestions for improvement below in a formatted list.
 """
-    if image_path is None:
+    if image_paths is None:
         return text
     return [
         {"type": "text", "text": text},
-        {"type": "image_url", "image_url": image_path},
-    ]
+    ] + [{"type": "image_url", "image_url": path} for path in image_paths]
 
 
-def get_judge_prompt(task: str, code_proposals: list[str]) -> str:
+def get_judge_prompt(task: str, code_proposals: list[str], expert_renderings: str | None) -> str | list[dict[str, str]]:
     # Dynamically generate code proposals in the prompt
     proposal_section = ""
     for i, code in enumerate(code_proposals, 1):
         proposal_section += f"Code Proposal {i}:\n```python\n{code}\n```\n\n"
+    feedback_blurb = (
+        "" if expert_renderings is None else (
+            f"Carefully examine the provided image rendered from the code proposal 1 to {len(code_proposals)}, "
+            "horizontally concatenated in the same order of proposals. Non-compilable code proposals give a black image."
+        )
+    )
 
-    return f"""Your task is to evaluate the following code proposals for the task described below and select the best one.
+    text = f"""Your task is to evaluate the following code proposals for the task described below and select the best one.
 
 Task description:
 {task}
 
-You will be presented with the following code proposals. Please evaluate each based on (ordered by importance):
-- Code correctness and functionality, particularly the usage of the provided DSL.
-- Whether the generated 3D scene matches the described task.
-- Code readability and maintainability.
+You will be presented with the following code proposals. {feedback_blurb}
+Please evaluate each based on:
+1. Physical accuracy. No penetration or floating allowed unless desired by the task.
+2. Aesthetics.
 
 {proposal_section}
 
-Your response will be used directly to execute in a Python interpreter, so make sure to output the best code proposal only:
+Output the index of the best code proposal and a rationale for your choice.
 """
+
+# Your response will be used directly to execute in a Python interpreter, so make sure to output the best code proposal only:
+    if expert_renderings is None:
+        return text
+
+    return [
+        {"type": "text", "text": text},
+        {"type": "image_url", "image_url": expert_renderings},
+    ]
 
 
 def get_user_prompt_reparam(program: str):
@@ -520,16 +523,18 @@ Now, refactor the following program.
 
 def compile_raw_gpt_response_to_program(result: str):
     lines = unwrap_results(result)
+    if lines is None:
+        return "Parsing error: invalid Python program."
     return "\n".join(lines)
 
 
-def find_rendering(save_dir: Path) -> Optional[str]:
-    rendering_path = list(save_dir.glob("renderings/*/rendering_traj_000.png"))
-    if len(rendering_path) == 0:
+def find_renderings(save_dir: Path) -> list[str] | None:
+    rendering_paths = list(save_dir.glob("renderings/*/rendering_traj_000.png"))
+    if len(rendering_paths) == 0:
         print(f"[ERROR] no renderings found")
         return None
     else:
-        return rendering_path[0].as_posix()
+        return [path.as_posix() for path in rendering_paths]
 
 
 def run_self_reflect_and_moe(
@@ -558,8 +563,7 @@ def run_self_reflect_and_moe(
 
     user_prompt = get_writer_prompt_initial(task, animate)
     system_prompt = get_system_prompt(role=Role.WRITER)
-    expert_role_save_dir = save_dir / f"prompts/expert_draft"
-    save_prompts(expert_role_save_dir.as_posix(), system_prompt, user_prompt)
+    save_prompts(save_dir.as_posix(), system_prompt, user_prompt)
     experts = generate(
         user_prompt=user_prompt,
         system_prompt=system_prompt,
@@ -567,17 +571,24 @@ def run_self_reflect_and_moe(
         skip_cache=False,
     )
 
+    num_reflections = (num_reflections - 1) // 2 * 2 + 1
+    print(f'[INFO] num_reflections: {num_reflections}')
+
+    expert_renderings = []
     for expert in range(num_experts):
+        expert_role_save_dir = save_dir / f"expert_{expert:02d}_refl_00_writer"
+
         role = Role.WRITER
         critique = None
         draft = experts[expert]
-        program = compile_raw_gpt_response_to_program(draft)
-        save_and_execute_trial(expert_role_save_dir / str(expert), program)
-        rendering_path = find_rendering(expert_role_save_dir / str(expert))
 
+        save_response(expert_role_save_dir, '\n'.join(draft))
+
+        program = compile_raw_gpt_response_to_program(draft)
+        save_and_execute_trial(expert_role_save_dir, program)
+        rendering_paths = find_renderings(expert_role_save_dir)
         role = switch_reflection_role(role)
 
-        num_reflections = (num_reflections - 1) // 2 * 2 + 1
         for i in range(1, num_reflections):
             print(
                 f"[INFO] Running self-reflection round {i + 1}/{num_reflections} for expert {expert + 1}/{num_experts}"
@@ -592,17 +603,20 @@ def run_self_reflect_and_moe(
                     skip_cache=True,
                 )[0]
                 role_save_dir = (
-                    save_dir / f"prompts/expert_{expert:02d}_refl_{i:02d}_writer"
+                    save_dir / f"expert_{expert:02d}_refl_{i:02d}_writer"
                 )
                 save_prompts(role_save_dir.as_posix(), system_prompt, user_prompt)
+                save_response(role_save_dir, '\n'.join(draft))
+
                 program = compile_raw_gpt_response_to_program(draft)
-                save_and_execute_trial(role_save_dir / "0", program)
-                rendering_path = find_rendering(role_save_dir / "0")
+                save_and_execute_trial(role_save_dir, program)
+                rendering_paths = find_renderings(role_save_dir)
+
             elif role == Role.CRITIC:
                 role_save_dir = (
-                    save_dir / f"prompts/expert_{expert:02d}_refl_{i:02d}_critic"
+                    save_dir / f"expert_{expert:02d}_refl_{i:02d}_critic"
                 )
-                user_prompt = get_critic_prompt(task, program, rendering_path)
+                user_prompt = get_critic_prompt(task, program, rendering_paths[:2] if rendering_paths is not None else None)
                 system_prompt = get_system_prompt(role=role)
                 critique = "\n".join(
                     generate(
@@ -613,11 +627,7 @@ def run_self_reflect_and_moe(
                     )[0]
                 )
                 save_prompts(role_save_dir.as_posix(), system_prompt, user_prompt)
-
-                (role_save_dir / "0").mkdir(exist_ok=True)
-                with open((role_save_dir / "0/raw.txt").as_posix(), "w") as f:
-                    f.write(critique)
-
+                save_response(role_save_dir, critique)
             else:
                 raise ValueError("Invalid role provided: " + role)
             role = switch_reflection_role(role)
@@ -631,14 +641,26 @@ def run_self_reflect_and_moe(
         # save_and_execute_trial(role_save_dir / '0', program, engine_mode='mi_material')
 
         code_proposals.append(program)
+        expert_renderings.append(rendering_paths[0] if rendering_paths is not None else None)
 
-    user_prompt = get_judge_prompt(task, code_proposals=code_proposals)
+    role_save_dir = save_dir / f'judge'
+    role_save_dir.mkdir(exist_ok=True)
+
+    # Load and concatenate expert renderings
+    if len(list(filter(None, expert_renderings))) == 0:
+        final_renderings = None
+    else:
+        final_renderings = (role_save_dir / 'expert_renderings.png').as_posix()
+        example_rendering = load_rgb_png(next(iter(filter(None, expert_renderings))))
+        write_rgb_png(final_renderings, np.concatenate([load_rgb_png(path) if path is not None else np.zeros_like(example_rendering) for path in expert_renderings], axis=1))
+
+    user_prompt = get_judge_prompt(task, code_proposals=code_proposals, expert_renderings=final_renderings)
     system_prompt = get_system_prompt(role=Role.JUDGE)
-    role_save_dir = save_dir / f'prompts/judge'
     save_prompts(role_save_dir.as_posix(), system_prompt, user_prompt)
     draft = generate(user_prompt=user_prompt, system_prompt=system_prompt, lm_config=lm_config, skip_cache=True)[0]
-    program = compile_raw_gpt_response_to_program(draft)
-    save_and_execute_trial(role_save_dir / '0', program)
+    save_response(role_save_dir, '\n'.join(draft))
+    # program = compile_raw_gpt_response_to_program(draft)
+    # save_and_execute_trial(role_save_dir, program)
 
 
 def save_and_execute_trial(trial_save_dir: Path, program, engine_mode=ENGINE_MODE):
@@ -661,3 +683,11 @@ def save_and_execute_trial(trial_save_dir: Path, program, engine_mode=ENGINE_MOD
         f.write(command)
 
     execute_command(command, trial_save_dir.as_posix())
+
+
+def save_response(save_dir: Path, response: str):
+    save_dir.mkdir(exist_ok=True)
+    with open((save_dir / "raw.txt").as_posix(), "w") as f:
+        f.write(response)
+    with open((save_dir / "raw.md").as_posix(), "w") as f:
+        f.write(response)

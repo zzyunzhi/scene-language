@@ -11,7 +11,7 @@
 #### Environment
 
 ```bash
-conda create --name sclg python=3.11
+conda create --name sclg python=3.12
 conda activate sclg
 pip install mitsuba  # tested for mitsuba==3.6.4
 pip install unidecode Pillow anthropic transforms3d astor ipdb scipy jaxtyping imageio tqdm
@@ -20,12 +20,11 @@ pip install unidecode Pillow anthropic transforms3d astor ipdb scipy jaxtyping i
 pip install spacy
 python -m spacy download en_core_web_md
 
-pip install --force-reinstall numpy==1.26.4  # to be compatible with transforms3d
-
 git clone https://github.com/zzyunzhi/scene-language.git
 cd scene-language
 pip install -e .
 ```
+<!-- pip install --force-reinstall numpy==1.26.4  # to be compatible with transforms3d -->
 
 <!-- If you want run neural renderers:
 ```bash
@@ -41,7 +40,7 @@ and add it to `engine/key.py`:
 ANTHROPIC_API_KEY = 'YOUR_ANTHROPIC_API_KEY'
 OPENAI_API_KEY = 'YOUR_OPENAI_API_KEY'  # optional, required for `LLM_PROVIDER='gpt'`
 ```
-By default, we use Claude 3.5 Sonnet. You may switch to other language models by setting `LLM_PROVIDER` in `engine/constants.py`.
+By default, we use Claude 3.7 Sonnet. You may switch to other language models by setting `LLM_PROVIDER` in `engine/constants.py`.
 
 
 ### Text-Conditioned 3D Generation
@@ -50,10 +49,12 @@ By default, we use Claude 3.5 Sonnet. You may switch to other language models by
 
 ```bash
 python scripts/run.py --tasks "a chessboard with a full set of chess pieces" 
+# Experimental
+python scripts/run_self_reflect_with_moe.py --tasks "Sponge Bob and friends"
 ```
 Renderings will be saved to `${PROJ_ROOT}/scripts/outputs/run_${timestep}_${uuid}/${scene_name}_${uuid}/${sample_index}/renderings/*.gif`. 
 
-Example results (raw outputs [here](resources/results/mitsuba)):
+Example results with Claude 3.5 Sonnet (raw outputs [here](resources/results/mitsuba)):
 
 <table>
 <tr>
