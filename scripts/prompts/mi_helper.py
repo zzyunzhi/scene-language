@@ -1005,13 +1005,31 @@ cylinder_fn: Callable[[float, P, P], Shape] = lambda radius, p0, p1, color=(1, 1
     'info': {'stack': []}
 }]
 
-sphere_fn: Callable[[P, Union[float, P]], Shape] = lambda color=(1, 1, 1), scale=1: [{
-    'type': 'sphere' if np.all(np.asarray(scale) == np.mean(scale)) else 'cube',  # FIXME hack
-    'to_world': _scale_matrix(0.5 * np.asarray(scale)),
+sphere_fn: Callable[[P, Union[float, P]], Shape] = lambda color=(1, 1, 1), radius=1: [{
+    'type': 'sphere', # l if np.all(np.asarray(scale) == np.mean(scale)) else 'cube',  # FIXME hack
+    'to_world': _scale_matrix(radius),
+    # 'to_world': _scale_matrix(0.5 * np.asarray(scale)),
     'bsdf': {'type': 'diffuse', 'reflectance': {'type': 'rgb', 'value': np.asarray(color[:3]).clip(0, 1)}},
     # 'bsdf': {'type': 'ref', 'id': 'red'},
     'info': {'stack': []}
 }]
+
+
+def cone_fn(radius: float, p0: P, p1: P, color=(1, 1, 1)) -> Shape:
+    num_segments = max(1, int(np.linalg.norm(np.asarray(p1) - np.asarray(p0)) * 10))
+    segments = []
+    for i in range(num_segments):
+        # p0_segment, p1_segment should be along the centerline of the cone
+        p0_segment = np.asarray(p0) + (np.asarray(p1) - np.asarray(p0)) * (i / num_segments)
+        p1_segment = np.asarray(p0) + (np.asarray(p1) - np.asarray(p0)) * ((i + 1) / num_segments)
+        radius_segment = radius * (1 - i / num_segments)
+        segments.append({
+            'type': 'cylinder', 'p0': mi.ScalarPoint3f(*p0_segment), 'p1': mi.ScalarPoint3f(*p1_segment), 'radius': radius_segment,
+            'to_world': identity_matrix(),
+            'bsdf': {'type': 'diffuse', 'reflectance': {'type': 'rgb', 'value': np.asarray(color[:3]).clip(0, 1)}},
+            'info': {'stack': []}
+        })
+    return segments
 
 
 def curve_fn(name: str, control_points: List[P], radius: Union[float, List[float]], color: P) -> Shape:
@@ -1196,9 +1214,8 @@ def shap_e_fn(prompt: str, scale: Union[float, P, None] = None,
 
 
 def impl_primitive_call():
-    def fn(name: Literal['sphere', 'cube'], **kwargs):
-        # FIXME `cylinder` is a hack as sometimes PGT misuses it
-        return {'cube': cube_fn, 'sphere': sphere_fn, 'cylinder': cylinder_fn,
+    def fn(name: Literal['sphere', 'cube', 'cylinder'], **kwargs):
+        return {'cube': cube_fn, 'sphere': sphere_fn, 'cylinder': cylinder_fn, 'cone': cone_fn,
                 'bsplinecurve': bsplinecurve_fn, 'linearcurve': linearcurve_fn,
                 'run': shap_e_fn, 'box': box_fn, '_from_minecraft_cuboid': _from_minecraft_cuboid_fn}.get(name, cube_fn)(**kwargs)
 

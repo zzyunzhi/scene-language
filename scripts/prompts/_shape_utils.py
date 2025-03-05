@@ -77,6 +77,11 @@ class Hole:
         self.parents.add(parent)
 
     def implement(self, impl_fn: Callable[[], ShapeSampler]):
+        if self.is_implemented:
+            print(f'[WARNING] {self.name} will be re-implemented!!!')
+        else:
+            print(f'[INFO] Implementing {self.name}...')
+
         # Comment these out - Matt
         # assert self.fn is None, self.fn
         # assert self.children is None, self.children

@@ -11,7 +11,7 @@ import numpy as np
 try:
     from engine.utils.code_llama_client import setup_llama
 except:
-    print("Unable to import Llama modules. Are you running on cluster?")
+    setup_llama = None
 from engine.utils.lm_utils import unwrap_results
 from engine.utils.execute_utils import execute_command
 from engine.constants import (
@@ -85,7 +85,7 @@ if ENGINE_MODE == "minecraft":
     SYSTEM_RULES += """\n5. Pay attention that the objects are not too large so it can't be rendered."""
 # if ENGINE_MODE == 'mi_material':
 #     SYSTEM_RULES += "4. Specify materials to be as realistic as possible; see documentation for `primitive_call`.\n"
-if ENGINE_MODE in ["mi", "mi_material", "exposed"]:
+if ENGINE_MODE in ["mi", "mi_material", "exposed", "exposed_v2"]:
     #     SYSTEM_RULES += "4. You can use shape primitives to approximate shape components that are too complex. You must make sure shape have correct poses. \
     # Be careful about `set_mode` and `set_to` from `primitive_call`.\n"
     SYSTEM_RULES += "4. You must use `library_call` to call registered functions.\n"
@@ -136,6 +136,8 @@ def read_example(path: Optional[str] = None, animate: bool = False) -> str:
                 # ('mi', 'calc'): 'oracle_rotate_v3.py',
                 ("exposed", "calc", True): "oracle_0831_animation.py",
                 ("exposed", "calc", False): "oracle_0807.py",
+                ("exposed_v2", "calc", True): "oracle_0831_animation.py",
+                ("exposed_v2", "calc", False): "oracle_0807.py",
                 ("mi_material", "calc", False): "oracle_material.py",
                 ("minecraft", "default", True): "oracle_minecraft_animation.py",
                 ("minecraft", "default", False): "oracle_minecraft.py",

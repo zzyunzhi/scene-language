@@ -53,6 +53,8 @@ def core(engine_modes: list[Literal['neural', 'lmd', 'omost', 'loosecontrol', 'd
     from prompt_helper import load_program
     from impl_parse_dependency import parse_dependency
     from engine.constants import ENGINE_MODE
+    if ENGINE_MODE == "exposed_v2":
+        import scripts.prompts.mesh_helper  # requires manual import to rewrite primitive call implementations from mi_helper!!
     try:
         from tu.loggers.utils import print_vcv_url
         from tu.loggers.utils import setup_vi
