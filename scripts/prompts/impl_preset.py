@@ -16,7 +16,7 @@ import mi_helper  # such that primitive call will be implemented
 import argparse
 from typing import Literal, Optional
 
-EXTRA_ENGINE_MODE = ['box', 'interior', 'exterior',
+EXTRA_ENGINE_MODE = ['box', 'interior', 'exterior', 'mesh',
                      'gala3d', 'lmd', 'migc', 'loosecontrol', 'omost', 'densediffusion', 'neural']  # `densediffusion` must be the last as it modifies diffusers library
 
 
@@ -36,7 +36,7 @@ def main():
          dependency_path=args.dependency_path, program_path=args.program_path)
 
 
-def core(engine_modes: list[Literal['neural', 'lmd', 'omost', 'loosecontrol', 'densediffusion']], overwrite: bool, save_dir: str,
+def core(engine_modes: list[Literal['neural', 'lmd', 'omost', 'loosecontrol', 'densediffusion', 'mesh']], overwrite: bool, save_dir: str,
          dependency_path: Optional[str] = None, program_path: Optional[str] = None, root: Optional[str] = None,
          tree_depths: Optional[list[int]] = None):
     try:
@@ -208,7 +208,7 @@ def core(engine_modes: list[Literal['neural', 'lmd', 'omost', 'loosecontrol', 'd
     for engine_mode in EXTRA_ENGINE_MODE:
         if engine_mode not in engine_modes:
             continue
-        if engine_mode not in ['box', 'interior', 'exterior'] and not cuda_is_available:
+        if engine_mode not in ['box', 'interior', 'exterior', 'mesh'] and not cuda_is_available:
             continue
         print(f'[INFO] running with {engine_mode}')
         for tree_depth in tree_depths:
