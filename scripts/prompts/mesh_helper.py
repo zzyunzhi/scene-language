@@ -47,7 +47,7 @@ cube_fn: Callable[[Union[float, P], P], Shape] = lambda scale, color=(1, 1, 1): 
 
 cylinder_fn: Callable[[float, P, P], Shape] = lambda radius, p0, p1, color=(1, 1, 1): [{
     'type': 'ply', 'filename': ASSETS_PATHS['cylinder'].as_posix(),
-    'to_world': translation_matrix(np.array(p0)) @ align_vectors(np.array([0, 1, 0]), np.array(p1) - np.array(p0)) @ _scale_matrix([radius, np.linalg.norm(np.array(p1) - np.array(p0)), radius], enforce_uniform=False),
+    'to_world': translation_matrix(np.array(p0)) @ align_vectors(np.array(p1) - np.array(p0), np.array([0, 1, 0])) @ _scale_matrix([radius, np.linalg.norm(np.array(p1) - np.array(p0)), radius], enforce_uniform=False),
     'bsdf': {'type': 'diffuse', 'reflectance': {'type': 'rgb', 'value': np.asarray(color[:3]).clip(0, 1)}},
     'info': {'stack': []}
 }]
@@ -61,7 +61,7 @@ sphere_fn: Callable[[P, Union[float, P]], Shape] = lambda radius, color=(1, 1, 1
 
 cone_fn: Callable[[float, P, P], Shape] = lambda radius, p0, p1, color=(1, 1, 1): [{
     'type': 'ply', 'filename': ASSETS_PATHS['cone'].as_posix(),
-    'to_world': translation_matrix(np.array(p0)) @ align_vectors(np.array([0, 1, 0]), np.array(p1) - np.array(p0)) @ _scale_matrix([radius, np.linalg.norm(np.array(p1) - np.array(p0)), radius], enforce_uniform=False),
+    'to_world': translation_matrix(np.array(p0)) @ align_vectors(np.array(p1) - np.array(p0), np.array([0, 1, 0])) @ _scale_matrix([radius, np.linalg.norm(np.array(p1) - np.array(p0)), radius], enforce_uniform=False),
     'bsdf': {'type': 'diffuse', 'reflectance': {'type': 'rgb', 'value': np.asarray(color[:3]).clip(0, 1)}},
     'info': {'stack': []}
 }]
