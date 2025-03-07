@@ -12,7 +12,7 @@ import trimesh
 import yaml
 from pathlib import Path
 from math_utils import identity_matrix
-from engine.constants import PROJ_DIR
+from engine.constants import PROJ_DIR, ENGINE_MODE
 from engine.utils.argparse_utils import setup_save_dir
 
 
@@ -36,6 +36,8 @@ def make_new_library(library, library_equiv, tree_depth: int, root: str, engine_
     decode_docstring = next(iter(library.values()))['docstring'].startswith('{')
     if decode_docstring and engine_mode not in ['interior', 'exterior', 'box', 'mesh']:
         assert tree_depth == -1, tree_depth
+    if engine_mode == 'mesh':
+        import scripts.prompts.mesh_helper  # overwrites primitive_call
 
     if engine_mode == 'mesh':
         library_dir = setup_save_dir(Path(PROJ_DIR) / 'logs' / 'library', log_unique=True)
@@ -196,5 +198,10 @@ def make_new_library(library, library_equiv, tree_depth: int, root: str, engine_
         with open(library_dir / 'layout.yaml', 'w') as f:
             yaml.dump(dict(scene_list), f)
         print(f'[INFO] Saved scene as dictionary to {library_dir / "layout.yaml"}')
+
+    if engine_mode == "mesh" and ENGINE_MODE != 'exposed_v2':
+        from scripts.prompts.mi_helper import impl_primitive_call
+        from scripts.prompts._shape_utils import primitive_call
+        primitive_call.implement(impl_primitive_call)
 
     return new_library

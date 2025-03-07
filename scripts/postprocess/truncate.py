@@ -23,6 +23,7 @@ sys.path.insert(0, prompts_root.as_posix())
 
 from scripts.prompts.sketch_helper import parse_program
 from scripts.prompts.impl_helper import make_new_library, generate_prompt_key
+from scripts.prompts.impl_preset import core
 
 def yes_or_no(prompt) -> bool:
     while True:
@@ -61,8 +62,9 @@ class FunctionReplacer(ast.NodeTransformer):
         return node
 
 
-def process_program(path: str, save_path: str, overwrite: bool = False):
-    if os.path.exists(save_path) and not overwrite:
+def process_program(path: Path, save_dir: Path, overwrite: bool = False):
+    save_path = save_dir / 'program.py'
+    if save_path.exists() and not overwrite:
         print(f"File already exists at {save_path}. Skipping.")
         # load_program(save_path)
         return
@@ -115,7 +117,7 @@ def process_program(path: str, save_path: str, overwrite: bool = False):
                     queue.append(child_scc_ind)
 
     print(f'Found parent and leaf nodes: {visited}')
-    has_exterior = yes_or_no("Are there any exterior functions?")
+    has_exterior = False # yes_or_no("Are there any exterior functions?")
 
     class MinecraftFunctionModifier(ast.NodeTransformer):
         def __init__(self, func_name):
@@ -194,12 +196,14 @@ def process_program(path: str, save_path: str, overwrite: bool = False):
     _ = DecoratorTransformer().visit(tree)
     new_program = astor.to_source(tree)
 
-    Path(save_path).parent.mkdir(parents=True, exist_ok=True)
     with open(save_path, 'w') as f:
         f.write(new_program)
     print(f'[INFO] Saved to: {save_path}')
 
-    load_program(save_path)
+
+def render_program(save_dir: Path, overwrite: bool):
+    load_program(save_dir / 'program.py')
+    core(engine_modes=['mesh'], overwrite=overwrite, save_dir=save_dir.as_posix())
 
 
 def load_program(path: str):
@@ -209,14 +213,18 @@ def load_program(path: str):
     new_library = make_new_library(library, library_equiv, tree_depth=-1,
                                    root=root_name, engine_mode='box')
     shape = new_library[root_name]['__target__']()
-    for s in shape:
-        print(s['info']['docstring'])
+    # for s in shape:
+    #     print(s['info']['docstring'])
+    print("[INFO] Load program test passed!")
 
 
 def main():
     args = get_parser().parse_args()
     exp_dir = Path(args.exp_dir)
-    exp_subdir_matched = sum([list(exp_dir.glob(exp_pattern)) for exp_pattern in args.exp_patterns], [])
+    exp_subdir_matched = sum([
+        list(exp_dir.glob(exp_pattern) if not Path(exp_pattern).is_absolute() else Path(exp_pattern).glob("**"))
+        for exp_pattern in args.exp_patterns
+    ], [])
     out_dir = Path(PROJ_DIR) / 'logs' / Path(__file__).stem
     out_dir = setup_save_dir(out_dir.as_posix(), args.log_unique)
 
@@ -225,9 +233,9 @@ def main():
             continue
         print(f'[INFO] processing {program_path.as_posix()}')
         save_dir = out_dir / program_path.relative_to(exp_dir).parent
-        save_path = (save_dir / 'program.py').as_posix()
-        process_program(program_path.as_posix(), save_path, overwrite=args.overwrite)
-
+        save_dir.mkdir(parents=True, exist_ok=True)
+        process_program(program_path, save_dir, overwrite=args.overwrite)
+        render_program(save_dir, overwrite=args.overwrite)
 
 def get_parser():
     parser = argparse.ArgumentParser()
