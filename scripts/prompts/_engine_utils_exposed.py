@@ -45,6 +45,9 @@ def primitive_call(
         pass
     elif name == 'cylinder':
         pass
+    elif name == 'cone':
+        # technically not exposed 
+        pass
     else:
         raise ValueError(f"Invalid name {name}")
     shape = _primitive_call(name, color=color, **shape_kwargs)  # centered at origin
