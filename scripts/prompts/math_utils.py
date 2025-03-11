@@ -36,6 +36,9 @@ def align_vectors(direction_to: P, direction_from: P) -> T:
     """
     Returns a rotation matrix that transforms `direction_from` to align with `direction_to`.
     """
+    if np.linalg.norm(direction_to) < 1e-6 or np.linalg.norm(direction_from) < 1e-6:
+        print(f"[ERROR] Aligning vectors with zero length: {direction_to=} {direction_from=}")
+        return np.eye(4)
     ret = np.eye(4)
     rot, *_ = Rotation.align_vectors(direction_to, direction_from)
     ret[:3, :3] = rot.as_matrix()

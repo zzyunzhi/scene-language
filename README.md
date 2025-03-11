@@ -14,7 +14,7 @@
 conda create --name sclg python=3.12
 conda activate sclg
 pip install mitsuba  # tested for mitsuba==3.6.4
-pip install unidecode Pillow anthropic transforms3d astor ipdb scipy jaxtyping imageio tqdm
+pip install unidecode Pillow anthropic transforms3d astor ipdb scipy jaxtyping imageio tqdm trimesh
 
 # required for minecraft renderer
 pip install spacy
