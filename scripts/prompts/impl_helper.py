@@ -44,6 +44,8 @@ def make_new_library(library, library_equiv, tree_depth: int, root: str, engine_
         (library_dir / 'assets').mkdir(parents=True, exist_ok=True)
         scene_list: list[tuple[str, dict[str, str | None | T]]] = []
 
+        active_eid = None
+
     def make_parent_target(_name):
         # print(f'[INFO] parent target: {_name=}')
 
@@ -106,6 +108,8 @@ def make_new_library(library, library_equiv, tree_depth: int, root: str, engine_
                 elif engine_mode == 'interior':
                     return [] if is_exterior else shape
                 elif engine_mode == "mesh":
+                    nonlocal active_eid
+                    active_eid = active_eid + 1 if active_eid is not None else 0
                     asset_path = library_dir / 'assets' / f"{generate_mesh_key(_name, complete_kwargs)}.ply"
 
                     # object coordinate of current node = world coordinate in saved mesh
@@ -116,8 +120,9 @@ def make_new_library(library, library_equiv, tree_depth: int, root: str, engine_
                     scene_list.append((_name, {
                         "description": prompt, 
                         "mesh": asset_path.as_posix(),
+                        "eid": active_eid,
                     }))
-                    return primitive_box_fn(prompt=prompt, shape=[{"type": "ply", "filename": asset_path.as_posix(), "to_world": identity_matrix()}], kwargs=complete_kwargs)
+                    return primitive_box_fn(prompt=prompt, shape=[{"type": "ply", "filename": asset_path.as_posix(), "to_world": identity_matrix()}], kwargs=complete_kwargs, eid=active_eid)
                 extra_info = {'is_exterior': is_exterior, 'yaw': yaw, 'negative_prompt': negative_prompt}
                 if len(shape) > 1:
                     return box_fn(prompt=prompt, scale=box.sizes, center=box.center, enforce_centered_origin=False,
@@ -168,14 +173,17 @@ def make_new_library(library, library_equiv, tree_depth: int, root: str, engine_
         if engine_mode == 'interior':
             return [] if is_exterior else shape
         if engine_mode == 'mesh':
+            nonlocal active_eid
+            active_eid = active_eid + 1 if active_eid is not None else 0
             scene_list.append((
                 _name,
                 {
                     "description": prompt,
                     "mesh": shape[0]['filename'],
+                    "eid": active_eid,
                 }
             ))
-            return shape
+            return primitive_box_fn(prompt=prompt, shape=shape, kwargs=complete_kwargs, eid=active_eid)
         extra_info = {} if engine_mode != 'gala3d' else {'is_exterior': is_exterior, 'yaw': yaw, 'negative_prompt': negative_prompt}
         return primitive_box_fn(prompt=prompt, shape=shape, kwargs=complete_kwargs, **extra_info)
     engine_utils.inner_primitive_call = primitive_call_target
@@ -191,12 +199,22 @@ def make_new_library(library, library_equiv, tree_depth: int, root: str, engine_
     if engine_mode == 'mesh':
         scene = new_library[root]['__target__']()
         if len(scene) != len(scene_list):
+            print(f'[WARNING] len(scene) != len(scene_list), {len(scene)=}, {len(scene_list)=}')
+        eid_to_scene_list_entry = {entry[1]["eid"]: entry for entry in scene_list}
+        if len(eid_to_scene_list_entry) != len(scene_list):
             import ipdb; ipdb.set_trace()
-        for eid in range(len(scene)):
-            scene_list[eid] = (f"{scene_list[eid][0]}_{eid:03d}", scene_list[eid][1])
-            scene_list[eid][1]['to_world'] = scene[eid]['to_world'].tolist()
+
+        eid_to_scene_entry = {entry["info"]["eid"]: entry for entry in scene}
+        if len(eid_to_scene_entry) != len(scene_list):
+            import ipdb; ipdb.set_trace()
+        updated_scene_list = []
+        for eid in eid_to_scene_entry:
+            scene_list_entry = eid_to_scene_list_entry[eid]
+            scene_list_entry = (f"{scene_list_entry[0]}_{eid:03d}", scene_list_entry[1])
+            scene_list_entry[1]['to_world'] = eid_to_scene_entry[eid]['to_world'].tolist()
+            updated_scene_list.append(scene_list_entry)
         with open(library_dir / 'layout.yaml', 'w') as f:
-            yaml.dump(dict(scene_list), f)
+            yaml.dump(dict(updated_scene_list), f)
         print(f'[INFO] Saved scene as dictionary to {library_dir / "layout.yaml"}')
 
     if engine_mode == "mesh" and ENGINE_MODE != 'exposed_v2':
