@@ -531,7 +531,7 @@ def compile_raw_gpt_response_to_program(result: str):
 
 
 def find_renderings(save_dir: Path) -> list[str] | None:
-    rendering_paths = list(save_dir.glob("renderings/*/rendering_traj_000.png"))
+    rendering_paths = list(sorted(save_dir.glob("renderings/*/rendering_traj_*.png")))
     if len(rendering_paths) == 0:
         print(f"[ERROR] no renderings found")
         return None
@@ -618,7 +618,7 @@ def run_self_reflect_and_moe(
                 role_save_dir = (
                     save_dir / f"expert_{expert:02d}_refl_{i:02d}_critic"
                 )
-                user_prompt = get_critic_prompt(task, program, rendering_paths[:2] if rendering_paths is not None else None)
+                user_prompt = get_critic_prompt(task, program, rendering_paths[::max(len(rendering_paths) // 2, 1)] if rendering_paths is not None else None)
                 system_prompt = get_system_prompt(role=role)
                 critique = "\n".join(
                     generate(

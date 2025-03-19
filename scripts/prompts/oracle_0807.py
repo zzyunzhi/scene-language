@@ -12,13 +12,15 @@ def book(scale: P) -> Shape:
 
 @register()
 def books(width: float, length: float, book_height: float, num_books: int) -> Shape:
-    def loop_fn(i) -> Shape:
+    book_shapes = []
+    for i in range(num_books):
         book_shape = library_call('book', scale=(width, book_height, length))
         book_shape = transform_shape(book_shape, translation_matrix([np.random.uniform(-0.05, 0.05), i * book_height, np.random.uniform(-0.05, 0.05)]))  # FIRST translate
         book_center = compute_shape_center(book_shape)  # must be computed AFTER transformation!!
-        return transform_shape(book_shape, rotation_matrix(np.random.uniform(-0.1, 0.1), direction=(0, 1, 0), point=book_center))  # THEN tilt
+        book_shape = transform_shape(book_shape, rotation_matrix(np.random.uniform(-0.1, 0.1), direction=(0, 1, 0), point=book_center))  # THEN tilt
+        book_shapes.append(book_shape)
 
-    return loop(num_books, loop_fn)
+    return concat_shapes(*book_shapes)
 
 
 @register()

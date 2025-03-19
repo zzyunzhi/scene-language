@@ -1,10 +1,5 @@
+from type_utils import Shape as Shape
 from typing import Callable
-from type_utils import Shape
-from shape_utils import concat_shapes
-
-
-__all__ = []
-# __all__ = ['loop']
 
 def loop(n: int, fn: Callable[[int], Shape]) -> Shape:
     """
@@ -17,5 +12,3 @@ def loop(n: int, fn: Callable[[int], Shape]) -> Shape:
     Returns:
         Concatenated shapes from each iteration.
     """
-
-    return concat_shapes(*[fn(i) for i in range(n)])
