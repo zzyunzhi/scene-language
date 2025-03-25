@@ -205,7 +205,7 @@ def make_new_library(library, library_equiv, tree_depth: int, root: str, engine_
             import ipdb; ipdb.set_trace()
 
         eid_to_scene_entry = {entry["info"]["eid"]: entry for entry in scene}
-        if len(eid_to_scene_entry) != len(scene_list):
+        if len(eid_to_scene_entry) != len(scene):
             import ipdb; ipdb.set_trace()
         updated_scene_list = []
         for eid in eid_to_scene_entry:
