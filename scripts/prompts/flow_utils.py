@@ -3,8 +3,8 @@ from type_utils import Shape
 from shape_utils import concat_shapes
 
 
-__all__ = []
-# __all__ = ['loop']
+# __all__ = []
+__all__ = ['loop']
 
 def loop(n: int, fn: Callable[[int], Shape]) -> Shape:
     """

@@ -66,8 +66,8 @@ Shape = list[dict[str, Any]]  # a shape is a list of primitive shapes
         "# shape function library utils",
         read_header((header_out_dir / 'dsl_utils.pyi').as_posix()),
         read_header((header_out_dir / f'_engine_utils_{ENGINE_MODE}.pyi').as_posix()),
-        # "# control flows",
-        # read_header((header_out_dir / 'flow_utils.pyi').as_posix()),
+        "# control flows",
+        read_header((header_out_dir / 'flow_utils.pyi').as_posix()),
         "# shape manipulation",
         read_header((header_out_dir / 'shape_utils.pyi').as_posix()),
     ]
