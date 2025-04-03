@@ -25,7 +25,7 @@ PROMPT_KEY = generate_prompt_key()  # prompt_kwargs_29fc3136
 
 
 def generate_mesh_key(name: str, kwargs: dict):
-    hash_object = hashlib.md5(json.dumps(sorted(kwargs)).encode())
+    hash_object = hashlib.md5(json.dumps({k: kwargs[k] for k in sorted(kwargs.keys())}).encode())
     return f'{name}_{hash_object.hexdigest()}'
 
 orig_primitive_call = engine_utils.inner_primitive_call
