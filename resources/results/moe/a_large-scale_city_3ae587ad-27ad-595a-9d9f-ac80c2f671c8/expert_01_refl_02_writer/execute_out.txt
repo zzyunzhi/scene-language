@@ -1,0 +1,85 @@
+[INFO] Implementing placeholder...
+ENGINE_MODE='exposed'
+DRY_RUN=False
+[INFO] Implementing primitive_call...
+[WARNING] Failed to import neural pipelines.
+[INFO] ('/Users/yzzhang/dev/scene-language/scripts/outputs/run_self_reflect_with_moe_20250707-111552_a6431c8b-82dc-4621-b943-fa0268d47678/a_large-scale_city_3ae587ad-27ad-595a-9d9f-ac80c2f671c8/expert_01_refl_02_writer/renderings',){}
+[INFO] (None,){'verbose': False}
+[INFO] ('/Users/yzzhang/dev/scene-language/scripts/outputs/run_self_reflect_with_moe_20250707-111552_a6431c8b-82dc-4621-b943-fa0268d47678/a_large-scale_city_3ae587ad-27ad-595a-9d9f-ac80c2f671c8/expert_01_refl_02_writer/renderings',){'verbose': False}
+[INFO] (None, [[None], [None]]){'col_type': 'text'}
+[WARNING] no roots specified, using the last function in the library
+[INFO] calling node (supposed to be root): large_scale_city
+[INFO] registering children for building with 78 hist calls
+[INFO] registering children for skyscraper with 69 hist calls
+[INFO] registering children for house with 60 hist calls
+[INFO] registering children for road with 32 hist calls
+[INFO] registering children for park with 2 hist calls
+[INFO] registering children for traffic_light with 32 hist calls
+[INFO] registering children for city_block with 23 hist calls
+[INFO] registering children for intersection with 8 hist calls
+[INFO] registering children for city_grid with 5 hist calls
+[INFO] registering children for parking_lot with 2 hist calls
+[INFO] registering children for large_scale_city with 1 hist calls
+root='large_scale_city'
+[INFO] (None, [['Parsed root from program.']]){}
+[INFO] (None, [['root function name: large_scale_city'], ["scc=([{'building'}, {'skyscraper'}, {'house'}, {'road'}, {'park'}, {'traffic_light'}, {'city_block'}, {'intersection'}, {'city_grid'}, {'parking_lot'}, {'large_scale_city'}], [[], [], [], [], [], [], [0, 1, 2], [5], [0, 1, 2, 3, 4, 5, 6, 7], [], [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]])"]]){}
+[INFO] (None, [['root function name: large_scale_city'], ["scc=([{'building'}, {'skyscraper'}, {'house'}, {'road'}, {'park'}, {'traffic_light'}, {'city_block'}, {'intersection'}, {'city_grid'}, {'parking_lot'}, {'large_scale_city'}], [[], [], [], [], [], [], [0, 1, 2], [5], [0, 1, 2, 3, 4, 5, 6, 7], [], [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]])"]]){}
+[INFO] (None, [['', '']]){'col_names': ['dependency', 'program']}
+[INFO] executing `large_scale_city`...
+node_depths={'building': 3, 'skyscraper': 3, 'house': 3, 'road': 2, 'park': 2, 'traffic_light': 3, 'city_block': 2, 'intersection': 2, 'city_grid': 1, 'parking_lot': 1, 'large_scale_city': 0}
+[INFO] executing `large_scale_city` done!
+node_depths={'building': 3, 'skyscraper': 3, 'house': 3, 'road': 2, 'park': 2, 'traffic_light': 3, 'city_block': 2, 'intersection': 2, 'city_grid': 1, 'parking_lot': 1, 'large_scale_city': 0}
+[INFO] (None, [['starting tree_depth=00']]){}
+[INFO] (None, [['tree_depth=00, viewpoint=00']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x33C2243B0>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=00, viewpoint=01']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x33C152DE0>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=00, viewpoint=02']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x319F17980>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=00, viewpoint=03']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x319DAEAB0>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=00, viewpoint=04']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x319F176E0>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=00, viewpoint=05']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x33C152DE0>]]){'col_names': ['exposed']}
+[INFO] (None, [['starting tree_depth=01']]){}
+[INFO] (None, [['tree_depth=01, viewpoint=00']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x319F17980>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=01, viewpoint=01']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x319F17F80>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=01, viewpoint=02']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x319F176E0>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=01, viewpoint=03']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x319F17980>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=01, viewpoint=04']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x319F17F80>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=01, viewpoint=05']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x319F176E0>]]){'col_names': ['exposed']}
+[INFO] (None, [['starting tree_depth=02']]){}
+[INFO] (None, [['tree_depth=02, viewpoint=00']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x319F17980>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=02, viewpoint=01']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x319F17F80>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=02, viewpoint=02']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x319F176E0>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=02, viewpoint=03']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x319F17980>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=02, viewpoint=04']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x319F17F80>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=02, viewpoint=05']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x319F176E0>]]){'col_names': ['exposed']}
+[INFO] (None, [['starting tree_depth=03']]){}
+[INFO] (None, [['tree_depth=03, viewpoint=00']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x319F17980>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=03, viewpoint=01']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x319F17F80>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=03, viewpoint=02']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x319F176E0>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=03, viewpoint=03']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x319F17980>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=03, viewpoint=04']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x319F17F80>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=03, viewpoint=05']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x319F176E0>]]){'col_names': ['exposed']}
+[INFO] (None,){}
+[INFO] (None,){}

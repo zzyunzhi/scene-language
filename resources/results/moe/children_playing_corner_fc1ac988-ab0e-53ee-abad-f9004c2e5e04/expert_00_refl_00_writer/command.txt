@@ -1,0 +1,1 @@
+ENGINE_MODE=exposed DEBUG=0 PYTHONPATH=/Users/yzzhang/dev/scene-language/scripts/prompts:$PYTHONPATH python /Users/yzzhang/dev/scene-language/scripts/outputs/run_self_reflect_with_moe_20250707-130640_f06261b2-4710-4ac4-b889-aa6655451770/children_playing_corner_fc1ac988-ab0e-53ee-abad-f9004c2e5e04/expert_00_refl_00_writer/impl.py

@@ -1,0 +1,54 @@
+Warning: No OpenAI keys found.
+ENGINE_MODE='exposed'
+DRY_RUN=False
+[WARNING] Failed to import neural pipelines.
+[INFO] ('/Users/yzzhang/dev/scene-language/scripts/outputs/run_self_reflect_with_moe_20250302-174429_c573988d-0958-4f63-8bd5-7c6689c48993/Sponge_Bob_and_friends_fb8ab13b-2717-53da-830f-f3e0d6385dc8/expert_00_refl_02_writer/renderings',){}
+[INFO] (None,){'verbose': False}
+[INFO] ('/Users/yzzhang/dev/scene-language/scripts/outputs/run_self_reflect_with_moe_20250302-174429_c573988d-0958-4f63-8bd5-7c6689c48993/Sponge_Bob_and_friends_fb8ab13b-2717-53da-830f-f3e0d6385dc8/expert_00_refl_02_writer/renderings',){'verbose': False}
+[INFO] (None, [[None], [None]]){'col_type': 'text'}
+[WARNING] no roots specified, using the last function in the library
+[INFO] calling node (supposed to be root): bikini_bottom_scene
+[INFO] registering children for sponge_bob with 1 hist calls
+[INFO] registering children for patrick with 1 hist calls
+[INFO] registering children for squidward with 1 hist calls
+[INFO] registering children for mr_krabs with 1 hist calls
+[INFO] registering children for sandy with 1 hist calls
+[INFO] registering children for create_seaweed with 8 hist calls
+[INFO] registering children for bikini_bottom_scene with 1 hist calls
+root='bikini_bottom_scene'
+[INFO] (None, [['Parsed root from program.']]){}
+[INFO] (None, [['root function name: bikini_bottom_scene'], ["scc=([{'sponge_bob'}, {'patrick'}, {'squidward'}, {'mr_krabs'}, {'sandy'}, {'create_seaweed'}, {'bikini_bottom_scene'}], [[], [], [], [], [], [], [0, 1, 2, 3, 4, 5]])"]]){}
+[INFO] (None, [['root function name: bikini_bottom_scene'], ["scc=([{'sponge_bob'}, {'patrick'}, {'squidward'}, {'mr_krabs'}, {'sandy'}, {'create_seaweed'}, {'bikini_bottom_scene'}], [[], [], [], [], [], [], [0, 1, 2, 3, 4, 5]])"]]){}
+[INFO] (None, [['', '']]){'col_names': ['dependency', 'program']}
+[INFO] executing `bikini_bottom_scene`...
+node_depths={'sponge_bob': 1, 'patrick': 1, 'squidward': 1, 'mr_krabs': 1, 'sandy': 1, 'create_seaweed': 1, 'bikini_bottom_scene': 0}
+[INFO] executing `bikini_bottom_scene` done!
+node_depths={'sponge_bob': 1, 'patrick': 1, 'squidward': 1, 'mr_krabs': 1, 'sandy': 1, 'create_seaweed': 1, 'bikini_bottom_scene': 0}
+[INFO] (None, [['starting tree_depth=00']]){}
+[INFO] (None, [['tree_depth=00, viewpoint=00']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x1031A24B0>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=00, viewpoint=01']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x1031A2540>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=00, viewpoint=02']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x1031A2540>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=00, viewpoint=03']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x1031A2510>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=00, viewpoint=04']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x1031A2510>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=00, viewpoint=05']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x1031A2570>]]){'col_names': ['exposed']}
+[INFO] (None, [['starting tree_depth=01']]){}
+[INFO] (None, [['tree_depth=01, viewpoint=00']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x1031A2570>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=01, viewpoint=01']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x1031A24B0>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=01, viewpoint=02']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x1031A24B0>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=01, viewpoint=03']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x1031A2540>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=01, viewpoint=04']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x1031A2540>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=01, viewpoint=05']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x1031A2510>]]){'col_names': ['exposed']}
+[INFO] (None,){}
+[INFO] (None,){}

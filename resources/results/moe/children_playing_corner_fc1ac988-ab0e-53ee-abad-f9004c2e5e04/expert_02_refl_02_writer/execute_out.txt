@@ -1,0 +1,60 @@
+[INFO] Implementing placeholder...
+ENGINE_MODE='exposed'
+DRY_RUN=False
+[INFO] Implementing primitive_call...
+[WARNING] Failed to import neural pipelines.
+[INFO] ('/Users/yzzhang/dev/scene-language/scripts/outputs/run_self_reflect_with_moe_20250707-130640_f06261b2-4710-4ac4-b889-aa6655451770/children_playing_corner_fc1ac988-ab0e-53ee-abad-f9004c2e5e04/expert_02_refl_02_writer/renderings',){}
+[INFO] (None,){'verbose': False}
+[INFO] ('/Users/yzzhang/dev/scene-language/scripts/outputs/run_self_reflect_with_moe_20250707-130640_f06261b2-4710-4ac4-b889-aa6655451770/children_playing_corner_fc1ac988-ab0e-53ee-abad-f9004c2e5e04/expert_02_refl_02_writer/renderings',){'verbose': False}
+[INFO] (None, [[None], [None]]){'col_type': 'text'}
+[WARNING] no roots specified, using the last function in the library
+[INFO] calling node (supposed to be root): children_playing_corner
+[INFO] func_name='toy_block' has no last call
+[INFO] registering children for toy_block with 0 hist calls
+[INFO] func_name='toy_ball' has no last call
+[INFO] registering children for toy_ball with 0 hist calls
+[INFO] registering children for toy_blocks_stack with 1 hist calls
+[INFO] registering children for toy_balls_pile with 1 hist calls
+[INFO] registering children for toy_train with 1 hist calls
+[INFO] registering children for play_mat with 1 hist calls
+[INFO] registering children for toy_shelf with 1 hist calls
+[INFO] registering children for stuffed_animal with 2 hist calls
+[INFO] registering children for small_rug with 2 hist calls
+[INFO] registering children for children_playing_corner with 1 hist calls
+[ERROR] cannot find root 'pop from an empty set'
+[INFO] (None, [['Picked root with 0 parent and >=1 child from library.']]){}
+[INFO] (None, [['root function name: children_playing_corner'], ["scc=([{'toy_block'}, {'toy_ball'}, {'toy_blocks_stack'}, {'toy_balls_pile'}, {'toy_train'}, {'play_mat'}, {'toy_shelf'}, {'stuffed_animal'}, {'small_rug'}, {'children_playing_corner'}], [[], [], [], [], [], [], [], [], [], [2, 3, 4, 5, 6, 7, 8]])"]]){}
+[INFO] (None, [['root function name: children_playing_corner'], ["scc=([{'toy_block'}, {'toy_ball'}, {'toy_blocks_stack'}, {'toy_balls_pile'}, {'toy_train'}, {'play_mat'}, {'toy_shelf'}, {'stuffed_animal'}, {'small_rug'}, {'children_playing_corner'}], [[], [], [], [], [], [], [], [], [], [2, 3, 4, 5, 6, 7, 8]])"]]){}
+[INFO] (None, [['', '']]){'col_names': ['dependency', 'program']}
+[INFO] executing `children_playing_corner`...
+node_depths={'toy_block': -1, 'toy_ball': -1, 'toy_blocks_stack': 1, 'toy_balls_pile': 1, 'toy_train': 1, 'play_mat': 1, 'toy_shelf': 1, 'stuffed_animal': 1, 'small_rug': 1, 'children_playing_corner': 0}
+[INFO] executing `children_playing_corner` done!
+node_depths={'toy_block': -1, 'toy_ball': -1, 'toy_blocks_stack': 1, 'toy_balls_pile': 1, 'toy_train': 1, 'play_mat': 1, 'toy_shelf': 1, 'stuffed_animal': 1, 'small_rug': 1, 'children_playing_corner': 0}
+[INFO] (None, [['starting tree_depth=00']]){}
+[INFO] (None, [['tree_depth=00, viewpoint=00']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x17DEE4CB0>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=00, viewpoint=01']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x17CE92420>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=00, viewpoint=02']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x17DEE45C0>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=00, viewpoint=03']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x17CF09DF0>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=00, viewpoint=04']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x17DEE4CB0>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=00, viewpoint=05']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x17CF0B860>]]){'col_names': ['exposed']}
+[INFO] (None, [['starting tree_depth=01']]){}
+[INFO] (None, [['tree_depth=01, viewpoint=00']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x17DEE45C0>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=01, viewpoint=01']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x17CF09DF0>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=01, viewpoint=02']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x17DEE4CB0>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=01, viewpoint=03']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x17CF0B860>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=01, viewpoint=04']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x17DEE45C0>]]){'col_names': ['exposed']}
+[INFO] (None, [['tree_depth=01, viewpoint=05']]){}
+[INFO] (None, [[<PIL.Image.Image image mode=RGB size=512x512 at 0x17CF09DF0>]]){'col_names': ['exposed']}
+[INFO] (None,){}
+[INFO] (None,){}

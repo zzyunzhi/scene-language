@@ -1,0 +1,1 @@
+ENGINE_MODE=exposed DEBUG=0 PYTHONPATH=/Users/yzzhang/dev/scene-language/scripts/prompts:$PYTHONPATH python /Users/yzzhang/dev/scene-language/scripts/outputs/run_self_reflect_with_moe_20250303-234310_3a199e3d-04e3-424e-99c3-394e4540615c/Basilica_de_la_Sagrada_Familia_20fa601b-6d24-557a-a9cf-ff686568f4fe/expert_00_refl_02_writer/impl.py
