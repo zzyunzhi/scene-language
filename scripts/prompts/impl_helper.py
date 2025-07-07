@@ -11,6 +11,7 @@ import engine_utils
 import trimesh
 import yaml
 from pathlib import Path
+import numpy as np
 from math_utils import identity_matrix
 from engine.constants import PROJ_DIR, ENGINE_MODE
 from engine.utils.argparse_utils import setup_save_dir
@@ -115,7 +116,16 @@ def make_new_library(library, library_equiv, tree_depth: int, root: str, engine_
                     # object coordinate of current node = world coordinate in saved mesh
                     # requires applying leaf transformation saved in `to_world` for all descendants
                     if not asset_path.exists():
-                        mesh = trimesh.util.concatenate([trimesh.load(s['filename']).apply_transform(s['to_world']) for s in shape])
+                        # mesh = trimesh.util.concatenate([trimesh.load(s['filename']).apply_transform(s['to_world']) for s in shape])
+
+                        mesh = []
+                        for s in shape:
+                            m = trimesh.load(s['filename']).apply_transform(s['to_world'])
+                            colors = np.ones((len(m.vertices), 4))
+                            colors[:, :3] = s["bsdf"]["reflectance"]["value"]
+                            m.visual = trimesh.visual.ColorVisuals(m, vertex_colors=colors)
+                            mesh.append(m)
+                        mesh = trimesh.util.concatenate(mesh)
                         mesh.export(asset_path)
                     scene_list.append((_name, {
                         "description": prompt, 
