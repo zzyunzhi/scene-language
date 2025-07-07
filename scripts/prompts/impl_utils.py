@@ -402,7 +402,7 @@ def torch(scale: float = 1.0) -> Shape:
                         cam_radius=cam_radius,
                         resolution=1024,
                     )
-            elif engine_mode in ['mi', 'mi_from_minecraft', 'neural', 'mi_material', 'exposed', 'interior', 'exterior', 'exposed_v2', 'mesh']:
+            elif engine_mode in ['mi', 'mi_from_minecraft', 'neural', 'mi_material', 'exposed', 'interior', 'exterior', 'exposed_v2', 'mesh', 'all']:
                 pass
             else:
                 raise NotImplementedError(engine_mode)

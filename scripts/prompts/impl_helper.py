@@ -5,6 +5,7 @@ from typing import Literal
 from _shape_utils import compute_bbox, primitive_call
 from dsl_utils import set_seed
 from type_utils import T
+from shape_utils import concat_shapes
 from mi_helper import box_fn, shap_e_fn, primitive_box_fn
 import hashlib
 import engine_utils
@@ -33,9 +34,9 @@ orig_primitive_call = engine_utils.inner_primitive_call
 # should NOT be changed by `make_new_library`
 
 
-def make_new_library(library, library_equiv, tree_depth: int, root: str, engine_mode: Literal['lmd', 'neural', 'omost', 'loosecontrol', 'box', 'densediffusion', 'mesh']):
+def make_new_library(library, library_equiv, tree_depth: int, root: str, engine_mode: Literal['lmd', 'neural', 'omost', 'loosecontrol', 'box', 'densediffusion', 'mesh', 'all']):
     decode_docstring = next(iter(library.values()))['docstring'].startswith('{')
-    if decode_docstring and engine_mode not in ['interior', 'exterior', 'box', 'mesh']:
+    if decode_docstring and engine_mode not in ['interior', 'exterior', 'box', 'mesh', 'all']:
         assert tree_depth == -1, tree_depth
     if engine_mode == 'mesh':
         import scripts.prompts.mesh_helper  # overwrites primitive_call
@@ -94,6 +95,8 @@ def make_new_library(library, library_equiv, tree_depth: int, root: str, engine_
                                   shape_type='cube', kwargs=complete_kwargs)
                 else:
                     return primitive_box_fn(prompt=prompt, shape=shape, kwargs=complete_kwargs)  # use this if possible as bounding box loses orientation information
+            if engine_mode == 'all':
+                return concat_shapes(primitive_box_fn(prompt=prompt, shape=[s], kwargs=complete_kwargs) for s in shape)
             if engine_mode in ['gala3d', 'exterior', 'interior', 'mesh']:
                 if decode_docstring:
                     docstring_decoded = json.loads(docstring)
