@@ -13,6 +13,16 @@ classifiers = [
 ]
 dependencies = [
     "mitsuba",
+    "unidecode", 
+    "Pillow",
+    "anthropic",
+    "transforms3d",
+    "astor",
+    "scipy",
+    "jaxtyping",
+    "imageio",
+    "tqdm",
+    "trimesh"
 ]
 
 [project.optional-dependencies]
