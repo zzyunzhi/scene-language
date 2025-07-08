@@ -218,15 +218,30 @@ def make_new_library(library, library_equiv, tree_depth: int, root: str, engine_
         if len(eid_to_scene_list_entry) != len(scene_list):
             import ipdb; ipdb.set_trace()
 
-        eid_to_scene_entry = {entry["info"]["eid"]: entry for entry in scene}
-        if len(eid_to_scene_entry) != len(scene):
-            import ipdb; ipdb.set_trace()
         updated_scene_list = []
-        for eid in eid_to_scene_entry:
+        for entry in scene:
+            eid = entry["info"]["eid"]
             scene_list_entry = eid_to_scene_list_entry[eid]
-            scene_list_entry = (f"{scene_list_entry[0]}_{eid:03d}", scene_list_entry[1])
-            scene_list_entry[1]['to_world'] = eid_to_scene_entry[eid]['to_world'].tolist()
-            updated_scene_list.append(scene_list_entry)
+            updated_scene_list.append((f"{scene_list_entry[0]}_{eid:03d}", {**scene_list_entry[1], "to_world": entry["to_world"].tolist()}))
+
+        # old code snippet that disallows 1:many entry correspondence between `scene_list` and `scene`
+        # which is violated e.g.:
+        # ```python
+            # def element_loop_fn(j) -> Shape:
+            #     # ...
+            #     return transform_shape(element, translation_matrix((x, y_pos, z)))  # Same element, different positions
+            # return loop(4, element_loop_fn)
+        # ```
+
+        # eid_to_scene_entry = {entry["info"]["eid"]: entry for entry in scene}
+        # if len(eid_to_scene_entry) != len(scene):
+        #     import ipdb; ipdb.set_trace()
+        # updated_scene_list = []
+        # for eid in eid_to_scene_entry:
+        #     scene_list_entry = eid_to_scene_list_entry[eid]
+        #     scene_list_entry = (f"{scene_list_entry[0]}_{eid:03d}", scene_list_entry[1])
+        #     scene_list_entry[1]['to_world'] = eid_to_scene_entry[eid]['to_world'].tolist()
+        #     updated_scene_list.append(scene_list_entry)
         with open(library_dir / 'layout.yaml', 'w') as f:
             yaml.dump(dict(updated_scene_list), f)
         print(f'[INFO] Saved scene as dictionary to {library_dir / "layout.yaml"}')
