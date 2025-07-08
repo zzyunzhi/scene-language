@@ -22,7 +22,8 @@ dependencies = [
     "jaxtyping",
     "imageio",
     "tqdm",
-    "trimesh"
+    "trimesh",
+    "ipdb",
 ]
 
 [project.optional-dependencies]
