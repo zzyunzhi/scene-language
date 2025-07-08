@@ -13,7 +13,7 @@ except:
 try:
     from .key import OPENAI_API_KEY
 except:
-    print("Warning: No OpenAI keys found.")
+    # print("Warning: No OpenAI keys found.")
     OPENAI_API_KEY = ''
 
 try:
@@ -30,7 +30,7 @@ import mitsuba as mi
 mi.set_variant(os.environ['MI_DEFAULT_VARIANT'])
 
 ENGINE_MODE: Literal['neural', 'mi', 'minecraft', 'lmd', 'mi_material', 'exposed'] = os.getenv('ENGINE_MODE', 'exposed')
-print(f'{ENGINE_MODE=}')
+# print(f'{ENGINE_MODE=}')
 DEBUG: bool = os.environ.get('DEBUG', '0') == '1'
 
 PROMPT_MODE: Literal['default', 'calc', 'assert', 'sketch'] = os.environ.get('PROMPT_MODE', 'default' if ENGINE_MODE == 'minecraft' else 'calc')
@@ -45,7 +45,7 @@ if 'DRY_RUN' in os.environ:
     DRY_RUN = bool(os.environ['DRY_RUN'])
 else:
     DRY_RUN = False
-print(f'DRY_RUN={DRY_RUN}')
+# print(f'DRY_RUN={DRY_RUN}')
 
 # LLM configs
 LLM_PROVIDER: Literal['gpt', 'claude', 'llama'] = 'claude'

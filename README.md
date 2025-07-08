@@ -13,17 +13,18 @@
 ```bash
 conda create --name sclg python=3.12
 conda activate sclg
-pip install mitsuba  # tested for mitsuba==3.6.4
-pip install unidecode Pillow anthropic transforms3d astor ipdb scipy jaxtyping imageio tqdm trimesh
+git clone https://github.com/zzyunzhi/scene-language.git
+cd scene-language
+pip install -e .
 
 # required for minecraft renderer
 pip install spacy
 python -m spacy download en_core_web_md
 
-git clone https://github.com/zzyunzhi/scene-language.git
-cd scene-language
-pip install -e .
 ```
+<!-- pip install mitsuba  # tested for mitsuba==3.6.4
+pip install unidecode Pillow anthropic transforms3d astor ipdb scipy jaxtyping imageio tqdm trimesh -->
+
 <!-- pip install --force-reinstall numpy==1.26.4  # to be compatible with transforms3d -->
 
 <!-- If you want run neural renderers:
@@ -38,15 +39,16 @@ Get your Anthropic API key following the [official documentation](https://docs.a
 and add it to `engine/key.py`:
 ```python
 ANTHROPIC_API_KEY = 'YOUR_ANTHROPIC_API_KEY'
-OPENAI_API_KEY = 'YOUR_OPENAI_API_KEY'  # optional, required for `LLM_PROVIDER='gpt'`
 ```
 
+<!-- OPENAI_API_KEY = 'YOUR_OPENAI_API_KEY'  # optional, required for `LLM_PROVIDER='gpt'` -->
 By default, we use Claude 3.7 Sonnet. You may switch to other language models by setting [`LLM_PROVIDER`](engine/constants.py#51).
 
 
 ### Text-Conditioned 3D Generation
 
 #### Renderer: Mitsuba
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/zzyunzhi/scene-language/blob/main/colab/text_to_scene.ipynb)
 
 ```bash
 python scripts/run.py --tasks "a chessboard with a full set of chess pieces" 
@@ -123,17 +125,17 @@ The output will contain visualizations of hierarchial parts of the scene (see be
 <table>
 <tr>
 <th width="20%">"a large-scale city"</th>
-<th width="20%">(depth=2)</th>
+<!-- <th width="20%">(depth=2)</th> -->
 <th width="20%">(depth=3)</th>
 <th width="20%">"Basilica de la Sagrada Familia"</th>
 <th width="20%">(depth=2)</th>
 </tr>
 <tr>
 <td><img src="resources/results/moe/a_large-scale_city_3ae587ad-27ad-595a-9d9f-ac80c2f671c8/expert_03_refl_00_writer/renderings/exposed_city_rover_background_rendering_traj.gif" width="100%"></td>
-<td><img src="logs/export/moe/a_large-scale_city_3ae587ad-27ad-595a-9d9f-ac80c2f671c8/expert_03_refl_00_writer/all_city_rover_background_depth_02_frame_00/rendering_traj_000.png" width="100%"></td>
+<!-- <td><img src="logs/export/moe/a_large-scale_city_3ae587ad-27ad-595a-9d9f-ac80c2f671c8/expert_03_refl_00_writer/all_city_rover_background_depth_02_frame_00/rendering_traj_000.png" width="100%"></td> -->
 <td><img src="logs/export/moe/a_large-scale_city_3ae587ad-27ad-595a-9d9f-ac80c2f671c8/expert_03_refl_00_writer/all_city_rover_background_depth_03_frame_00/rendering_traj_000.png" width="100%"></td>
 <td><img src="resources/results/moe/Basilica_de_la_Sagrada_Familia_20fa601b-6d24-557a-a9cf-ff686568f4fe/expert_00_refl_02_writer/renderings/exposed_sagrada_familia_rover_background_rendering_traj.gif" width="100%"></td>
-<td><img src="logs/export/moe/Basilica_de_la_Sagrada_Familia_20fa601b-6d24-557a-a9cf-ff686568f4fe/expert_00_refl_00_writer/all_sagrada_familia_rover_background_depth_02_frame_00/rendering_traj_000.png" width="100%"></td>
+<td><img src="logs/export/moe/Basilica_de_la_Sagrada_Familia_20fa601b-6d24-557a-a9cf-ff686568f4fe/expert_00_refl_02_writer/all_sagrada_familia_rover_background_depth_02_frame_00/rendering_traj_000.png" width="100%"></td>
 </tr>
 </table>
 
