@@ -40,7 +40,8 @@ and add it to `engine/key.py`:
 ANTHROPIC_API_KEY = 'YOUR_ANTHROPIC_API_KEY'
 OPENAI_API_KEY = 'YOUR_OPENAI_API_KEY'  # optional, required for `LLM_PROVIDER='gpt'`
 ```
-By default, we use Claude 3.7 Sonnet. You may switch to other language models by setting `LLM_PROVIDER` in `engine/constants.py`.
+
+By default, we use Claude 3.7 Sonnet. You may switch to other language models by setting [`LLM_PROVIDER`](engine/constants.py#51).
 
 
 ### Text-Conditioned 3D Generation
@@ -54,7 +55,7 @@ python scripts/run_self_reflect_with_moe.py --tasks "Sponge Bob and friends"
 ```
 Renderings will be saved to `${PROJ_ROOT}/scripts/outputs/run_${timestep}_${uuid}/${scene_name}_${uuid}/${sample_index}/renderings/*.gif`. 
 
-Example results with Claude 3.5 Sonnet (raw outputs [here](resources/results/mitsuba)):
+Example results with Claude 3.5 Sonnet (please use [this download link](https://downloads.cs.stanford.edu/viscam/SceneLanguage/resources/results.zip) for raw results including prompts, LLM responses, and renderings):
 
 <table>
 <tr>
@@ -86,7 +87,7 @@ python viewers/minecraft/run.py
 Then open [http://127.0.0.1:5001](http://127.0.0.1:5001) in your browser
 and drag generated json files to the web page.
 
-Example results (raw outputs [here](resources/results/minecraft)):
+Example results:
 
 <table>
 <tr>
@@ -110,6 +111,31 @@ Example results (raw outputs [here](resources/results/minecraft)):
 ```bash
 python scripts/run.py --tasks ./resources/examples/* --cond image --temperature 0.8
 ```
+
+### Export Hierarchical Parts to Mesh
+
+```bash
+# Replace with your actual experiment paths, wildcards supported (e.g., "run_*/*/0" or "**/*")
+python scripts/postprocess/export.py --exp-patterns "run_${timestep}_${uuid}/${scene_name}_${uuid}/${sample_index}"
+```
+The output will contain visualizations of hierarchial parts of the scene (see below, same color denotes the same hierarchy level), and exported `*.ply` files. Raw LLM outputs can be found in the same download link as above. 
+
+<table>
+<tr>
+<th width="20%">"a large-scale city"</th>
+<th width="20%">"(depth=2)"</th>
+<th width="20%">"(depth=3)"</th>
+<th width="20%">"Basilica de la Sagrada Familia"</th>
+<th width="20%">"(depth=2)"</th>
+</tr>
+<tr>
+<td><img src="resources/results/moe/a_large-scale_city_3ae587ad-27ad-595a-9d9f-ac80c2f671c8/expert_03_refl_00_writer/renderings/exposed_city_rover_background_rendering_traj.gif" width="100%"></td>
+<td><img src="logs/export/moe/a_large-scale_city_3ae587ad-27ad-595a-9d9f-ac80c2f671c8/expert_03_refl_00_writer/all_city_rover_background_depth_02_frame_00/rendering_traj_000.png" width="100%"></td>
+<td><img src="logs/export/moe/a_large-scale_city_3ae587ad-27ad-595a-9d9f-ac80c2f671c8/expert_03_refl_00_writer/all_city_rover_background_depth_03_frame_00/rendering_traj_000.png" width="100%"></td>
+<td><img src="resources/results/moe/Basilica_de_la_Sagrada_Familia_20fa601b-6d24-557a-a9cf-ff686568f4fe/expert_00_refl_02_writer/renderings/exposed_sagrada_familia_rover_background_rendering_traj.gif" width="100%"></td>
+<td><img src="logs/export/moe/Basilica_de_la_Sagrada_Familia_20fa601b-6d24-557a-a9cf-ff686568f4fe/expert_00_refl_00_writer/all_sagrada_familia_rover_background_depth_02_frame_00/rendering_traj_000.png" width="100%"></td>
+</tr>
+</table>
 
 
 ### Codebase Details
@@ -154,13 +180,14 @@ Please open a github issue or [email](mailto:yzzhang@cs.stanford.edu) us if enco
 
 ### Citation
 
-If you find this work useful, please consider cite our paper:
+If you find this work useful, please consider cite the paper:
 
 ```bibtex
-@article{zhang2024scenelanguage,
-  title={The Scene Language: Representing Scenes with Programs, Words, and Embeddings},
-  author={Yunzhi Zhang and Zizhang Li and Matt Zhou and Shangzhe Wu and Jiajun Wu},
-  year={2024},
-  journal={arXiv preprint arXiv:2410.16770},
+@inproceedings{zhang2025scenelanguage,
+  title={The scene language: Representing scenes with programs, words, and embeddings},
+  author={Zhang, Yunzhi and Li, Zizhang and Zhou, Matt and Wu, Shangzhe and Wu, Jiajun},
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+  pages={24625--24634},
+  year={2025}
 }
 ```
