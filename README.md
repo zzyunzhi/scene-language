@@ -123,10 +123,10 @@ The output will contain visualizations of hierarchial parts of the scene (see be
 <table>
 <tr>
 <th width="20%">"a large-scale city"</th>
-<th width="20%">"(depth=2)"</th>
-<th width="20%">"(depth=3)"</th>
+<th width="20%">(depth=2)</th>
+<th width="20%">(depth=3)</th>
 <th width="20%">"Basilica de la Sagrada Familia"</th>
-<th width="20%">"(depth=2)"</th>
+<th width="20%">(depth=2)</th>
 </tr>
 <tr>
 <td><img src="resources/results/moe/a_large-scale_city_3ae587ad-27ad-595a-9d9f-ac80c2f671c8/expert_03_refl_00_writer/renderings/exposed_city_rover_background_rendering_traj.gif" width="100%"></td>
