@@ -1,1 +1,0 @@
-ENGINE_MODE=exposed DEBUG=0 PYTHONPATH=/Users/yzzhang/release/engine/scripts/prompts:$PYTHONPATH python /Users/yzzhang/release/engine/scripts/outputs/run_20241026-185817_ab566477-a619-4c6c-9cfb-28a6b70ebe3a/a_scene_inspired_by_Egon_Schiele_72beffd6-1531-5700-894f-f86bb06b7b30/1/impl.py

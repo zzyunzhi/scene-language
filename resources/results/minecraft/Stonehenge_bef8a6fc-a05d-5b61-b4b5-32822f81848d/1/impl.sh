@@ -1,1 +1,0 @@
-ENGINE_MODE=minecraft DEBUG=0 PYTHONPATH=/Users/yzzhang/release/engine/scripts/prompts:$PYTHONPATH python /Users/yzzhang/release/engine/scripts/outputs/run_20241026-221418_8ad3c94a-26fc-4377-9688-624af68bfc62/Stonehenge_bef8a6fc-a05d-5b61-b4b5-32822f81848d/1/impl.py
