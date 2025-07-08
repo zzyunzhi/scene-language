@@ -118,7 +118,7 @@ python scripts/run.py --tasks ./resources/examples/* --cond image --temperature 
 # Replace with your actual experiment paths, wildcards supported (e.g., "run_*/*/0" or "**/*")
 python scripts/postprocess/export.py --exp-patterns "run_${timestep}_${uuid}/${scene_name}_${uuid}/${sample_index}"
 ```
-The output will contain visualizations of hierarchial parts of the scene (see below, same color denotes the same hierarchy level), and exported `*.ply` files. Raw LLM outputs can be found in the same download link as above. 
+The output will contain visualizations of hierarchial parts of the scene (see below, same color denotes the same hierarchy level), and exported `*.ply` files. Results in this section are obtained with Claude 3.7 Sonnet. Raw LLM outputs can be found in the same download link as above. 
 
 <table>
 <tr>
