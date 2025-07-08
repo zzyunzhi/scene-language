@@ -96,7 +96,8 @@ def make_new_library(library, library_equiv, tree_depth: int, root: str, engine_
                 else:
                     return primitive_box_fn(prompt=prompt, shape=shape, kwargs=complete_kwargs)  # use this if possible as bounding box loses orientation information
             if engine_mode == 'all':
-                return concat_shapes(primitive_box_fn(prompt=prompt, shape=[s], kwargs=complete_kwargs) for s in shape)
+                # must use concat_shapes(*(... for ...)) not concat_shapes(... for ...)
+                return concat_shapes(*(primitive_box_fn(prompt=prompt, shape=[s], kwargs=complete_kwargs) for s in shape))
             if engine_mode in ['gala3d', 'exterior', 'interior', 'mesh']:
                 if decode_docstring:
                     docstring_decoded = json.loads(docstring)
