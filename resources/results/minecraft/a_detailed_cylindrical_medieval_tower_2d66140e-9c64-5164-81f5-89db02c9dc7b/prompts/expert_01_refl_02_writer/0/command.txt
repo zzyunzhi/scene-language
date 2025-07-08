@@ -1,1 +1,0 @@
-ENGINE_MODE=minecraft DEBUG=0 PYTHONPATH=/Users/yzzhang/release/engine/scripts/prompts:$PYTHONPATH python /Users/yzzhang/release/engine/scripts/outputs/run_self_reflect_with_moe_20241026-175939_a34340f9-5e80-449f-84ab-358ed5ffe2dc/a_detailed_cylindrical_medieval_tower_2d66140e-9c64-5164-81f5-89db02c9dc7b/prompts/expert_01_refl_02_writer/0/impl.py

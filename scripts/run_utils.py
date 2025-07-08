@@ -11,7 +11,7 @@ import numpy as np
 try:
     from engine.utils.code_llama_client import setup_llama
 except:
-    print("Unable to import Llama modules. Are you running on cluster?")
+    setup_llama = None
 from engine.utils.lm_utils import unwrap_results
 from engine.utils.execute_utils import execute_command
 from engine.constants import (
@@ -85,7 +85,7 @@ if ENGINE_MODE == "minecraft":
     SYSTEM_RULES += """\n5. Pay attention that the objects are not too large so it can't be rendered."""
 # if ENGINE_MODE == 'mi_material':
 #     SYSTEM_RULES += "4. Specify materials to be as realistic as possible; see documentation for `primitive_call`.\n"
-if ENGINE_MODE in ["mi", "mi_material", "exposed"]:
+if ENGINE_MODE in ["mi", "mi_material", "exposed", "exposed_v2"]:
     #     SYSTEM_RULES += "4. You can use shape primitives to approximate shape components that are too complex. You must make sure shape have correct poses. \
     # Be careful about `set_mode` and `set_to` from `primitive_call`.\n"
     SYSTEM_RULES += "4. You must use `library_call` to call registered functions.\n"
@@ -136,6 +136,8 @@ def read_example(path: Optional[str] = None, animate: bool = False) -> str:
                 # ('mi', 'calc'): 'oracle_rotate_v3.py',
                 ("exposed", "calc", True): "oracle_0831_animation.py",
                 ("exposed", "calc", False): "oracle_0807.py",
+                ("exposed_v2", "calc", True): "oracle_0831_animation.py",
+                ("exposed_v2", "calc", False): "oracle_0807.py",
                 ("mi_material", "calc", False): "oracle_material.py",
                 ("minecraft", "default", True): "oracle_minecraft_animation.py",
                 ("minecraft", "default", False): "oracle_minecraft.py",
@@ -529,7 +531,7 @@ def compile_raw_gpt_response_to_program(result: str):
 
 
 def find_renderings(save_dir: Path) -> list[str] | None:
-    rendering_paths = list(save_dir.glob("renderings/*/rendering_traj_000.png"))
+    rendering_paths = list(sorted(save_dir.glob("renderings/*/rendering_traj_*.png")))
     if len(rendering_paths) == 0:
         print(f"[ERROR] no renderings found")
         return None
@@ -616,7 +618,7 @@ def run_self_reflect_and_moe(
                 role_save_dir = (
                     save_dir / f"expert_{expert:02d}_refl_{i:02d}_critic"
                 )
-                user_prompt = get_critic_prompt(task, program, rendering_paths[:2] if rendering_paths is not None else None)
+                user_prompt = get_critic_prompt(task, program, rendering_paths[::max(len(rendering_paths) // 2, 1)] if rendering_paths is not None else None)
                 system_prompt = get_system_prompt(role=role)
                 critique = "\n".join(
                     generate(

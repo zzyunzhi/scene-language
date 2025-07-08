@@ -12,3 +12,5 @@ cache/
 node_modules/
 scripts/assets/mitsuba/rover_background/tmp*.xml
 unused/
+logs/
+scripts/assets/mitsuba/rover_background/meshes/tmp_*.ply

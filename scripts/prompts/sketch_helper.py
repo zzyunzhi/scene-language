@@ -248,8 +248,8 @@ def load_example_program():
     return text
 
 
-EXAMPLE_SKETCH = load_example_sketch()
-EXAMPLE_PROGRAM = load_example_program()
+# EXAMPLE_SKETCH = load_example_sketch()
+# EXAMPLE_PROGRAM = load_example_program()
 
 SYSTEM_PROMPT = "You are a code completion model and an excellent 3D designer. You can only write python functions wrapped within ```python```."
 

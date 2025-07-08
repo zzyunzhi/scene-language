@@ -16,7 +16,7 @@ import mi_helper  # such that primitive call will be implemented
 import argparse
 from typing import Literal, Optional
 
-EXTRA_ENGINE_MODE = ['box', 'interior', 'exterior',
+EXTRA_ENGINE_MODE = ['box', 'interior', 'exterior', 'mesh', 'all',
                      'gala3d', 'lmd', 'migc', 'loosecontrol', 'omost', 'densediffusion', 'neural']  # `densediffusion` must be the last as it modifies diffusers library
 
 
@@ -36,7 +36,7 @@ def main():
          dependency_path=args.dependency_path, program_path=args.program_path)
 
 
-def core(engine_modes: list[Literal['neural', 'lmd', 'omost', 'loosecontrol', 'densediffusion']], overwrite: bool, save_dir: str,
+def core(engine_modes: list[Literal['neural', 'lmd', 'omost', 'loosecontrol', 'densediffusion', 'mesh']], overwrite: bool, save_dir: str,
          dependency_path: Optional[str] = None, program_path: Optional[str] = None, root: Optional[str] = None,
          tree_depths: Optional[list[int]] = None):
     try:
@@ -53,6 +53,8 @@ def core(engine_modes: list[Literal['neural', 'lmd', 'omost', 'loosecontrol', 'd
     from prompt_helper import load_program
     from impl_parse_dependency import parse_dependency
     from engine.constants import ENGINE_MODE
+    if ENGINE_MODE == "exposed_v2":
+        import scripts.prompts.mesh_helper  # requires manual import to rewrite primitive call implementations from mi_helper!!
     try:
         from tu.loggers.utils import print_vcv_url
         from tu.loggers.utils import setup_vi
@@ -206,7 +208,7 @@ def core(engine_modes: list[Literal['neural', 'lmd', 'omost', 'loosecontrol', 'd
     for engine_mode in EXTRA_ENGINE_MODE:
         if engine_mode not in engine_modes:
             continue
-        if engine_mode not in ['box', 'interior', 'exterior'] and not cuda_is_available:
+        if engine_mode not in ['box', 'interior', 'exterior', 'mesh', 'all'] and not cuda_is_available:
             continue
         print(f'[INFO] running with {engine_mode}')
         for tree_depth in tree_depths:
@@ -234,8 +236,8 @@ def core(engine_modes: list[Literal['neural', 'lmd', 'omost', 'loosecontrol', 'd
     # for tree_depth in np.linspace(0, max(max_tree_depth, 0), num=min(5, max(max_tree_depth, 0) + 1), dtype=int):
     # depth_candidates = list(range(max(max_tree_depth + 1, 1)))  # when max_tree_depth == -1, still execute the loop once
     depth_candidates = [0] if len(tree_depths) == 0 else tree_depths
-    if len(depth_candidates) > 5:
-        depth_candidates = depth_candidates[:4] + [depth_candidates[-1]]
+    # if len(depth_candidates) > 5:
+    #     depth_candidates = depth_candidates[:4] + [depth_candidates[-1]]
     for tree_depth in depth_candidates:
         vi_helper.dump_table(vi, [[f'starting tree_depth={tree_depth:02d}']])
         runtime_engine_modes = [ENGINE_MODE]

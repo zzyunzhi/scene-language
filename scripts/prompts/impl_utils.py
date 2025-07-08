@@ -26,7 +26,7 @@ import traceback
 from engine.constants import ENGINE_MODE, DEBUG
 from engine.utils.docstring_utils import describe_color
 from helper import library_call, T
-from prompt_helper import load_program
+# from prompt_helper import load_program
 from typing import Union, Optional
 import numpy as np
 import ast
@@ -402,7 +402,7 @@ def torch(scale: float = 1.0) -> Shape:
                         cam_radius=cam_radius,
                         resolution=1024,
                     )
-            elif engine_mode in ['mi', 'mi_from_minecraft', 'neural', 'mi_material', 'exposed', 'interior', 'exterior']:
+            elif engine_mode in ['mi', 'mi_from_minecraft', 'neural', 'mi_material', 'exposed', 'interior', 'exterior', 'exposed_v2', 'mesh', 'all']:
                 pass
             else:
                 raise NotImplementedError(engine_mode)

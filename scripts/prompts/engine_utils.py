@@ -19,6 +19,8 @@ elif ENGINE_MODE == 'mi_from_minecraft':
     from _engine_utils_mi_from_minecraft import primitive_call as _primitive_call
 elif ENGINE_MODE == 'exposed':
     from _engine_utils_exposed import primitive_call as _primitive_call
+elif ENGINE_MODE == 'exposed_v2':
+    from _engine_utils_exposed_v2 import primitive_call as _primitive_call
 else:
     raise NotImplementedError(ENGINE_MODE)
 
