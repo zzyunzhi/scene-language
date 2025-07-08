@@ -236,8 +236,8 @@ def core(engine_modes: list[Literal['neural', 'lmd', 'omost', 'loosecontrol', 'd
     # for tree_depth in np.linspace(0, max(max_tree_depth, 0), num=min(5, max(max_tree_depth, 0) + 1), dtype=int):
     # depth_candidates = list(range(max(max_tree_depth + 1, 1)))  # when max_tree_depth == -1, still execute the loop once
     depth_candidates = [0] if len(tree_depths) == 0 else tree_depths
-    if len(depth_candidates) > 5:
-        depth_candidates = depth_candidates[:4] + [depth_candidates[-1]]
+    # if len(depth_candidates) > 5:
+    #     depth_candidates = depth_candidates[:4] + [depth_candidates[-1]]
     for tree_depth in depth_candidates:
         vi_helper.dump_table(vi, [[f'starting tree_depth={tree_depth:02d}']])
         runtime_engine_modes = [ENGINE_MODE]
