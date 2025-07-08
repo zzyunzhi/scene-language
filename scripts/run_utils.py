@@ -58,7 +58,7 @@ def read_header(engine_mode: str = ENGINE_MODE, prompt_mode: str = PROMPT_MODE) 
     )[-1]
     # files = sorted((root / 'outputs' / 'stubgen').iterdir(), key=os.path.getmtime)[-1]
     header_file = header_dir / "header.pyi"
-    print(header_file)
+    print(f"[INFO] Reading header from {header_file}.")
     with open(header_file.as_posix(), "r") as f:
         s = f.read()
     return s
