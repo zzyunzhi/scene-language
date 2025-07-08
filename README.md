@@ -1,6 +1,6 @@
 # The Scene Language: Representing Scenes with Programs, Words, and Embeddings
 
-[arXiv](https://arxiv.org/abs/2410.16770) | [Project Page](https://ai.stanford.edu/~yzzhang/projects/scene-language/)
+[arXiv](https://arxiv.org/abs/2410.16770) | [Project Page](https://ai.stanford.edu/~yzzhang/projects/scene-language/) | [Colab](colab/text_to_scene.ipynb)
 
 [Yunzhi Zhang](https://cs.stanford.edu/~yzzhang), [Zizhang Li](https://kyleleey.github.io/), Matt Zhou, [Shangzhe Wu](https://elliottwu.com/), [Jiajun Wu](https://jiajunwu.com/). CVPR 2025.
 
@@ -120,21 +120,32 @@ python scripts/run.py --tasks ./resources/examples/* --cond image --temperature 
 # Replace with your actual experiment paths, wildcards supported (e.g., "run_*/*/0" or "**/*")
 python scripts/postprocess/export.py --exp-patterns "run_${timestep}_${uuid}/${scene_name}_${uuid}/${sample_index}"
 ```
-The output will contain visualizations of hierarchial parts of the scene (see below, same color denotes the same hierarchy level), and exported `*.ply` files. Results in this section are obtained with Claude 3.7 Sonnet. Raw LLM outputs can be found in the same download link as above. 
+The output will contain visualizations of hierarchial parts of the scene and exported `*.ply` files. Below shows examples on two scenes, one randomized color denotes one hierarchy level columns. Results in this section are obtained with Claude 3.7 Sonnet. Raw LLM outputs can be found in the same download link as above. 
 
 <table>
 <tr>
-<th width="20%">"a large-scale city"</th>
-<!-- <th width="20%">(depth=2)</th> -->
-<th width="20%">(depth=3)</th>
-<th width="20%">"Basilica de la Sagrada Familia"</th>
-<th width="20%">(depth=2)</th>
+<th width="25%">"a large-scale city"</th>
+<th width="25%">Level: 0</th>
+<th width="25%">Level: 1</th>
+<th width="25%">Level: 2</th>
 </tr>
 <tr>
 <td><img src="resources/results/moe/a_large-scale_city_3ae587ad-27ad-595a-9d9f-ac80c2f671c8/expert_03_refl_00_writer/renderings/exposed_city_rover_background_rendering_traj.gif" width="100%"></td>
-<!-- <td><img src="logs/export/moe/a_large-scale_city_3ae587ad-27ad-595a-9d9f-ac80c2f671c8/expert_03_refl_00_writer/all_city_rover_background_depth_02_frame_00/rendering_traj_000.png" width="100%"></td> -->
+<td><img src="logs/export/moe/a_large-scale_city_3ae587ad-27ad-595a-9d9f-ac80c2f671c8/expert_03_refl_00_writer/all_city_rover_background_depth_00_frame_00/rendering_traj_000.png" width="100%"></td>
+<td><img src="logs/export/moe/a_large-scale_city_3ae587ad-27ad-595a-9d9f-ac80c2f671c8/expert_03_refl_00_writer/all_city_rover_background_depth_02_frame_00/rendering_traj_000.png" width="100%"></td>
 <td><img src="logs/export/moe/a_large-scale_city_3ae587ad-27ad-595a-9d9f-ac80c2f671c8/expert_03_refl_00_writer/all_city_rover_background_depth_03_frame_00/rendering_traj_000.png" width="100%"></td>
+</tr>
+<tr>
+<th width="25%">"Basilica de la Sagrada Familia"</th>
+<th width="25%">Level: 0</th>
+<th width="25%">Level: 1</th>
+<th width="25%">Level: 2</th>
+</tr>
+<tr>
+<tr>
 <td><img src="resources/results/moe/Basilica_de_la_Sagrada_Familia_20fa601b-6d24-557a-a9cf-ff686568f4fe/expert_00_refl_02_writer/renderings/exposed_sagrada_familia_rover_background_rendering_traj.gif" width="100%"></td>
+<td><img src="logs/export/moe/Basilica_de_la_Sagrada_Familia_20fa601b-6d24-557a-a9cf-ff686568f4fe/expert_00_refl_02_writer/all_sagrada_familia_rover_background_depth_00_frame_00/rendering_traj_000.png" width="100%"></td>
+<td><img src="logs/export/moe/Basilica_de_la_Sagrada_Familia_20fa601b-6d24-557a-a9cf-ff686568f4fe/expert_00_refl_02_writer/all_sagrada_familia_rover_background_depth_01_frame_00/rendering_traj_000.png" width="100%"></td>
 <td><img src="logs/export/moe/Basilica_de_la_Sagrada_Familia_20fa601b-6d24-557a-a9cf-ff686568f4fe/expert_00_refl_02_writer/all_sagrada_familia_rover_background_depth_02_frame_00/rendering_traj_000.png" width="100%"></td>
 </tr>
 </table>
