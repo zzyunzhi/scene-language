@@ -62,7 +62,7 @@ class FunctionReplacer(ast.NodeTransformer):
         return node
 
 
-def process_program(path: Path, save_dir: Path, overwrite: bool = False):
+def process_program(path: Path, save_dir: Path, overwrite: bool = False, skip_prompt: bool = False):
     save_path = save_dir / 'program.py'
     if save_path.exists() and not overwrite:
         print(f"File already exists at {save_path}. Skipping.")
@@ -137,7 +137,7 @@ def process_program(path: Path, save_dir: Path, overwrite: bool = False):
                 context = f"Function: {node.func.id}, {ast.unparse(node)}"
                 key = generate_prompt_key()
                 prompt = input_with_confirm(
-                    f'Found primitive (leaf): {context}\nPlease provide a prompt for the leaf primitive: \n')
+                    f'Found primitive (leaf): {context}\nPlease provide a prompt for the leaf primitive: \n') if not skip_prompt else node.func.id
                 is_exterior = has_exterior and yes_or_no(f'Is this an exterior function?')
                 assert next((kw for kw in node.keywords if kw.arg == key), None) is None, node.keywords
                 node.keywords.append(ast.keyword(
@@ -165,9 +165,9 @@ def process_program(path: Path, save_dir: Path, overwrite: bool = False):
             _ = MinecraftFunctionModifier(name).visit(tree)
 
         if is_leaf:
-            prompt = input_with_confirm("Please provide a prompt for this leaf function: ")
+            prompt = input_with_confirm("Please provide a prompt for this leaf function: ") if not skip_prompt else name
         elif name == root_name:
-            prompt = input_with_confirm("Please provide a prompt for the scene: ")
+            prompt = input_with_confirm("Please provide a prompt for the scene: ") if not skip_prompt else name
         else:
             prompt = library[name]['docstring']
         is_exterior = has_exterior and is_leaf and yes_or_no("Is this function an exterior?")
@@ -234,7 +234,7 @@ def main():
         print(f'[INFO] processing {program_path.as_posix()}')
         save_dir = out_dir / program_path.relative_to(exp_dir).parent
         save_dir.mkdir(parents=True, exist_ok=True)
-        process_program(program_path, save_dir, overwrite=args.overwrite)
+        process_program(program_path, save_dir, overwrite=args.overwrite, skip_prompt=args.skip_prompt)
         render_program(save_dir, overwrite=args.overwrite)
 
 def get_parser():
@@ -243,6 +243,7 @@ def get_parser():
     parser.add_argument('--exp-patterns', nargs='+', type=str, required=True)
     parser.add_argument('--log-unique', action='store_true', help='append timestamp to logging dir')
     parser.add_argument('-o', '--overwrite', action='store_true', help='overwrite existing renderings')
+    parser.add_argument('--skip-prompt', action='store_true', help='use function name as asset description')
     return parser
 
 
