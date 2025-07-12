@@ -1,6 +1,8 @@
 # The Scene Language: Representing Scenes with Programs, Words, and Embeddings
 
-[arXiv](https://arxiv.org/abs/2410.16770) | [Project Page](https://ai.stanford.edu/~yzzhang/projects/scene-language/) | [Colab](colab/text_to_scene.ipynb)
+[arXiv](https://arxiv.org/abs/2410.16770) | [Project Page](https://ai.stanford.edu/~yzzhang/projects/scene-language/)
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/zzyunzhi/scene-language/blob/main/colab/text_to_scene.ipynb)
 
 [Yunzhi Zhang](https://cs.stanford.edu/~yzzhang), [Zizhang Li](https://kyleleey.github.io/), Matt Zhou, [Shangzhe Wu](https://elliottwu.com/), [Jiajun Wu](https://jiajunwu.com/). CVPR 2025.
 
@@ -32,23 +34,23 @@ pip install unidecode Pillow anthropic transforms3d astor ipdb scipy jaxtyping i
 pip install opencv-python plyfile adan-pytorch plotly
 ``` -->
 
-Run `python scripts/installation/test_install.py` to check if the installation is successful. 
+Run `python scripts/tests/test_basic.py` to check if the installation is successful. 
 
 #### Language Model API
-Get your Anthropic API key following the [official documentation](https://docs.anthropic.com/en/api/getting-started#accessing-the-api)
+If you don't have API keys, please follow instructions [here](colab/text_to_scene.ipynb). 
+
+Otherwise, get your Anthropic API key following the [official documentation](https://docs.anthropic.com/en/api/getting-started#accessing-the-api)
 and add it to `engine/key.py`:
 ```python
 ANTHROPIC_API_KEY = 'YOUR_ANTHROPIC_API_KEY'
 ```
 
-<!-- OPENAI_API_KEY = 'YOUR_OPENAI_API_KEY'  # optional, required for `LLM_PROVIDER='gpt'` -->
-By default, we use Claude 3.7 Sonnet. You may switch to other language models by setting [`LLM_PROVIDER`](engine/constants.py#51).
+We recommond using Claude 3.7 Sonnet which is the default setting. You may switch to other language models [here](engine/constants.py#51).
 
 
 ### Text-Conditioned 3D Generation
 
 #### Renderer: Mitsuba
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/zzyunzhi/scene-language/blob/main/colab/text_to_scene.ipynb)
 
 ```bash
 python scripts/run.py --tasks "a chessboard with a full set of chess pieces" 
@@ -107,6 +109,10 @@ Example results:
 <td><img src="resources/results/minecraft-screenshots/greek.png" width="100%"></td>
 </tr>
 </table>
+
+#### Renderer: 3D Gaussian Splatting
+
+Coming soon.
 
 
 ### Image-Conditioned 3D Generation
@@ -169,9 +175,6 @@ python scripts/experimental/simulate_genesis.py -->
 
 <img src="logs/simulate_pybullet/test/history_animation.gif" width="25%">
 
-### Neural Renderers
-
-Coming soon.
 
 ### Codebase Details
 
@@ -213,7 +216,7 @@ Other tasks and renderers reported in the paper will be supported in future upda
 
 Please open a github issue or [email](mailto:yzzhang@cs.stanford.edu) us if encountering any issues. 
 
-### Citation
+### Bibtex
 
 If you find this work useful, please consider cite the paper:
 
