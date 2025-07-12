@@ -14,3 +14,6 @@ scripts/assets/mitsuba/rover_background/tmp*.xml
 unused/
 logs/
 scripts/assets/mitsuba/rover_background/meshes/tmp_*.ply
+resources/results/
+scripts/tests/test_parse_program.py
+scripts/experimental/simulate_genesis.py

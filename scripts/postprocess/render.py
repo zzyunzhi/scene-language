@@ -34,7 +34,7 @@ def get_parser():
     parser.add_argument('--input-pattern', type=str, default=['**'], nargs='+', help='pattern to match subdirectories')
     parser.add_argument('--output-dir', type=str, default=None)
     parser.add_argument('--engine-modes', nargs='*', default=[''],
-                        choices=['omost', 'lmd', 'loosecontrol', 'neural', 'box', 'migc', 'densediffusion', 'gala3d', 'exterior', 'interior'])
+                        choices=['omost', 'lmd', 'loosecontrol', 'neural', 'box', 'migc', 'densediffusion', 'gala3d', 'exterior', 'interior', 'mesh', 'all'])
     parser.add_argument('--log-unique', action='store_true', help='append timestamp to logging dir')
     parser.add_argument('--overwrite', action='store_true', help='overwrite existing renderings')
     parser.add_argument('--dry-run', action='store_true', help='print commands without executing')

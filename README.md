@@ -119,7 +119,10 @@ python scripts/run.py --tasks ./resources/examples/* --cond image --temperature 
 ```bash
 # Replace with your actual experiment paths, wildcards supported (e.g., "run_*/*/0" or "**/*")
 python scripts/postprocess/export.py --exp-patterns "run_${timestep}_${uuid}/${scene_name}_${uuid}/${sample_index}"
+# The above scripts defines entity hierarchies by the track depth of the function call in the computation graph of the program. If you want to define manually which function should correspond to the leaf node, run the follows:
+python scripts/postprocess/truncate.py --exp-patterns "run_${timestep}_${uuid}/${scene_name}_${uuid}/${sample_index}" --skip-prompt
 ```
+
 The output will contain visualizations of hierarchial parts of the scene and exported `*.ply` files. Below shows examples on two scenes, one randomized color denotes one hierarchy level columns. Results in this section are obtained with Claude 3.7 Sonnet. Raw LLM outputs can be found in the same download link as above. 
 
 <table>
@@ -149,6 +152,19 @@ The output will contain visualizations of hierarchial parts of the scene and exp
 <td><img src="logs/export/moe/Basilica_de_la_Sagrada_Familia_20fa601b-6d24-557a-a9cf-ff686568f4fe/expert_00_refl_02_writer/all_sagrada_familia_rover_background_depth_02_frame_00/rendering_traj_000.png" width="100%"></td>
 </tr>
 </table>
+
+
+### Export to simulation
+
+You can further load the exported assets from above into a physics simulator:
+```bash
+# Export to PyBullet
+# pip install git+git@github.com:google-research/kubric.git
+python scripts/experimental/simulate_pybullet.py
+```
+<!-- # Export to Genesis
+# pip install genesis open3d
+python scripts/experimental/simulate_genesis.py -->
 
 
 ### Codebase Details
