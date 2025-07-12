@@ -114,13 +114,11 @@ Example results:
 python scripts/run.py --tasks ./resources/examples/* --cond image --temperature 0.8
 ```
 
-### Export Hierarchical Parts to Mesh
+### Export Hierarchical Parts as Mesh
 
 ```bash
 # Replace with your actual experiment paths, wildcards supported (e.g., "run_*/*/0" or "**/*")
 python scripts/postprocess/export.py --exp-patterns "run_${timestep}_${uuid}/${scene_name}_${uuid}/${sample_index}"
-# The above scripts defines entity hierarchies by the track depth of the function call in the computation graph of the program. If you want to define manually which function should correspond to the leaf node, run the follows:
-python scripts/postprocess/truncate.py --exp-patterns "run_${timestep}_${uuid}/${scene_name}_${uuid}/${sample_index}" --skip-prompt
 ```
 
 The output will contain visualizations of hierarchial parts of the scene and exported `*.ply` files. Below shows examples on two scenes, one randomized color denotes one hierarchy level columns. Results in this section are obtained with Claude 3.7 Sonnet. Raw LLM outputs can be found in the same download link as above. 
@@ -145,7 +143,6 @@ The output will contain visualizations of hierarchial parts of the scene and exp
 <th width="25%">Level: 2</th>
 </tr>
 <tr>
-<tr>
 <td><img src="resources/results/moe/Basilica_de_la_Sagrada_Familia_20fa601b-6d24-557a-a9cf-ff686568f4fe/expert_00_refl_02_writer/renderings/exposed_sagrada_familia_rover_background_rendering_traj.gif" width="100%"></td>
 <td><img src="logs/export/moe/Basilica_de_la_Sagrada_Familia_20fa601b-6d24-557a-a9cf-ff686568f4fe/expert_00_refl_02_writer/all_sagrada_familia_rover_background_depth_00_frame_00/rendering_traj_000.png" width="100%"></td>
 <td><img src="logs/export/moe/Basilica_de_la_Sagrada_Familia_20fa601b-6d24-557a-a9cf-ff686568f4fe/expert_00_refl_02_writer/all_sagrada_familia_rover_background_depth_01_frame_00/rendering_traj_000.png" width="100%"></td>
@@ -154,11 +151,15 @@ The output will contain visualizations of hierarchial parts of the scene and exp
 </table>
 
 
-### Export to simulation
-
-You can further load the exported assets from above into a physics simulator:
+The script above constructs entity hierarchy from a program’s call graph—each increase in call depth denotes a deeper hierarchy level (levels 0, 1, 2, etc. as in the table above). If you instead want to manually specify which functions should be treated as leaf nodes, run the following command:
 ```bash
-# Export to PyBullet
+python scripts/postprocess/truncate.py --exp-patterns "run_${timestep}_${uuid}/${scene_name}_${uuid}/${sample_index}" --skip-prompt
+```
+
+### Load Mesh in Physics Simulator
+
+You can further load the exported assets from above into a physics simulator. Below is a example script and its output.
+```bash
 # pip install git+git@github.com:google-research/kubric.git
 python scripts/experimental/simulate_pybullet.py
 ```
@@ -166,6 +167,11 @@ python scripts/experimental/simulate_pybullet.py
 # pip install genesis open3d
 python scripts/experimental/simulate_genesis.py -->
 
+<img src="logs/simulate_pybullet/test/history_animation.gif" width="25%">
+
+### Neural Renderers
+
+Coming soon.
 
 ### Codebase Details
 
